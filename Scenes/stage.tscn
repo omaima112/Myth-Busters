@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceg5502f860mc"]
+
+[ext_resource type="PackedScene" uid="uid://bmawkdyctdx5y" path="res://Models/stage.fbx" id="1_84iix"]
+
+[node name="stage" instance=ExtResource("1_84iix")]

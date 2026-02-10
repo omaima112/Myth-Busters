@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://mwf5g12kuph3"]
+
+[ext_resource type="Texture2D" uid="uid://bsg4pubo8x7c5" path="res://splash-screen.png" id="1_splash"]
+[ext_resource type="Script" uid="uid://cms5q41xu2mu4" path="res://menu_enhanced.gd" id="2_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.12, 0.12, 0.15, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.6, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.2, 0.18, 0.15, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.8, 0.3, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Menu" type="Control" unique_id=916870268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1589143565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_splash")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=2135110388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3)
+
+[node name="MainContainer" type="HBoxContainer" parent="." unique_id=300317862]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = -80.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainContainer" unique_id=1436637267]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Spacer1" type="Control" parent="MainContainer/LeftPanel" unique_id=1091558591]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="MainContainer/LeftPanel" unique_id=2092729972]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MainContainer/LeftPanel" unique_id=1332631098]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.9, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+text = "START GAME"
+
+[node name="QuitButton" type="Button" parent="MainContainer/LeftPanel" unique_id=140507020]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.95, 0.8, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.9, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+text = "QUIT"
+
+[node name="Spacer3" type="Control" parent="MainContainer/LeftPanel" unique_id=1875678684]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Separator" type="Control" parent="MainContainer" unique_id=350498016]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="RightPanel" type="VBoxContainer" parent="MainContainer" unique_id=1804720755]
+custom_minimum_size = Vector2(460, -20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MissionPanel" type="PanelContainer" parent="MainContainer/RightPanel" unique_id=274906009]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PanelStyle" type="Panel" parent="MainContainer/RightPanel/MissionPanel" unique_id=1461722379]
+self_modulate = Color(0.1, 0.1, 0.12, 0.8)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/RightPanel/MissionPanel" unique_id=548696401]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/RightPanel/MissionPanel/MarginContainer" unique_id=1677658351]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MissionTitle" type="Label" parent="MainContainer/RightPanel/MissionPanel/MarginContainer/VBoxContainer" unique_id=2047510247]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 42
+text = "MISSION"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="MainContainer/RightPanel/MissionPanel/MarginContainer/VBoxContainer" unique_id=1770931048]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxFlat_button")
+
+[node name="MissionText" type="RichTextLabel" parent="MainContainer/RightPanel/MissionPanel/MarginContainer/VBoxContainer" unique_id=528301204]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[center][b]COLLECT & LEARN[/b][/center]
+
+[center]Your mission is to navigate through terrain and collect nuclear barrels marked with black and yellow color and gain information about Nuclear Tech[/center]
+
+"
+fit_content = true
+
+[connection signal="pressed" from="MainContainer/LeftPanel/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainContainer/LeftPanel/QuitButton" to="." method="_on_quit_button_pressed"]

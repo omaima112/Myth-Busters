@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dkoedhuyj7ng1"]
+
+[sub_resource type="GDScript" id="GDScript_test"]
+script/source = "extends Area3D
+
+func _ready():
+	print(\"\\n=================================\")
+	print(\"TEST ZONE READY!\")
+	print(\"Position:\", global_position)
+	print(\"Monitoring:\", monitoring)
+	print(\"=================================\")
+	body_entered.connect(on_body_in)
+
+func on_body_in(body):
+	print(\"\\n🔥 SOMETHING ENTERED!\")
+	print(\"Name:\", body.name)
+	print(\"Type:\", body.get_class())
+	print(\"=================================\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_test"]
+size = Vector3(20, 10, 20)
+
+[node name="TestRadiationZone" type="Area3D" unique_id=1591485461]
+script = SubResource("GDScript_test")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1245989836]
+shape = SubResource("BoxShape3D_test")

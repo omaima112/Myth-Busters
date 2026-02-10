@@ -1,0 +1,11 @@
+Model Information:
+* title:	nuclear power plant
+* source:	https://sketchfab.com/3d-models/nuclear-power-plant-c5c97bf64e9842a598ee95bbe3e24e45
+* author:	qASQA (https://sketchfab.com/qASQA)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "nuclear power plant" (https://sketchfab.com/3d-models/nuclear-power-plant-c5c97bf64e9842a598ee95bbe3e24e45) by qASQA (https://sketchfab.com/qASQA) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

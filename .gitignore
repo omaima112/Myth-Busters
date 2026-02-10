@@ -1,0 +1,18 @@
+# Godot 4 ignores 
+.godot/ 
+.import/ 
+export_presets.cfg 
+*.translation 
+ 
+# Build outputs 
+Build/ 
+*.exe 
+*.pck 
+*.zip 
+ 
+# OS files 
+.DS_Store 
+Thumbs.db 
+desktop.ini 
+*~ 
+*.swp

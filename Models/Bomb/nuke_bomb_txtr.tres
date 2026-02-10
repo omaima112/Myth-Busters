@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8tnat5egok28"]
+
+[ext_resource type="Texture2D" uid="uid://bbcpi2q6dbhho" path="res://Models/Bomb/nuclear_bomb_stylized_lowpoly_0.webp" id="1_aohf1"]
+
+[resource]
+resource_name = "nuke_bomb_txtr"
+cull_mode = 2
+albedo_texture = ExtResource("1_aohf1")
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1

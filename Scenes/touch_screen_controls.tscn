@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7mnrpuva07ev"]
+
+[ext_resource type="Texture2D" uid="uid://wjyvgbskkwa2" path="res://UI/forward_button.png" id="1_7x8ve"]
+[ext_resource type="Texture2D" uid="uid://cwqkjrvi8i8dy" path="res://UI/back_button.png" id="2_p80f0"]
+[ext_resource type="Texture2D" uid="uid://dhx8kf1hb5i1h" path="res://UI/right_button.png" id="3_ot47t"]
+[ext_resource type="Texture2D" uid="uid://ki8ced2ww4bv" path="res://UI/left_button.png" id="4_em3e5"]
+
+[node name="TouchScreenControls" type="CanvasLayer"]
+
+[node name="Gas" type="TouchScreenButton" parent="."]
+position = Vector2(103, 450)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_7x8ve")
+action = "Gas"
+visibility_mode = 1
+
+[node name="Brake" type="TouchScreenButton" parent="."]
+position = Vector2(103, 536)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_p80f0")
+action = "Brake"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(983, 448.00003)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_ot47t")
+action = "Right"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(875.99994, 448.99997)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_em3e5")
+action = "Left"
+visibility_mode = 1

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bel53jhupu1k4"]
+
+[ext_resource type="Script" uid="uid://8ip6j0lvhbig" path="res://Scenes/canvas_layer.gd" id="1_e0onf"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_fccik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjfho"]
+font = ExtResource("2_fccik")
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.25490198, 0.25490198, 0.25490198, 0.6862745)
+
+[node name="HUD" type="Control" unique_id=139008116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1582134567]
+script = ExtResource("1_e0onf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=218105843]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="OrbCounter" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=61282485]
+layout_mode = 2
+text = "Collect Barrels"
+label_settings = SubResource("LabelSettings_bjfho")

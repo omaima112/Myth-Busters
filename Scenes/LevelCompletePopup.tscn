@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dcs6h5rw72x4v"]
+
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="1_wqhlr"]
+
+[node name="LevelCompletePopup" type="PopupPanel" unique_id=963093712]
+oversampling_override = 1.0
+size = Vector2i(668, 318)
+visible = true
+exclusive = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1402250968]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1152382707]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1737750951]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wqhlr")
+theme_override_font_sizes/font_size = 34
+text = "LEVEL COMPLETED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Spacer1" type="Control" parent="MarginContainer/VBoxContainer" unique_id=484488460]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1454711390]
+layout_mode = 2
+text = "Next level is coming soon
+For now you gained Facts and Myths about the Nuclear Technology"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1638210356]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="CountdownLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=727178570]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.03137255, 1, 0.7647059, 1)
+text = "Restarting in 3 seconds..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D3" type="Line2D" parent="MarginContainer" unique_id=852049984]
+position = Vector2(50, -18)
+rotation = 1.5707964
+points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D7" type="Line2D" parent="MarginContainer" unique_id=908232899]
+position = Vector2(152, 60)
+points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D5" type="Line2D" parent="MarginContainer" unique_id=1234667867]
+position = Vector2(465.72556, -21.999983)
+rotation = 1.5707964
+scale = Vector2(1, 8.997448)
+points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D6" type="Line2D" parent="MarginContainer" unique_id=210031643]
+position = Vector2(1072, -15)
+rotation = 1.5707964
+scale = Vector2(1, 8.997448)
+points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D4" type="Line2D" parent="MarginContainer" unique_id=917167992]
+position = Vector2(708, -19)
+rotation = 1.5707964
+points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
+width = 2.0
+default_color = Color(0, 1, 1, 1)

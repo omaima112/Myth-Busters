@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7twua2sbrhxs"]
+
+[ext_resource type="FontFile" uid="uid://bkdoso8q43fur" path="res://Fonts/Lilmarie.ttf" id="1_8p7yn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxknu"]
+font = ExtResource("1_8p7yn")
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.15294118, 0.15294118, 0.15294118, 0.85882354)
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Instructions" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Instructions"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Instructions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="Instructions/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Explore and find all the Pink and Blue crystals
+spread accross the forest to learn new facts and 
+dispel misconceptions about Nuclear Science!"
+label_settings = SubResource("LabelSettings_dxknu")

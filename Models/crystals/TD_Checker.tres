@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dbrbj5qv2b3ao"]
+
+[ext_resource type="Texture2D" uid="uid://d2po51v7nvdgi" path="res://Models/crystals/fantasy_stylized_crystals_0.png" id="1_d6e4a"]
+[ext_resource type="Texture2D" uid="uid://buu3m2fnbls13" path="res://Models/crystals/fantasy_stylized_crystals_1.png" id="2_3d4g1"]
+[ext_resource type="Texture2D" uid="uid://cn1cirofpb2ep" path="res://Models/crystals/fantasy_stylized_crystals_2.png" id="3_adshr"]
+[ext_resource type="Texture2D" uid="uid://cm2cqm58fkgw4" path="res://Models/crystals/fantasy_stylized_crystals_3.png" id="4_0s1un"]
+
+[resource]
+resource_name = "TD_Checker"
+cull_mode = 2
+albedo_texture = ExtResource("1_d6e4a")
+metallic = 1.0
+metallic_texture = ExtResource("2_3d4g1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_3d4g1")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("3_adshr")
+normal_enabled = true
+normal_texture = ExtResource("4_0s1un")
+ao_enabled = true
+ao_texture = ExtResource("2_3d4g1")

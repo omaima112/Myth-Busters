@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlhvjw3win4w6"]
+
+[ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orb.gd" id="1_caui3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ryljl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4tb7o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3x0a"]
+albedo_color = Color(1, 0.65745145, 0.6966894, 1)
+emission_enabled = true
+emission = Color(0.93910867, 0.50878483, 0.60979915, 1)
+emission_energy_multiplier = 2.6
+
+[node name="Orb" type="Node3D"]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
+script = ExtResource("1_caui3")
+
+[node name="TriggerArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+shape = SubResource("SphereShape3D_ryljl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_4tb7o")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3x0a")

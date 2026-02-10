@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b4685jp0x6ohw"]
+
+[ext_resource type="PackedScene" uid="uid://bqxe6a8vwtjej" path="res://Scenes/Jeep/Jeep.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b6ojk5javc8yb" path="res://Camera/camera_rig.gd" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://depxvigskmvuq" path="res://Scenes/Environment/environment.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://bkql7a8enl67p" path="res://Scenes/popups.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://b7mnrpuva07ev" path="res://Scenes/touch_screen_controls.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bel53jhupu1k4" path="res://Scenes/hud.tscn" id="6_21xkr"]
+
+[node name="Main" type="Node3D" unique_id=434334455]
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1518125680 node_paths=PackedStringArray("target_vehicle")]
+script = ExtResource("2_bo1nx")
+target_vehicle = NodePath("../Jeep")
+camera_height = 7.69
+camera_distance = 7.21
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1235178967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21393871, 2.74221, 2.3259144)
+current = true
+fov = 83.416725
+
+[node name="Environment" parent="." unique_id=87204326 instance=ExtResource("3_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01824379, -0.012592316, 0.007893562)
+
+[node name="Jeep" parent="." unique_id=2007525747 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(-0.0063525885, -0.07104613, 0.99745274, 0.02638465, 0.99711365, 0.07119009, -0.9996318, 0.02676969, -0.004459687, -0.54161584, 1.786706, 3.4084682)
+max_engine_force = 650.0
+max_steer_angle = 0.45
+steer_speed = 3.2
+
+[node name="Popups" parent="." unique_id=779390533 instance=ExtResource("4_jjvhh")]
+scale = Vector2(2.1070201, 3.962356)
+
+[node name="TouchScreenControls" parent="." unique_id=701083740 instance=ExtResource("5_kry3j")]
+
+[node name="HUD" parent="." unique_id=1643897027 instance=ExtResource("6_21xkr")]

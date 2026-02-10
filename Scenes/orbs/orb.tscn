@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dlhvjw3win4w6"]
+
+[ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_caui3"]
+[ext_resource type="PackedScene" uid="uid://dmtef2qegc02c" path="res://Scenes/orbs/container_nuclear.glb" id="2_ehpuv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6pvm"]
+
+[node name="Orb" type="Node3D" unique_id=953888495]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
+script = ExtResource("1_caui3")
+
+[node name="TriggerArea" type="Area3D" parent="." unique_id=404851432]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea" unique_id=7067173]
+shape = SubResource("CapsuleShape3D_l6pvm")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1631467954 instance=ExtResource("2_ehpuv")]
+transform = Transform3D(0.5000001, 0, 0, 0, 0.5000001, 0, 0, 0, 0.5000001, -0.031851918, 0.19102521, 0.009500192)

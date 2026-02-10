@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blqfic0nab8x7"
+path="res://.godot/imported/2d9c7eac8d3d495990b83c14dbad62da.zip.obj-e4179fd2fad5b80daf9376dabbed3dca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/2d9c7eac8d3d495990b83c14dbad62da.zip.obj-e4179fd2fad5b80daf9376dabbed3dca.mesh"]
+
+source_file="res://weapons/grenade/source/2d9c7eac8d3d495990b83c14dbad62da.zip.obj"
+dest_files=["res://.godot/imported/2d9c7eac8d3d495990b83c14dbad62da.zip.obj-e4179fd2fad5b80daf9376dabbed3dca.mesh", "res://.godot/imported/2d9c7eac8d3d495990b83c14dbad62da.zip.obj-e4179fd2fad5b80daf9376dabbed3dca.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

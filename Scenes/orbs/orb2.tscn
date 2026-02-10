@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cluap3u4bamqy"]
+
+[ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_5m04f"]
+[ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="2_rbqvr"]
+[ext_resource type="PackedScene" uid="uid://dmtef2qegc02c" path="res://Scenes/orbs/container_nuclear.glb" id="3_0uv7p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5m04f"]
+
+[node name="Orb" type="Node3D" unique_id=1333296512]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
+script = ExtResource("1_5m04f")
+info_title = "Nuclear Myth Busted"
+info_text = "Radiation from plants is less than from a banana or flight. NST powers clean energy!"
+info_image = ExtResource("2_rbqvr")
+
+[node name="TriggerArea" type="Area3D" parent="." unique_id=1651768842]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea" unique_id=1075468842]
+transform = Transform3D(2.035, 0, 0, 0, 2.035, 0, 0, 0, 2.035, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5m04f")
+
+[node name="Sketchfab_Scene2" parent="." unique_id=1631467954 instance=ExtResource("3_0uv7p")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.01841032, 0.03931298, 0.028633952)
