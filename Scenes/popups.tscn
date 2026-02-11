@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bhdeivk0vvert" path="res://Scenes/popups.gd" id="1_45svt"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xpg3u"]
 [ext_resource type="Texture2D" uid="uid://b8q0vkog06v51" path="res://Images/person-walking-in-park.webp" id="4_62nyy"]
-[ext_resource type="PackedScene" uid="uid://b1kxrvt364kyo" path="res://Scenes/LevelCompletePopup.tscn" id="4_j6djd"]
+[ext_resource type="PackedScene" uid="uid://dcs6h5rw72x4v" path="res://Scenes/LevelCompletePopup.tscn" id="4_j6djd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p7gdj"]
 line_spacing = -23.0
@@ -43,8 +43,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_right = 556.0
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

@@ -2,12 +2,17 @@ extends VehicleBody3D
 
 @export var can_drive := true
 
+# === VEHICLE SCALING (Safe - doesn't override physics) ===
+@export var vehicle_scale := 1.0  # Scale multiplier (1.0 = normal, 1.5 = 50% bigger)
+@export var apply_scale_on_ready := true  # Auto-scale when scene starts
+
 # Toy Car Tuning (adjust in Inspector!)
 @export var max_engine_force := 1200.0     # High relative to low mass = snappy!
 @export var max_brake_force := 20.0        # Light braking for drifts
 @export var handbrake_force := 40.0        # Strong skid for fun
 @export var max_steer_angle := 0.7         # Wide turns
 @export var steer_speed := 8.0             # Instant response
+@export var invert_steering := false       # NEW: Option to invert steering
 
 # === NITRO BOOST SETTINGS ===
 @export var nitro_boost_multiplier := 2.5  # 2.5x engine power when active
@@ -38,17 +43,31 @@ var current_pitch := idle_pitch
 
 var initial_position := Vector3.ZERO  # Store initial position
 var initial_rotation := Vector3.ZERO  # Store initial rotation
+var initial_mesh_scales = {}  # Store original mesh scales
+var initial_wheel_positions = {}  # Store original wheel positions
 
 func _ready():
-	# Auto-tune all wheels (toy car feel)
+	# Store initial transform
 	initial_position = global_position
 	initial_rotation = rotation
 	
+	# Store initial scales of all meshes and wheels
+	for child in get_children():
+		if child is MeshInstance3D:
+			initial_mesh_scales[child.name] = child.scale
+		elif child is VehicleWheel3D:
+			initial_wheel_positions[child.name] = child.position
+	
+	# Apply scaling if enabled
+	if apply_scale_on_ready and vehicle_scale != 1.0:
+		scale_vehicle(vehicle_scale)
+	
+	# Auto-tune all wheels (toy car feel)
 	for wheel in get_children():
 		if wheel is VehicleWheel3D:
 			# Grip & suspension (all wheels)
 			wheel.wheel_friction_slip = wheel_friction_slip
-			wheel.suspension_travel = suspension_travel
+			wheel.suspension_travel = suspension_travel * vehicle_scale
 			wheel.suspension_stiffness = suspension_stiffness
 			wheel.damping_compression = damping_compression
 			wheel.damping_relaxation = damping_relaxation
@@ -61,6 +80,69 @@ func _ready():
 			if wheel.position.z < 0:  # Z < 0 = rear
 				wheel.use_as_traction = true
 
+# Scale the vehicle properly (meshes and wheels, not physics body)
+func scale_vehicle(scale_factor: float) -> void:
+	if scale_factor <= 0:
+		print("❌ Invalid scale factor! Must be > 0")
+		return
+	
+	print("🚗 Scaling vehicle to: ", scale_factor, "x")
+	
+	# IMPORTANT: Don't scale the VehicleBody3D itself!
+	# Instead, scale all child meshes and wheels
+	
+	# Scale all MeshInstance3D nodes
+	for child in get_children():
+		if child is MeshInstance3D:
+			var original_scale = initial_mesh_scales.get(child.name, child.scale)
+			child.scale = original_scale * scale_factor
+			print("  ✓ Scaled mesh: ", child.name, " to ", child.scale)
+		
+		# Scale wheel positions (so they move further from center)
+		elif child is VehicleWheel3D:
+			var original_pos = initial_wheel_positions.get(child.name, child.position)
+			child.position = original_pos * scale_factor
+			child.suspension_travel = suspension_travel * scale_factor
+			print("  ✓ Scaled wheel: ", child.name, " position to ", child.position)
+	
+	# Adjust main body position so it sits on ground properly
+	global_position.y = initial_position.y * scale_factor
+	
+	print("✅ Vehicle scaled to: ", scale_factor, "x")
+	print("✅ New position Y: ", global_position.y)
+	print("✅ Physics body NOT scaled (avoids override issues)")
+
+# Reset vehicle (with proper scaling)
+func reset_vehicle():
+	print("🔄 Resetting vehicle...")
+	
+	# Reset position
+	global_position = initial_position
+	global_position.y = initial_position.y * vehicle_scale
+	rotation = initial_rotation
+	
+	# Reset all meshes to scaled size
+	for child in get_children():
+		if child is MeshInstance3D:
+			var original_scale = initial_mesh_scales.get(child.name, Vector3.ONE)
+			child.scale = original_scale * vehicle_scale
+		
+		elif child is VehicleWheel3D:
+			var original_pos = initial_wheel_positions.get(child.name, child.position)
+			child.position = original_pos * vehicle_scale
+			child.suspension_travel = suspension_travel * vehicle_scale
+	
+	# Reset physics
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	
+	# Reset nitro
+	current_nitro = max_nitro
+	nitro_cooldown_timer = 0.0
+	is_boosting = false
+	
+	print("✅ Vehicle reset!")
+
 func _physics_process(delta):
 	
 	# Reset on 'R' key
@@ -68,7 +150,12 @@ func _physics_process(delta):
 		reset_vehicle()
 		
 	var throttle = Input.get_action_strength("Gas") - Input.get_action_strength("Brake")
+	
+	# STEERING FIX: Check if steering should be inverted
 	var steer_input = Input.get_action_strength("Left") - Input.get_action_strength("Right")
+	if invert_steering:
+		steer_input = -steer_input  # Flip steering direction
+	
 	var handbrake = Input.is_action_pressed("Handbrake")
 	
 	if not can_drive:
@@ -118,48 +205,20 @@ func _physics_process(delta):
 	var avg_rpm = (rpm_left + rpm_right) / 2.0
 	
 	# Throttle-based pitch (0-1 normalized)
-	var throttle_factor = Input.get_action_strength("Gas")/2 if (Input.get_action_strength("Gas") - Input.get_action_strength("Brake")) > 0.5 else Input.get_action_strength("Brake")/4
+	var throttle_factor = abs(throttle)
+	var rpm_factor = clamp(avg_rpm / 50.0, 0.0, 1.0)  # 50 RPM = max pitch
 	
-	# Boost pitch higher when nitro active
-	var pitch_max = max_pitch * 1.3 if is_boosting else max_pitch
-	var target_pitch = lerp(idle_pitch, pitch_max, throttle_factor)
+	# Combine throttle input + wheel RPM
+	var pitch_target = idle_pitch + (max_pitch - idle_pitch) * max(throttle_factor, rpm_factor)
 	
-	# Smooth pitch lerp
-	current_pitch = lerp(current_pitch, target_pitch, pitch_smoothing * delta)
+	# Boost sound (higher pitch when boosting)
+	if is_boosting:
+		pitch_target *= 1.2  # 20% higher pitch
 	
-	# Apply to sound
+	# Smooth pitch transition
+	current_pitch = lerp(current_pitch, pitch_target, pitch_smoothing * delta)
 	engine_sound.pitch_scale = current_pitch
 	
-	# Volume swell with throttle (quieter idle)
-	engine_sound.volume_db = lerp(-15.0, 0.0, throttle_factor)
-	
-	# === HORN ===
-	if Input.is_action_pressed("Horn"):  # Press H
-		if not horn_sound.playing:   # Prevents spam/overlapping
-			horn_sound.play()
-
-	if not Input.is_action_pressed("Horn") and horn_sound.playing:
-		horn_sound.stop()
-
-	# Debug
-	print("Nitro: ", current_nitro, " | Boosting: ", is_boosting)
-
-
-func _on_engine_off():
-	engine_sound.pitch_scale = idle_pitch
-	engine_sound.volume_db = -30.0  # Quiet idle
-
-func reset_vehicle():
-	global_position = initial_position
-	rotation = initial_rotation
-	linear_velocity = Vector3.ZERO
-	angular_velocity = Vector3.ZERO
-	engine_force = 0.0
-	brake = max_brake_force * 2
-	steering = 0.0
-	current_nitro = max_nitro  # Refill nitro on reset
-	is_boosting = false
-
-# Optional: Get nitro percentage for UI display
-func get_nitro_percentage():
-	return (current_nitro / max_nitro) * 100.0
+	# Play horn on 'H' key
+	if Input.is_action_just_pressed("Horn"):
+		horn_sound.play()

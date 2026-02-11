@@ -13,23 +13,32 @@ extends Node3D
 var yaw := 0.0
 var pitch := 0.2
 
-func _ready():
+func _ready() -> void:
+	print("=== TUTORIAL CAMERA RIG READY ===")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Capture mouse for rotation
+	
+	# Auto-find vehicle if not set
+	if not target_vehicle:
+		target_vehicle = get_parent().get_node_or_null("Jeep") as VehicleBody3D
+		if target_vehicle:
+			print("✅ Auto-found vehicle: ", target_vehicle.name)
+		else:
+			print("❌ ERROR: Vehicle not found!")
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		# Natural vertical rotation (not inverted)
 		yaw -= event.relative.x * mouse_sensitivity   # left/right
 		pitch += event.relative.y * mouse_sensitivity # up/down corrected
 		pitch = clamp(pitch, min_pitch, max_pitch)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	if not target_vehicle:
 		return
-
+	
 	# Vehicle position
 	var car_pos = target_vehicle.global_position
-
+	
 	# Calculate camera offset
 	var offset = Vector3(
 		sin(yaw) * cos(pitch),
@@ -37,9 +46,9 @@ func _physics_process(delta):
 		cos(yaw) * cos(pitch)
 	) * camera_distance
 	offset.y += camera_height
-
+	
 	# Smooth follow
 	global_position = global_position.lerp(car_pos + offset, follow_speed * delta)
-
+	
 	# Look at car
 	look_at(car_pos + Vector3.UP, Vector3.UP)

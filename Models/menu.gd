@@ -76,31 +76,26 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _position: Vector
 		_on_start_pressed()
 
 func _on_start_pressed():
-	print("\n🎮 START BUTTON PRESSED!")
+	print("🎮 Starting Tutorial...")
 	
-	# Try to load the loading screen first
-	var loading_screen_path = "res://Scenes/LoadingScreen.tscn"
-	print("Attempting to load:", loading_screen_path)
+	# Load the tutorial scene first
+	var tutorial_path = "res://Scenes/Tutorial/tutorial.tscn"
 	
-	if FileAccess.file_exists(loading_screen_path):
-		print("✅ LoadingScreen found! Switching to splash...")
-		get_tree().change_scene_to_file(loading_screen_path)
+	if FileAccess.file_exists(tutorial_path):
+		print("📚 Loading tutorial...")
+		get_tree().change_scene_to_file(tutorial_path)
 	else:
-		print("❌ LoadingScreen NOT found at:", loading_screen_path)
-		print("Trying direct load of Environment...")
+		print("❌ ERROR: Tutorial not found, loading splash screen instead...")
+		# Fallback to loading screen
+		var loading_screen_path = "res://Scenes/LoadingScreen.tscn"
 		
-		# Fallback: Try to load Environment directly
-		var env_path = "res://Scenes/Environment/Environment.tscn"
-		if FileAccess.file_exists(env_path):
-			print("✅ Loading Environment directly...")
-			get_tree().change_scene_to_file(env_path)
+		if FileAccess.file_exists(loading_screen_path):
+			get_tree().change_scene_to_file(loading_screen_path)
 		else:
-			print("❌ ERROR: Environment not found at:", env_path)
-			
-			# Last resort: try main.tscn
-			var main_path = "res://Scenes/main.tscn"
-			if FileAccess.file_exists(main_path):
-				print("✅ Loading main.tscn...")
-				get_tree().change_scene_to_file(main_path)
+			print("❌ ERROR: LoadingScreen not found, loading main directly...")
+			# Fallback to loading main scene directly
+			var scene_path = "res://Scenes/main.tscn"
+			if FileAccess.file_exists(scene_path):
+				get_tree().change_scene_to_file(scene_path)
 			else:
-				print("❌ CRITICAL ERROR: No valid scene found!")
+				print("❌ ERROR: Main scene not found at:", scene_path)
