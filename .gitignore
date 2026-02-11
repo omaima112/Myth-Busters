@@ -1,18 +1,8 @@
-# Godot 4 ignores 
-.godot/ 
-.import/ 
-export_presets.cfg 
-*.translation 
- 
-# Build outputs 
-Build/ 
-*.exe 
-*.pck 
-*.zip 
- 
-# OS files 
-.DS_Store 
-Thumbs.db 
-desktop.ini 
-*~ 
-*.swp
+# Godot 4+ specific ignores
+.godot/*
+export_presets.cfg
+icon.svg
+*.import
+project.godot
+.editorconfig
+test/*
