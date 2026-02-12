@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cqkjwyq8vhmpb" path="res://Scenes/Tutorial/path/server_rack.glb" id="19_i0hnp"]
 [ext_resource type="PackedScene" uid="uid://cj22tdmjymsuu" path="res://Scenes/Tutorial/path/type_30_console.glb" id="20_2iurx"]
 [ext_resource type="PackedScene" uid="uid://cx1n6m7lys6xo" path="res://Scenes/Tutorial/path/computer_sgd_116_-_logan_thomas.glb" id="21_x7vmi"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="25_t0s0g"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p3i08"]
 panorama = ExtResource("2_41rtk")
@@ -545,3 +546,17 @@ material = SubResource("StandardMaterial3D_rp3sh")
 transform = Transform3D(1, 0, 0, 0, 0.99920136, 0.0399574, 0, -0.0399574, 0.99920136, -20.332907, 17.71628, 47.696087)
 size = Vector3(11.05267, 5.6384125, 0.368042)
 material = SubResource("StandardMaterial3D_rp3sh")
+
+[node name="Label" type="Label" parent="." unique_id=1601618775]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.61960787, 0.05490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("25_t0s0g")
+theme_override_font_sizes/font_size = 26
+text = "Press E to Skip Tutorial"
