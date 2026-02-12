@@ -2,8 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_o4miw"]
 [ext_resource type="PackedScene" uid="uid://c5gxahct6ly6s" path="res://Models/banana.glb" id="2_diybw"]
+[ext_resource type="Script" uid="uid://biik7vvc63csx" path="res://Scenes/orbs/arrow_indicator.gd" id="3_5tq6v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5m04f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_013sn"]
+transparency = 1
+albedo_color = Color(1, 1, 0.05882353, 1)
+emission_enabled = true
+emission = Color(1, 1, 0.05882353, 1)
+emission_energy_multiplier = 2.0
 
 [node name="Orb" type="Node3D" unique_id=1670677355]
 transform = Transform3D(0.65946084, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
@@ -19,3 +27,22 @@ shape = SubResource("CapsuleShape3D_5m04f")
 
 [node name="Sketchfab_Scene" parent="." unique_id=903290066 instance=ExtResource("2_diybw")]
 transform = Transform3D(-1.7992015e-10, -0.004343504, 5.2453675e-10, 0.0041160933, -1.898606e-10, 0, 3.1458238e-17, 7.594424e-10, 0.0030000005, -0.060099248, 0, 0.029219694)
+
+[node name="ArrowIndicator" type="Node3D" parent="." unique_id=908941943]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.09445178, 0.878219, 0.113828786)
+script = ExtResource("3_5tq6v")
+
+[node name="Arrow" type="CSGCombiner3D" parent="ArrowIndicator" unique_id=114678338]
+material_override = SubResource("StandardMaterial3D_013sn")
+transparency = 0.9
+
+[node name="Shaft" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=556587605]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.016520496, 4.194335, -0.17202748)
+radius = 0.23
+height = 1.87
+
+[node name="tip" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=385824812]
+transform = Transform3D(0.9914153, -0.010805756, -0.13031086, -0.011134828, -0.99993724, -0.0017969048, -0.1302832, 0.0032323424, -0.99147266, 0.026401583, 3.053636, -0.15898462)
+radius = 0.538
+height = 0.61
+cone = true

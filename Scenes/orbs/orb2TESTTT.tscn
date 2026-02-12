@@ -1,25 +1,25 @@
-[gd_scene format=3 uid="uid://cluap3u4bamqy"]
+[gd_scene format=3 uid="uid://ccmoiu2f70h06"]
 
-[ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_5m04f"]
-[ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="2_rbqvr"]
-[ext_resource type="PackedScene" uid="uid://dmtef2qegc02c" path="res://Scenes/orbs/container_nuclear.glb" id="3_0uv7p"]
-[ext_resource type="Script" uid="uid://biik7vvc63csx" path="res://Scenes/orbs/arrow_indicator.gd" id="4_0uv7p"]
+[ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_rxk1f"]
+[ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="2_l7vjd"]
+[ext_resource type="PackedScene" uid="uid://dmtef2qegc02c" path="res://Scenes/orbs/container_nuclear.glb" id="3_36xwr"]
+[ext_resource type="Script" uid="uid://biik7vvc63csx" path="res://Scenes/orbs/arrow_indicator.gd" id="4_l7vjd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5m04f"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uv7p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxk1f"]
 transparency = 1
-albedo_color = Color(1, 1, 0.05882353, 1)
+albedo_color = Color(1, 0.87058824, 0.007843138, 1)
 emission_enabled = true
-emission = Color(1, 1, 0.05882353, 1)
+emission = Color(1, 1, 0.039215688, 1)
 emission_energy_multiplier = 2.0
 
 [node name="Orb" type="Node3D" unique_id=1333296512]
 transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
-script = ExtResource("1_5m04f")
+script = ExtResource("1_rxk1f")
 info_title = "Nuclear Myth Busted"
 info_text = "Radiation from plants is less than from a banana or flight. NST powers clean energy!"
-info_image = ExtResource("2_rbqvr")
+info_image = ExtResource("2_l7vjd")
 
 [node name="TriggerArea" type="Area3D" parent="." unique_id=1651768842]
 collision_layer = 4
@@ -29,23 +29,23 @@ collision_mask = 2
 transform = Transform3D(2.035, 0, 0, 0, 2.035, 0, 0, 0, 2.035, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_5m04f")
 
-[node name="Sketchfab_Scene2" parent="." unique_id=1631467954 instance=ExtResource("3_0uv7p")]
+[node name="Sketchfab_Scene2" parent="." unique_id=1631467954 instance=ExtResource("3_36xwr")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.01841032, 0.03931298, 0.028633952)
 
-[node name="ArrowIndicator" type="Node3D" parent="." unique_id=1602200521]
+[node name="ArrowIndicator" type="Node3D" parent="." unique_id=320835202]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.09445178, 0.878219, 0.113828786)
-script = ExtResource("4_0uv7p")
+script = ExtResource("4_l7vjd")
 
-[node name="Arrow" type="CSGCombiner3D" parent="ArrowIndicator" unique_id=1282215862]
-material_override = SubResource("StandardMaterial3D_0uv7p")
+[node name="Arrow" type="CSGCombiner3D" parent="ArrowIndicator" unique_id=2030485262]
+material_override = SubResource("StandardMaterial3D_rxk1f")
 transparency = 0.9
 
-[node name="Shaft" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=1894866244]
+[node name="Shaft" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=2103268919]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.016520496, 4.194335, -0.17202748)
 radius = 0.23
 height = 1.87
 
-[node name="tip" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=713650873]
+[node name="tip" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=1338547482]
 transform = Transform3D(0.9914153, -0.010805756, -0.13031086, -0.011134828, -0.99993724, -0.0017969048, -0.1302832, 0.0032323424, -0.99147266, 0.026401583, 3.053636, -0.15898462)
 radius = 0.538
 height = 0.61

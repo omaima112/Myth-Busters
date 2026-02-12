@@ -20,4 +20,3 @@ MIT License
 ## Author
 
 あるる（きのもと 結衣） @arlez80
-
