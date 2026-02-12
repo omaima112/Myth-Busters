@@ -81,6 +81,12 @@ func _input(event: InputEvent) -> void:
 				print("Need more barrels...")
 		else:
 			print("Popup not active")
+	
+	# E key to skip tutorial anytime
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_E:
+			print("E KEY PRESSED - Skipping tutorial!")
+			skip_tutorial()
 
 func setup_orb_collection() -> void:
 	await get_tree().process_frame
@@ -205,3 +211,24 @@ func complete_tutorial() -> void:
 			return
 	
 	print("ERROR: No scene file found!")
+
+func skip_tutorial() -> void:
+	print("skip_tutorial() called - jumping to main level")
+	
+	# Try different possible paths
+	var paths = [
+		"res://Scenes/LoadingScreen.tscn",
+		"res://LoadingScreen.tscn",
+		"res://Scenes/Environment/environment.tscn",
+		"res://Scenes/Environment.tscn",
+		"res://main.tscn"
+	]
+	
+	print("Looking for main level scene...")
+	for path in paths:
+		if ResourceLoader.exists(path):
+			print("Found scene! Loading: ", path)
+			get_tree().change_scene_to_file(path)
+			return
+	
+	print("ERROR: No main level scene found!")
