@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://caq7hpx0d7sff"]
+
+[ext_resource type="Script" uid="uid://k5gbp7obl2gv" path="res://Scenes/timer_hud.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="2_s7w0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1bgf"]
+font = ExtResource("2_s7w0h")
+font_size = 50
+outline_size = 2
+outline_color = Color(0.02, 0.02, 0.02, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.8901961)
+
+[node name="TimerHUD" type="Control" unique_id=651693062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=165128943]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 380.0
+offset_top = 1.0
+offset_right = 580.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "05:00"
+label_settings = SubResource("LabelSettings_u1bgf")
+horizontal_alignment = 1
+vertical_alignment = 1

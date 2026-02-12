@@ -68,6 +68,7 @@ custom_minimum_size = Vector2(350, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
 text = "Information asdasd asd as das dasd as dasd sa "
 label_settings = SubResource("LabelSettings_xpg3u")
 horizontal_alignment = 1
@@ -75,7 +76,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Line2D" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=532395366]
-position = Vector2(1, -20)
+position = Vector2(1, -16)
 scale = Vector2(1.0444444, 0.99224806)
 points = PackedVector2Array(-1, 49, 173, 49, 348, 49)
 width = 2.0
@@ -122,3 +123,4 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="LevelCompletePopup" parent="UI" unique_id=1686940586 instance=ExtResource("4_j6djd")]
+visible = false
