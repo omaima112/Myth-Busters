@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_ax7pt"]
 [ext_resource type="PackedScene" uid="uid://dmtef2qegc02c" path="res://Scenes/orbs/container_nuclear.glb" id="2_1cfpi"]
+[ext_resource type="PackedScene" uid="uid://2uw58b4c1m2u" path="res://Scenes/arrow_indicator.tscn" id="3_6y6t8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ax7pt"]
 
@@ -19,3 +20,6 @@ shape = SubResource("CapsuleShape3D_ax7pt")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1631467954 instance=ExtResource("2_1cfpi")]
 transform = Transform3D(0.8000001, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8000001, -0.020795405, 0, -0.0128431935)
+
+[node name="ArrowIndicator" parent="." unique_id=99426261 instance=ExtResource("3_6y6t8")]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.09445178, 0.878219, 0.113828786)
