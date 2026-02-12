@@ -37,3 +37,5 @@ func _on_car_entered(body):
 func _on_car_exited(body):
 	if body.is_in_group("vehicles") or body.collision_layer & (1 << 1):
 		GameManager.hide_orb_popup()  # Hide popup
+		
+		
