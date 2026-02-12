@@ -169,7 +169,7 @@ theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[center][b]COLLECT & LEARN[/b][/center]
 
-[center]Your mission is to navigate through terrain and collect nuclear barrels marked with black and yellow color and gain information about Nuclear Tech[/center]
+[center]Your mission is to navigate through terrain and collect nuclear barrels marked with black and yellow color and gain information about Nuclear Tech in a certain Time Period[/center]
 
 "
 fit_content = true

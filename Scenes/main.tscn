@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bkql7a8enl67p" path="res://Scenes/popups.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b7mnrpuva07ev" path="res://Scenes/touch_screen_controls.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://bel53jhupu1k4" path="res://Scenes/hud.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" path="res://Scenes/timer_hud.tscn" id="7_timer"]
+[ext_resource type="PackedScene" path="res://Scenes/win_screen.tscn" id="8_win"]
+[ext_resource type="PackedScene" path="res://Scenes/lose_screen.tscn" id="9_lose"]
 
 [node name="Main" type="Node3D" unique_id=434334455]
 
@@ -35,3 +38,9 @@ scale = Vector2(2.1070201, 3.962356)
 [node name="TouchScreenControls" parent="." unique_id=701083740 instance=ExtResource("5_kry3j")]
 
 [node name="HUD" parent="." unique_id=1643897027 instance=ExtResource("6_21xkr")]
+
+[node name="TimerHUD" parent="." instance=ExtResource("7_timer")]
+
+[node name="WinScreen" parent="." instance=ExtResource("8_win")]
+
+[node name="LoseScreen" parent="." instance=ExtResource("9_lose")]
