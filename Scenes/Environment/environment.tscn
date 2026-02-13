@@ -643,7 +643,7 @@ func is_player(body) -> bool:
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2d4ng"]
-size = Vector3(89.00063, 3.9718018, 60.49226)
+size = Vector3(88.032425, 3.9718018, 60.49226)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq1i7"]
 size = Vector3(57.644775, 2.6464844, 20.120117)
@@ -651,14 +651,8 @@ size = Vector3(57.644775, 2.6464844, 20.120117)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3flo4"]
 size = Vector3(119.37362, 4.7909546, 213.47162)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1kb8p"]
-size = Vector3(40.43582, 9.525391, 29.162231)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsww7"]
 size = Vector3(14.087341, 9.181763, 15.972656)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qaipu"]
-size = Vector3(64.9621, 27.594208, 51.34204)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnel6"]
 albedo_texture = ExtResource("84_i2u67")
@@ -6713,15 +6707,17 @@ transform = Transform3D(0.97657096, 0, -0.2151955, 0, 1, 0, 0.2151955, 0, 0.9765
 
 [node name="RadiationZone" type="Area3D" parent="." unique_id=322640688]
 script = ExtResource("75_x3dms")
-max_radiation = 0.5
+max_radiation = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone" unique_id=287234122]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.681637, 1.4859009, -58.50885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.16574, 1.4859009, -58.50885)
 shape = SubResource("BoxShape3D_2d4ng")
+debug_color = Color(0.75188565, 0.4533617, 0, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RadiationZone" unique_id=231034091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.681637, 1.4859009, -58.50885)
 shape = SubResource("BoxShape3D_2d4ng")
+debug_color = Color(0.75188565, 0.4533617, 0, 1)
 
 [node name="RadiationZone5" type="Area3D" parent="." unique_id=1496561637]
 script = ExtResource("75_x3dms")
@@ -6730,42 +6726,19 @@ max_radiation = 0.2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone5" unique_id=1901171075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.74668, 0.8232403, 89.26994)
 shape = SubResource("BoxShape3D_cq1i7")
+debug_color = Color(0, 0, 0, 1)
 
 [node name="RadiationZone6" type="Area3D" parent="." unique_id=1320635920]
 script = ExtResource("75_x3dms")
 max_radiation = 0.2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone6" unique_id=907761986]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.319355, 1.8954773, 1.222992)
-shape = SubResource("BoxShape3D_3flo4")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RadiationZone6" unique_id=1050827854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.055187, 1.8954773, 79.11839)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.6227, 1.8954773, -3.1624756)
 shape = SubResource("BoxShape3D_3flo4")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="RadiationZone6" unique_id=1471001213]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.8652, 1.8954773, -123.1382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.122986, 1.8954773, -0.77789307)
 shape = SubResource("BoxShape3D_3flo4")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="RadiationZone6" unique_id=1807488285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.167023, 1.8954773, -199.2493)
-shape = SubResource("BoxShape3D_3flo4")
-
-[node name="RadiationZone4" type="Area3D" parent="." unique_id=1381832314]
-script = ExtResource("75_x3dms")
-max_radiation = 50.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone4" unique_id=1800756800]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.184673, 4.2626953, 69.95023)
-shape = SubResource("BoxShape3D_1kb8p")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RadiationZone4" unique_id=1462401632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.62833, 4.2626934, 70.48852)
-shape = SubResource("BoxShape3D_1kb8p")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="RadiationZone4" unique_id=345848351]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.62833, 4.2626934, 41.411644)
-shape = SubResource("BoxShape3D_1kb8p")
 
 [node name="RadiationZone3" type="Area3D" parent="." unique_id=1280587686]
 script = ExtResource("75_x3dms")
@@ -6774,23 +6747,6 @@ max_radiation = 0.3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone3" unique_id=1201388965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.092167, 4.090889, 8.896829)
 shape = SubResource("BoxShape3D_jsww7")
-
-[node name="RadiationZone7" type="Area3D" parent="." unique_id=820787408]
-script = ExtResource("75_x3dms")
-max_radiation = 15.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone7" unique_id=345678842]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.813446, 3.4725952, -39.760372)
-shape = SubResource("BoxShape3D_jsww7")
-
-[node name="RadiationZone2" type="Area3D" parent="." unique_id=1092062417]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.80747, 0, -45.273273)
-script = ExtResource("75_x3dms")
-max_radiation = 79.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone2" unique_id=552833851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.842377, -6.1623993, -25.171017)
-shape = SubResource("BoxShape3D_qaipu")
 
 [node name="Sketchfab_Scene6" parent="." unique_id=25216245 instance=ExtResource("80_jr6re")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.927044, 0.0043298006, 82.73163)

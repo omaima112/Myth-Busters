@@ -15,42 +15,40 @@ func _ready():
 		GameManager.game_won.connect(_on_game_won)
 
 func _on_game_won(stars: int):
-	"""Show win screen with star rating"""
+	"""Show win screen with star rating after 4 second delay"""
 	stars_earned = stars
+	
+	print("🏆 Game won! Waiting 4 seconds before showing win screen...")
+	
+	# Wait 4 seconds before showing win screen
+	await get_tree().create_timer(4.0).timeout
+	
+	print("✅ Showing win screen now!")
 	show()
 	display_stars(stars)
 	get_tree().paused = true
-	
-	# Make cursor visible and free to move
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func display_stars(count: int):
-	"""Display the earned stars with animation"""
-	# Reset all stars first
-	star1.modulate = Color(0.3, 0.3, 0.3, 1.0)  # Dim/gray
-	star2.modulate = Color(0.3, 0.3, 0.3, 1.0)
-	star3.modulate = Color(0.3, 0.3, 0.3, 1.0)
-	
-	# Light up earned stars
-	if count >= 1:
-		star1.modulate = Color(1.0, 0.84, 0.0, 1.0)  # Gold
-	if count >= 2:
-		star2.modulate = Color(1.0, 0.84, 0.0, 1.0)
-	if count >= 3:
-		star3.modulate = Color(1.0, 0.84, 0.0, 1.0)
+	"""Light up earned stars, gray out the rest.
+	   Supports 0, 1, 2, or 3 stars."""
+	var dim  = Color(0.3, 0.3, 0.3, 1.0)  # gray
+	var gold = Color(1.0, 0.84, 0.0, 1.0) # gold
+
+	star1.modulate = gold if count >= 1 else dim
+	star2.modulate = gold if count >= 2 else dim
+	star3.modulate = gold if count >= 3 else dim
 
 func _on_level_2_button_pressed():
 	"""Load Level 2"""
 	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED  # Hide cursor for gameplay
-	# Add your Level 2 scene path here
-	# get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
-	print("Loading Level 2...")
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
 
 func _on_retry_button_pressed():
 	"""Retry current level"""
 	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED  # Hide cursor for gameplay
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if GameManager:
 		GameManager.reset_level()
 	get_tree().reload_current_scene()
@@ -58,5 +56,5 @@ func _on_retry_button_pressed():
 func _on_menu_button_pressed():
 	"""Return to main menu"""
 	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE  # Show cursor for menu
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
