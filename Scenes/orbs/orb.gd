@@ -10,15 +10,18 @@ extends Node3D
 var start_y: float
 var time: float = 0.0
 var phase_offset: float = 0.0
+var collected: bool = false
 
 func _ready():
 	start_y = global_position.y
 	phase_offset = randf() * TAU
-	$TriggerArea.body_entered.connect(_on_car_entered)  # Connect in code (or editor)
-	#$TriggerArea.body_exited.connect(_on_car_exited)  # Connect in code (or editor)
-	print("Orb ready at: ", global_position)
+	$TriggerArea.body_entered.connect(_on_car_entered)
+	print("🎯 Orb ready: ", info_title)
 
 func _process(delta):
+	if collected:
+		return
+		
 	time += delta
 	
 	# Bobbing (sin wave up/down)
@@ -29,13 +32,26 @@ func _process(delta):
 	rotate_y(delta * spin_speed)
 		
 func _on_car_entered(body):
-	if body.is_in_group("vehicles") or body.collision_layer & (1 << 1):  # Layer 2 = Vehicle
-		GameManager.show_orb_popup(info_title, info_text, info_image)  # Show popup
-		GameManager.collect_orb()  # Track collection
+	if collected:
+		return
+		
+	# Check if player/vehicle hit it
+	if body.is_in_group("vehicles") or body.collision_layer & (1 << 1):
+		collected = true
+		print("✨ COLLECTED: ", info_title)
+		
+		# Collect in GameManager
+		GameManager.collect_orb()
+		
+		# Show popup - it will pause the game
+		GameManager.show_orb_popup(info_title, info_text, info_image)
+		
+		# Remove orb after a tiny delay (after popup shows)
+		await get_tree().create_timer(0.1).timeout
 		queue_free()
+		print("🗑️ Orb removed from scene")
 
 func _on_car_exited(body):
 	if body.is_in_group("vehicles") or body.collision_layer & (1 << 1):
-		GameManager.hide_orb_popup()  # Hide popup
-		
-		
+		if not collected:
+			GameManager.hide_orb_popup()

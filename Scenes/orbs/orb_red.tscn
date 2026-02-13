@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvqneatmamjwd" path="res://Scenes/orbs/orb.gd" id="1_mjpox"]
 [ext_resource type="PackedScene" uid="uid://bspekbi2skkb4" path="res://waste/barrel_v1.0.glb" id="2_8hfe2"]
-[ext_resource type="Script" uid="uid://biik7vvc63csx" path="res://Scenes/orbs/arrow_indicator.gd" id="3_or3fj"]
+[ext_resource type="Script" path="res://Scenes/orbs/arrow_indicator.gd" id="3_or3fj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6pvm"]
 
@@ -37,12 +37,12 @@ material_override = SubResource("StandardMaterial3D_ft83g")
 transparency = 0.9
 
 [node name="Shaft" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=529022281]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0.016520496, 4.194335, -0.17202748)
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, -0.095990755, 4.194335, -0.14549802)
 radius = 0.23
 height = 1.87
 
 [node name="tip" type="CSGCylinder3D" parent="ArrowIndicator/Arrow" unique_id=828629615]
-transform = Transform3D(0.9914153, -0.010805756, -0.13031086, -0.011134828, -0.99993724, -0.0017969048, -0.1302832, 0.0032323424, -0.99147266, 0.026401583, 3.053636, -0.15898462)
+transform = Transform3D(0.9914153, -0.010805756, -0.13031086, -0.011134828, -0.99993724, -0.0017969048, -0.1302832, 0.0032323424, -0.99147266, -0.08610967, 3.053636, -0.13245516)
 radius = 0.538
 height = 0.61
 cone = true

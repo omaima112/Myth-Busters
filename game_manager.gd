@@ -2,7 +2,6 @@ extends Node
 
 signal show_orb_popup_signal(title: String, text: String, image: Texture2D)
 signal hide_orb_popup_signal
-signal level_complete_signal(level_name: String)
 signal orbs_updated(collected: int, total: int)
 signal all_orbs_collected
 signal timer_updated(time_remaining: int)
@@ -79,7 +78,6 @@ func level_complete():
 	var stars = calculate_stars()
 	print("Level Complete! Stars: ", stars)
 	game_won.emit(stars)
-	level_complete_signal.emit(current_level)
 
 func game_over_lose():
 	"""Handle game over when timer runs out"""
@@ -87,15 +85,20 @@ func game_over_lose():
 	game_lost.emit()
 
 func calculate_stars() -> int:
-	"""Calculate star rating based on time remaining"""
-	var time_percentage = float(time_remaining) / float(time_limit) * 100.0
-	
-	if time_percentage >= 70:
-		return 3  # 3 stars if 70% or more time remaining
-	elif time_percentage >= 40:
-		return 2  # 2 stars if 40-69% time remaining
+	"""Calculate star rating based on time remaining:
+	   3 stars = completed with 2:00 or more remaining  (>= 120s)
+	   2 stars = completed with 1:30 - 1:59 remaining   (>= 90s)
+	   1 star  = completed with 0:30 - 1:29 remaining   (>= 30s)
+	   0 stars = completed in last 30 seconds            (< 30s)
+	"""
+	if time_remaining >= 120:
+		return 3
+	elif time_remaining >= 90:
+		return 2
+	elif time_remaining >= 30:
+		return 1
 	else:
-		return 1  # 1 star if less than 40% time remaining
+		return 0
 
 func show_orb_popup(title: String, text: String, image: Texture2D = null):
 	show_orb_popup_signal.emit(title, text, image)
