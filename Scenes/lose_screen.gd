@@ -22,6 +22,7 @@ func _on_retry_button_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED  # Hide cursor for gameplay
 	if GameManager:
 		GameManager.reset_level()
+		GameManager.start_timer()  # Explicitly restart the timer
 	get_tree().reload_current_scene()
 
 func _on_menu_button_pressed():

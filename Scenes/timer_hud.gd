@@ -15,7 +15,7 @@ func _on_timer_updated(time_remaining: int):
 	var seconds = time_remaining % 60
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
 
-	# Color feedback scaled for a 5-minute (300s) timer
+	# Color feedback scaled for a 7-minute (420s) timer
 	if time_remaining <= 30 and time_remaining > 0:
 		# Under 30 seconds — red warning
 		timer_label.add_theme_color_override("font_color", Color.RED)

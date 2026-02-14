@@ -64,15 +64,15 @@ func _show_popup(title: String, text: String, image: Texture2D):
 	else:
 		print("⚠️ Jeep is null - cannot disable controls")
 	
-	# Start timer - 1 second
-	popup_timer.wait_time = 1.0
+	# Start timer - 3.5 seconds
+	popup_timer.wait_time = 3.5
 	popup_timer.one_shot = true
 	popup_timer.start()
-	print("⏱️ Popup will auto-hide in 1 second")
+	print("⏱️ Popup will auto-hide in 3.5 seconds")
 
 func _on_popup_timer_timeout():
-	"""Called after 1 second"""
-	print("⏰ 1 second elapsed!")
+	"""Called after 3.5 seconds"""
+	print("⏰ 3.5 seconds elapsed!")
 	popup_timer.stop()
 	_hide_popup()
 
@@ -110,4 +110,4 @@ func _input(event: InputEvent) -> void:
 	if popup_visible and event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().root.set_input_as_handled()
-			print("🛑 Escape blocked - wait 1 second")
+			print("🛑 Escape blocked - wait 3.5 seconds")

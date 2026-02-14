@@ -13,9 +13,9 @@ var collected_orbs: int = 0
 var current_level: String = "Level 1"
 
 # Timer variables
-var time_limit: int = 300      # 5 minutes in seconds
-var time_remaining_f: float = 300.0  # float for accurate delta subtraction
-var time_remaining: int = 300        # int used for display / signals
+var time_limit: int = 420      # 7 minutes in seconds
+var time_remaining_f: float = 420.0  # float for accurate delta subtraction
+var time_remaining: int = 420        # int used for display / signals
 var timer_running: bool = false
 
 func _ready():
@@ -34,7 +34,7 @@ func _process(delta):
 			time_remaining = int(time_remaining_f)
 			timer_updated.emit(time_remaining)
 
-func start_timer(duration: int = 300):
+func start_timer(duration: int = 420):
 	"""Start the countdown timer with specified duration in seconds"""
 	time_limit = duration
 	time_remaining_f = float(duration)

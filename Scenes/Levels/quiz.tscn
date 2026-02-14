@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://btfj8w0e1h6ry"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Levels/quiz_2 (2).tscn" id="1_ogqdi"]
+[ext_resource type="Texture2D" uid="uid://cipa82v2b2mj2" path="res://Scenes/Levels/ChatGPT Image Feb 14, 2026, 02_13_25 PM.png" id="2_8mlga"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="3_7n2m6"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="4_7hhy6"]
+[ext_resource type="FontFile" uid="uid://bt5kel71bjdgk" path="res://Fonts/SwanseaBold-D0ox.ttf" id="5_tsj7y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvaho"]
+font = ExtResource("3_7n2m6")
+font_size = 59
+
+[sub_resource type="LabelSettings" id="LabelSettings_m18dm"]
+font = ExtResource("4_7hhy6")
+font_size = 34
+
+[sub_resource type="LabelSettings" id="LabelSettings_82sbt"]
+font = ExtResource("3_7n2m6")
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mlga"]
+line_spacing = 22.0
+font = ExtResource("5_tsj7y")
+font_size = 30
+
+[node name="Quiz" unique_id=1885615310 instance=ExtResource("1_ogqdi")]
+
+[node name="Background" parent="." index="0"]
+offset_left = -135.0
+offset_top = -253.0
+offset_right = 303.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background" index="0" unique_id=2022952899]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.195
+offset_left = 3.0
+offset_top = -3.0
+offset_right = -4.0
+offset_bottom = -188.17505
+texture = ExtResource("2_8mlga")
+expand_mode = 1
+
+[node name="Panel" parent="." index="1"]
+offset_left = -688.0
+offset_top = -413.0
+offset_right = 908.0
+offset_bottom = 570.0
+
+[node name="TITLE" type="Label" parent="Panel" index="0" unique_id=872865220]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 112.0
+offset_right = 774.0
+offset_bottom = 232.0
+text = "FINAL QUIZ"
+label_settings = SubResource("LabelSettings_kvaho")
+horizontal_alignment = 1
+
+[node name="ProgressLabel" parent="Panel" index="1"]
+offset_left = 928.0
+offset_top = 691.0
+offset_right = 1353.0
+offset_bottom = 771.0
+label_settings = SubResource("LabelSettings_m18dm")
+
+[node name="QuestionLabel" parent="Panel" index="2"]
+offset_left = 184.0
+offset_top = 230.0
+offset_right = 1144.0
+offset_bottom = 310.0
+text = "QUESTION"
+label_settings = SubResource("LabelSettings_82sbt")
+
+[node name="Option1" parent="Panel" index="3"]
+visible = false
+offset_left = 205.0
+offset_top = 378.0
+offset_right = 655.0
+offset_bottom = 465.0
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 35
+text = "OPTION 1"
+
+[node name="Option2" parent="Panel" index="4"]
+visible = false
+offset_left = 693.0
+offset_top = 380.0
+offset_right = 1143.0
+offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 35
+text = "OPTION 2"
+
+[node name="Option3" parent="Panel" index="5"]
+visible = false
+offset_left = 202.0
+offset_top = 487.0
+offset_right = 652.0
+offset_bottom = 574.0
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 35
+text = "OPTION 3"
+
+[node name="Option4" parent="Panel" index="6"]
+visible = false
+offset_left = 692.0
+offset_top = 489.0
+offset_right = 1142.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 35
+text = "OPTION 4"
+
+[node name="NextButton" parent="Panel" index="7"]
+offset_left = 516.0
+offset_top = 622.0
+offset_right = 818.0
+offset_bottom = 709.0
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 35
+text = "Next ▶︎"
+
+[node name="Stars" parent="Panel" index="8"]
+offset_left = 372.0
+offset_top = 336.0
+offset_right = 972.0
+offset_bottom = 425.0
+
+[node name="NoteLabel" parent="Panel" index="9"]
+visible = true
+offset_left = 205.0
+offset_top = 423.0
+offset_right = 1145.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_tsj7y")
+theme_override_font_sizes/font_size = 36
+label_settings = SubResource("LabelSettings_8mlga")
