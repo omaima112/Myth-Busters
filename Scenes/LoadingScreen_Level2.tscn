@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://b4wokpqr30h6w"]
+
+[ext_resource type="Texture2D" uid="uid://bsg4pubo8x7c5" path="res://splash-screen.png" id="1_kddo8"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xoop3"]
+[ext_resource type="Script" uid="uid://dloading2level" path="res://Scenes/Levels/loading_screen_level2.gd" id="3_loading"]
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1740082763]
+layer = 100
+script = ExtResource("3_loading")
+next_scene = "res://Scenes/main_2.tscn"
+min_display_time = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1563692859]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SplashImage" type="TextureRect" parent="." unique_id=1661269368]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -584.0
+offset_top = -342.0
+offset_right = 626.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kddo8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="SplashImage" unique_id=1206185053]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 629.0
+offset_right = 1110.0
+offset_bottom = 661.0
+theme_override_fonts/font = ExtResource("2_xoop3")
+theme_override_font_sizes/font_size = 31
+text = "LEVEL 2 LOADING..."
