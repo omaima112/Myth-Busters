@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxqikqrfk2fg1"]
 
-[ext_resource type="Script" uid="uid://k5gbp7obl2gv" path="res://Scenes/timer_hud.gd" id="1"]
+[ext_resource type="Script" path="res://Scenes/Levels/timer_hud_2.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="2_s7w0h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u1bgf"]
