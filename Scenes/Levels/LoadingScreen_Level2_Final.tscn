@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ci43tnq5qi7p3_level2"]
+[gd_scene format=3 uid="uid://dcnrfwx35d101"]
 
 [ext_resource type="Texture2D" uid="uid://bsg4pubo8x7c5" path="res://splash-screen.png" id="1_kddo8"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xoop3"]
@@ -68,10 +68,10 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="SplashImage" unique_id=1206185053]
 layout_mode = 0
-offset_left = 1001.0
-offset_top = 629.0
-offset_right = 1110.0
-offset_bottom = 661.0
+offset_left = 956.0
+offset_top = 626.0
+offset_right = 1146.0
+offset_bottom = 658.0
 theme_override_fonts/font = ExtResource("2_xoop3")
 theme_override_font_sizes/font_size = 31
 text = "LEVEL 2 LOADING..."

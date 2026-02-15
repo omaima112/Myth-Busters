@@ -21,67 +21,73 @@ var selected_answer = -1
 
 var questions = [
 	{
-		"question": "What is the capital of France?",
-		"options": ["London", "Berlin", "Paris", "Madrid"],
-		"correct": 2
-	},
-	{
-		"question": "What is 2 + 2?",
-		"options": ["3", "4", "5", "6"],
+		"question": "What percentage of global electricity comes from nuclear power?",
+		"options": ["5%", "10%", "25%", " 50%"],
 		"correct": 1
 	},
 	{
-		"question": "Which planet is closest to the Sun?",
-		"options": ["Venus", "Mercury", "Earth", "Mars"],
-		"correct": 1
-	},
-	{
-		"question": "What is the largest ocean?",
-		"options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+		"question": "What is the typical radiation dose from ONE CT scan?",
+		"options": ["0.02 mSv", "1 mSv", "1-6 mSv", "7-10 mSv"],
 		"correct": 3
 	},
 	{
-		"question": "Who wrote Romeo and Juliet?",
-		"options": ["Marlowe", "Shakespeare", "Jonson", "Bacon"],
+		"question": "How much CO₂ does nuclear energy avoid annually?",
+		"options": ["1 billion tons", "2 billion tons", "3 billion tons", "4 billion tons"],
 		"correct": 1
 	},
 	{
-		"question": "What is the chemical symbol for Gold?",
-		"options": ["Go", "Gd", "Au", "Ag"],
+		"question": "How many deaths does coal-caused air pollution cause annually worldwide?",
+		"options": ["10,000+", "500,000+", "800,000+", "1,000,000"],
 		"correct": 2
 	},
 	{
-		"question": "In which year did the Titanic sink?",
-		"options": ["1911", "1912", "1913", "1914"],
+		"question": "Where does most of our daily radiation exposure come from?",
+		"options": ["Nuclear power plants", "Cell phones", "Natural sources", "Medical X-rays"],
+		"correct": 3
+	},
+	{
+		"question": "What does ALARA stand for in radiation safety?",
+		"options": ["As Low As Reasonably Achievable", "Always Low And Reliable Administration", "Advanced Laser And Radiation Application", "Avoid Long-term Accumulated Radiation Absorption"],
+		"correct": 0
+	},
+	{
+		"question": "Which releases MORE radiation into the environment?",
+		"options": ["Nuclear power plant vicinity", "Coal plant vicinity", "They're exactly the same", "Neither releases radiation"],
 		"correct": 1
 	},
 	{
-		"question": "What is the smallest prime number?",
-		"options": ["0", "1", "2", "3"],
+		"question": "WHow much space does 60 years of US nuclear waste occupy?",
+		"options": ["10 football fields", "One football field", "Entire state of Nevada", "One swimming pool"],
 		"correct": 2
 	},
 	{
-		"question": "Which country is home to the kangaroo?",
-		"options": ["New Zealand", "Australia", "South Africa", "Brazil"],
+		"question": "Which energy source causes the FEWEST deaths per terawatt-hour (TWh)?",
+		"options": ["Coal (24.6 deaths/TWh)", "Oil (18.4 deaths/TWh)", "Solar (0.02 deaths/TWh)", "Nuclear (0.07 deaths/TWh)"],
 		"correct": 1
 	},
 	{
-		"question": "What is the speed of light?",
-		"options": ["300,000 km/s", "150,000 km/s", "450,000 km/s", "600,000 km/s"],
+		"question": "How many countries are currently members of the Nuclear Non-Proliferation Treaty (NPT)?",
+		"options": ["176", "185", "190", "195"],
 		"correct": 0
 	}
 ]
 
 func _ready():
 	print("🟢 quiz_2.gd _ready() called!")
+	
+	# ✅ CRITICAL FIX: Ensure game is unpaused
+	get_tree().paused = false
+	
+	# ✅ CRITICAL FIX: Set mouse mode AFTER unpausing
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
+	
+	# ✅ CRITICAL FIX: Connect signals AFTER setting mouse mode
 	for i in range(option_buttons.size()):
 		option_buttons[i].pressed.connect(_on_option_pressed.bind(i))
-
+	
 	next_button.pressed.connect(_on_next_pressed)
 	next_button.disabled = true
-
+	
 	print("✅ Quiz initialized with ", questions.size(), " questions")
 	load_question()
 
@@ -108,6 +114,7 @@ func load_question():
 
 func _on_option_pressed(index: int):
 	"""Called when an option button is clicked"""
+	print("✅ Option ", index, " clicked!")  # ✅ DEBUG
 	selected_answer = index
 	for i in range(option_buttons.size()):
 		option_buttons[i].modulate = Color.YELLOW if i == index else Color.WHITE

@@ -23,6 +23,12 @@ func _on_game_won(stars: int):
 	display_stars(stars)
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	# ✅ CONNECT BUTTON SIGNALS
+	if not retry_button.pressed.is_connected(_on_retry_button_pressed):
+		retry_button.pressed.connect(_on_retry_button_pressed)
+	if not menu_button.pressed.is_connected(_on_menu_button_pressed):
+		menu_button.pressed.connect(_on_menu_button_pressed)
 
 func display_stars(count: int):
 	"""Light up earned stars, gray out the rest."""
@@ -53,3 +59,17 @@ func _on_menu_button_pressed():
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	
+func _input(event: InputEvent):
+	# ✅ CRITICAL FIX: Only allow Q input if win screen is actually visible
+	if not visible:
+		return
+	
+	# Press Q to open the quiz
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_Q:
+			print("🎓 Q pressed — loading quiz...")
+			# ✅ CRITICAL FIX: Unpause BEFORE changing scene
+			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			get_tree().change_scene_to_file("res://Scenes/Levels/quiz.tscn")
