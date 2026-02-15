@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var next_scene: String = "res://Scenes/main.tscn"
+@export var next_scene: String = "res://Scenes/Levels/main_2.tscn"
 @export var min_display_time: float = 2.0
 
 var start_time: float = 0.0

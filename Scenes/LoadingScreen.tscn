@@ -1,40 +1,23 @@
 [gd_scene format=3 uid="uid://ci43tnq5qi7p3"]
 
 [ext_resource type="Texture2D" uid="uid://bsg4pubo8x7c5" path="res://splash-screen.png" id="1_kddo8"]
+[ext_resource type="Script" uid="uid://blecluo5y2prs" path="res://Scenes/loading_screen.gd" id="1_m6rkq"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xoop3"]
 
-[sub_resource type="GDScript" id="GDScript_loading"]
-script/source = "extends CanvasLayer
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.6, 0.2, 1)
 
-@export var next_scene: String = \"res://Scenes/main.tscn\"
-@export var min_display_time: float = 1.0  # Minimum time to show splash (seconds)
-
-var start_time: float = 0.0
-
-func _ready():
-	print(\"Loading screen started\")
-	start_time = Time.get_ticks_msec() / 1000.0
-	
-	# Start loading the next scene
-	ResourceLoader.load_threaded_request(next_scene)
-
-func _process(_delta):
-	# Check if scene is loaded
-	var progress = []
-	var status = ResourceLoader.load_threaded_get_status(next_scene, progress)
-	
-	# Calculate elapsed time
-	var elapsed = (Time.get_ticks_msec() / 1000.0) - start_time
-	
-	# Change scene when loaded AND minimum time has passed
-	if status == ResourceLoader.THREAD_LOAD_LOADED and elapsed >= min_display_time:
-		var packed_scene = ResourceLoader.load_threaded_get(next_scene)
-		get_tree().change_scene_to_packed(packed_scene)
-"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(0.8, 0.6, 0.2, 1)
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1740082763]
 layer = 100
-script = SubResource("GDScript_loading")
+script = ExtResource("1_m6rkq")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1563692859]
 anchors_preset = 15
@@ -68,4 +51,19 @@ offset_right = 1110.0
 offset_bottom = 661.0
 theme_override_fonts/font = ExtResource("2_xoop3")
 theme_override_font_sizes/font_size = 31
-text = "LOADING..."
+text = "LOADING"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2000111852]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -300.0
+offset_top = -30.0
+offset_right = 300.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")

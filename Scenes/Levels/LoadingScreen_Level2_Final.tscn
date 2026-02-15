@@ -1,46 +1,23 @@
 [gd_scene format=3 uid="uid://dcnrfwx35d101"]
 
+[ext_resource type="Script" uid="uid://dbvpxu04hv40v" path="res://Scenes/Levels/loading_screen_level_2_final.gd" id="1_fntyq"]
 [ext_resource type="Texture2D" uid="uid://bsg4pubo8x7c5" path="res://splash-screen.png" id="1_kddo8"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xoop3"]
 
-[sub_resource type="GDScript" id="GDScript_loading_level2"]
-script/source = "extends CanvasLayer
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.6, 0.2, 1)
 
-@export var next_scene: String = \"res://Scenes/Levels/main_2.tscn\"
-@export var min_display_time: float = 2.0  # Minimum time to show splash (seconds)
-
-var start_time: float = 0.0
-
-func _ready():
-	print(\"🔄 Loading screen started for Level 2\")
-	start_time = Time.get_ticks_msec() / 1000.0
-	
-	# Start loading the next scene in background
-	ResourceLoader.load_threaded_request(next_scene)
-	print(\"⏳ Loading Level 2 in background...\")
-
-func _process(_delta):
-	# Check if scene is loaded
-	var progress = []
-	var status = ResourceLoader.load_threaded_get_status(next_scene, progress)
-	
-	# Calculate elapsed time
-	var elapsed = (Time.get_ticks_msec() / 1000.0) - start_time
-	
-	# Show loading progress
-	if status == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		pass  # Scene is loading
-	
-	# Change scene when loaded AND minimum time has passed
-	if status == ResourceLoader.THREAD_LOAD_LOADED and elapsed >= min_display_time:
-		print(\"✅ Level 2 loaded! Showing scene...\")
-		var packed_scene = ResourceLoader.load_threaded_get(next_scene)
-		get_tree().change_scene_to_packed(packed_scene)
-"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(0.8, 0.6, 0.2, 1)
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1740082763]
 layer = 100
-script = SubResource("GDScript_loading_level2")
+script = ExtResource("1_fntyq")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1563692859]
 anchors_preset = 15
@@ -68,10 +45,25 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="SplashImage" unique_id=1206185053]
 layout_mode = 0
-offset_left = 956.0
-offset_top = 626.0
-offset_right = 1146.0
-offset_bottom = 658.0
+offset_left = 1001.0
+offset_top = 629.0
+offset_right = 1110.0
+offset_bottom = 661.0
 theme_override_fonts/font = ExtResource("2_xoop3")
 theme_override_font_sizes/font_size = 31
-text = "LEVEL 2 LOADING..."
+text = "LOADING"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2000111852]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -300.0
+offset_top = -30.0
+offset_right = 300.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")

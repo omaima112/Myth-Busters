@@ -6839,6 +6839,11 @@ transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05,
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
+[node name="Plane_238" type="MeshInstance3D" parent="ROADS" unique_id=588721945]
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -99.815216, -0.08657778, 5.980865)
+mesh = SubResource("ArrayMesh_bxh1j")
+skeleton = NodePath("")
+
 [node name="Plane_194" type="MeshInstance3D" parent="ROADS" unique_id=1399056777]
 transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -88.04046, -0.08657753, 6.0616837)
 mesh = SubResource("ArrayMesh_bxh1j")
