@@ -62,12 +62,12 @@ var questions = [
 	},
 	{
 		"question": "Which energy source causes the FEWEST deaths per terawatt-hour (TWh)?",
-		"options": ["Coal", "Oil", "Sola", "Nuclear"],
+		"options": ["Coal", "Oil", "Solar", "Nuclear"],
 		"correct": 3
 	},
 	{
-		"question": "How many countries are currently members of the Nuclear Non-Proliferation Treaty (NPT)?",
-		"options": ["176", "180", "190", "195"],
+		"question": "How many countries are currently members of the IAEA?",
+		"options": ["176", "181", "190", "195"],
 		"correct": 1
 	}
 ]
