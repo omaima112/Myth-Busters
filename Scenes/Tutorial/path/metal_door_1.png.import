@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgj0wlro13ufq"
+uid="uid://6ie8okn377vi"
 path.s3tc="res://.godot/imported/metal_door_1.png-a46fe1db538e828761c8a238ceccbf32.s3tc.ctex"
 path.etc2="res://.godot/imported/metal_door_1.png-a46fe1db538e828761c8a238ceccbf32.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d9024345b927a7a0b7840443ccaba555"
 }
 
 [deps]
@@ -30,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://Scenes/Tutorial/path/metal_door_2.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

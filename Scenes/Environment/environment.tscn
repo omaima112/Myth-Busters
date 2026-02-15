@@ -1861,9 +1861,9 @@ info_image = ExtResource("33_qaipu")
 [node name="Orb42" parent="OrbsContainer" unique_id=2034255399 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 4.867758, 1.5797989, 4.902359)
 info_title = "International Cooperation"
-info_text = "How Many countries cooperate on nuclear energy tech?
+info_text = "How many countries are currently members of the IAEA?
 
-180 IAEA member states collaborate on peaceful nuclear technology and safety standards"
+181 IAEA member states collaborate on peaceful nuclear technology and safety standards"
 info_image = ExtResource("16_jsww7")
 
 [node name="Orb54" parent="OrbsContainer" unique_id=1206067023 instance=ExtResource("41_86ndy")]
