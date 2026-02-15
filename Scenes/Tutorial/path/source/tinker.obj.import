@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1y3hu0i88ma1"
+path="res://.godot/imported/tinker.obj-a7da191bb6331f3bc3d2afa8d3498f3e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tinker.obj-a7da191bb6331f3bc3d2afa8d3498f3e.mesh"]
+
+source_file="res://Scenes/Tutorial/path/source/tinker.obj"
+dest_files=["res://.godot/imported/tinker.obj-a7da191bb6331f3bc3d2afa8d3498f3e.mesh", "res://.godot/imported/tinker.obj-a7da191bb6331f3bc3d2afa8d3498f3e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

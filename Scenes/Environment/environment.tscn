@@ -37,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://bgwmbpcaiphoy" path="res://Images/ChatGPT Image Feb 1, 2026, 02_08_38 PM.png" id="32_deloa"]
 [ext_resource type="Texture2D" uid="uid://bxmil5p7epxsg" path="res://Images/WhatsApp Image 2026-01-30 at 12.45.59 AM.jpeg" id="32_jr6re"]
 [ext_resource type="PackedScene" uid="uid://dup6taq6cpjd7" path="res://waste/curiosity_rover_mars_nasa.glb" id="33_d0ug1"]
-[ext_resource type="Texture2D" uid="uid://d2by66432sqda" path="res://Images/rtxoig8.jpg" id="33_deloa"]
 [ext_resource type="Texture2D" uid="uid://5toaivdivbvk" path="res://Images/WhatsApp Image 2026-01-30 at 12.46.03 AM (1).jpeg" id="33_qaipu"]
 [ext_resource type="ArrayMesh" uid="uid://bdhqh7e3c7s4a" path="res://Buildings pack - Aug 2017/OBJ/Hospital.obj" id="34_huij4"]
 [ext_resource type="Texture2D" uid="uid://7756m8ghkr7q" path="res://Images/ChatGPT Image Feb 1, 2026, 12_43_09 PM.png" id="35_dbj8p"]
@@ -634,14 +633,14 @@ func is_player(body) -> bool:
 [sub_resource type="BoxShape3D" id="BoxShape3D_2d4ng"]
 size = Vector3(88.032425, 3.9718018, 60.49226)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cq1i7"]
-size = Vector3(57.644775, 2.6464844, 20.120117)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3flo4"]
 size = Vector3(119.37362, 4.7909546, 213.47162)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsww7"]
 size = Vector3(14.087341, 9.181763, 15.972656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cq1i7"]
+size = Vector3(57.644775, 2.6464844, 20.120117)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnel6"]
 albedo_texture = ExtResource("84_i2u67")
@@ -852,7 +851,7 @@ script = ExtResource("1_8x6ym")
 use_collision = true
 
 [node name="Ground" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1592670596]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 1.3740349, -0.42213973, 0.66669166)
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 1.3740349, -0.42213973, 0.66451025)
 material_override = SubResource("StandardMaterial3D_86fwl")
 use_collision = true
 size = Vector3(46.09065, 0.646, 42.623116)
@@ -1712,7 +1711,7 @@ transform = Transform3D(0.525, 0, 0, 0, 0.52500004, 0, 0, 0, 0.525, 89.88235, 0,
 script = ExtResource("5_6idwj")
 
 [node name="Orb65" parent="OrbsContainer" unique_id=1928754747 instance=ExtResource("40_saevq")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 25.682163, 1.4559786, -71.92523)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4.8469124, 1.4559786, -58.684647)
 info_title = "Nuclear Fuel"
 info_text = "What country reprocesses nuclear fuel to reduce waste?
 
@@ -1843,14 +1842,6 @@ info_text = "The IAEA exists to promote nuclear weapons?
 False! The IAEA promotes safe, peaceful nuclear use and prevents weapon spread"
 info_image = ExtResource("32_deloa")
 
-[node name="Orb32" parent="OrbsContainer" unique_id=90448202 instance=ExtResource("40_saevq")]
-transform = Transform3D(0.9000001, 0, 0, 0, 0.8999986, 0.0015707953, 0, -0.0015707954, 0.89999855, -75.68473, 0.48019898, 5.1954985)
-info_title = "Myth"
-info_text = "Chernobyl caused more deaths than coal pollution
-
-False! Air pollution from coal kills far more people in a single year than Chernobyl did in total"
-info_image = ExtResource("33_deloa")
-
 [node name="Orb30" parent="OrbsContainer" unique_id=820223595 instance=ExtResource("41_86ndy")]
 transform = Transform3D(2.08, 0, 0, 0, 2.0800002, 0, 0, 0, 2.08, 63.652554, 1.2285268, 90.1841)
 info_title = "Myth"
@@ -1876,7 +1867,7 @@ info_text = "How Many countries cooperate on nuclear energy tech?
 info_image = ExtResource("16_jsww7")
 
 [node name="Orb54" parent="OrbsContainer" unique_id=1580798509 instance=ExtResource("41_86ndy")]
-transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.18567, 1.5811819, -29.90684)
+transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.16508, 1.5811819, 3.4577656)
 info_title = "Myth 🤔"
 info_text = "Chernobyl caused more deaths than coal pollution
 
@@ -5927,15 +5918,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.681637, 1.4859009, -58.50
 shape = SubResource("BoxShape3D_2d4ng")
 debug_color = Color(0.75188565, 0.4533617, 0, 1)
 
-[node name="RadiationZone5" type="Area3D" parent="." unique_id=1496561637]
-script = ExtResource("75_x3dms")
-max_radiation = 0.8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone5" unique_id=1901171075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.74668, 0.8232403, 89.26994)
-shape = SubResource("BoxShape3D_cq1i7")
-debug_color = Color(0, 0, 0, 1)
-
 [node name="RadiationZone6" type="Area3D" parent="." unique_id=1320635920]
 script = ExtResource("75_x3dms")
 max_radiation = 0.2
@@ -5955,6 +5937,15 @@ max_radiation = 0.3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone3" unique_id=1201388965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.092167, 4.090889, 8.896829)
 shape = SubResource("BoxShape3D_jsww7")
+
+[node name="RadiationZone5" type="Area3D" parent="." unique_id=1496561637]
+script = ExtResource("75_x3dms")
+max_radiation = 0.8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone5" unique_id=1901171075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.74668, 0.8232403, 89.26994)
+shape = SubResource("BoxShape3D_cq1i7")
+debug_color = Color(0, 0, 0, 1)
 
 [node name="Sketchfab_Scene6" parent="." unique_id=25216245 instance=ExtResource("80_jr6re")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.927044, 0.0043298006, 82.73163)
@@ -6609,87 +6600,87 @@ mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_161" type="MeshInstance3D" parent="ROADS" unique_id=715899716]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 67.715576, 0, 3.2598202)
+transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 67.715576, -0.08657753, 3.2598202)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_162" type="MeshInstance3D" parent="ROADS" unique_id=1822685356]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 85.173195, 0, 3.3820047)
+transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 85.173195, -0.08657753, 3.3820047)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_424" type="MeshInstance3D" parent="ROADS" unique_id=375113779]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 96.05178, 0, 3.4581432)
+transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 96.05178, -0.08657753, 3.4581432)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_426" type="MeshInstance3D" parent="ROADS" unique_id=1181918029]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 107.28083, 0, 3.5367346)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 107.28083, -0.08657753, 3.5367346)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_427" type="MeshInstance3D" parent="ROADS" unique_id=285448664]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 101.69775, 0, 3.497659)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 101.69775, -0.08657753, 3.497659)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_425" type="MeshInstance3D" parent="ROADS" unique_id=2073555940]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 90.38017, 0, 3.418448)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 90.38017, -0.08657753, 3.418448)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_392" type="MeshInstance3D" parent="ROADS" unique_id=651522567]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 79.32831, 0, 3.3410969)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 79.32831, -0.08657753, 3.3410969)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_393" type="MeshInstance3D" parent="ROADS" unique_id=884763626]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 73.50937, 0, 3.3003705)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 73.50937, -0.08657753, 3.3003705)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_163" type="MeshInstance3D" parent="ROADS" unique_id=269437418]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 62.121, 0, 3.2206643)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 62.121, -0.08657753, 3.2206643)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_164" type="MeshInstance3D" parent="ROADS" unique_id=22006408]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 56.38651, 0, 3.180529)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 56.38651, -0.08657753, 3.180529)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_165" type="MeshInstance3D" parent="ROADS" unique_id=1700548231]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 50.603348, 0, 3.1400533)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 50.603348, -0.08657753, 3.1400533)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_166" type="MeshInstance3D" parent="ROADS" unique_id=722967686]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 44.966885, 0, 3.100604)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 44.966885, -0.08657753, 3.100604)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_167" type="MeshInstance3D" parent="ROADS" unique_id=1282186237]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 39.250423, 0, 3.060595)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 39.250423, -0.08657753, 3.060595)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_168" type="MeshInstance3D" parent="ROADS" unique_id=21642360]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 33.37544, 0, 3.0194764)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 33.37544, -0.08657753, 3.0194764)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_169" type="MeshInstance3D" parent="ROADS" unique_id=728192173]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 27.684973, 0, 2.9796493)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 27.684973, -0.08657753, 2.9796493)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_170" type="MeshInstance3D" parent="ROADS" unique_id=840748247]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 21.824463, 0, 2.938632)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 21.824463, -0.08657753, 2.938632)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_171" type="MeshInstance3D" parent="ROADS" unique_id=870280952]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 15.967041, 0, 2.8976364)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 15.967041, -0.08657753, 2.8976364)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
@@ -6739,287 +6730,287 @@ mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_172" type="MeshInstance3D" parent="ROADS" unique_id=2089751862]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 10.27894, 0, 2.8578258)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 10.27894, -0.08657753, 2.8578258)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_173" type="MeshInstance3D" parent="ROADS" unique_id=404251086]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 4.5348277, 0, 2.8176231)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 4.5348277, -0.08657753, 2.8176231)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_174" type="MeshInstance3D" parent="ROADS" unique_id=225931577]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -1.2180395, 0, 2.7773592)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -1.2180395, -0.08657753, 2.7773592)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_175" type="MeshInstance3D" parent="ROADS" unique_id=698585192]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -7.0797687, 0, 2.7363334)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -7.0797687, -0.08657753, 2.7363334)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_176" type="MeshInstance3D" parent="ROADS" unique_id=698671030]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -12.815708, 0, 2.696188)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -12.815708, -0.08657753, 2.696188)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_177" type="MeshInstance3D" parent="ROADS" unique_id=1490767982]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -18.321562, 0, 2.6576529)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -18.321562, -0.08657753, 2.6576529)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_178" type="MeshInstance3D" parent="ROADS" unique_id=2085881846]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -24.102505, 0, 2.6171925)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -24.102505, -0.08657753, 2.6171925)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_179" type="MeshInstance3D" parent="ROADS" unique_id=72102512]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -29.634552, 0, 2.578474)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -29.634552, -0.08657753, 2.578474)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_180" type="MeshInstance3D" parent="ROADS" unique_id=148608086]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -35.25996, 0, 2.5391023)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -35.25996, -0.08657753, 2.5391023)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_181" type="MeshInstance3D" parent="ROADS" unique_id=333677768]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -41.13925, 0, 2.4979537)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -41.13925, -0.08657753, 2.4979537)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_182" type="MeshInstance3D" parent="ROADS" unique_id=1310738430]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -47.001522, 0, 2.4569242)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -47.001522, -0.08657753, 2.4569242)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_183" type="MeshInstance3D" parent="ROADS" unique_id=638171618]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -52.935513, 0, 2.4153926)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -52.935513, -0.08657753, 2.4153926)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_184" type="MeshInstance3D" parent="ROADS" unique_id=460657522]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -58.697643, 0, 2.375064)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -58.697643, -0.08657753, 2.375064)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_185" type="MeshInstance3D" parent="ROADS" unique_id=535596050]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -64.367195, 0, 2.3353832)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -64.367195, -0.08657753, 2.3353832)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_186" type="MeshInstance3D" parent="ROADS" unique_id=960421660]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -70.12696, 0, 2.2950711)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -70.12696, -0.08657753, 2.2950711)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_187" type="MeshInstance3D" parent="ROADS" unique_id=36015467]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -75.72874, 0, 2.2558646)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -75.72874, -0.08657753, 2.2558646)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_188" type="MeshInstance3D" parent="ROADS" unique_id=506590052]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -81.453156, 0, 2.2157998)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -81.453156, -0.08657753, 2.2157998)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_189" type="MeshInstance3D" parent="ROADS" unique_id=552694870]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -87.255714, 0, 2.175188)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -87.255714, -0.08657753, 2.175188)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_190" type="MeshInstance3D" parent="ROADS" unique_id=816166819]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -93.03104, 0, 2.1353948)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -93.03104, -0.08657753, 2.1353948)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_191" type="MeshInstance3D" parent="ROADS" unique_id=1007014400]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -98.953, 0, 2.0965335)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -98.953, -0.08657753, 2.0965335)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_401" type="MeshInstance3D" parent="ROADS" unique_id=1116579968]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -99.13442, -0.083, 5.9759045)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -99.13442, -0.16957752, 5.9759045)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_193" type="MeshInstance3D" parent="ROADS" unique_id=640870581]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -93.95465, 0, 6.021883)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -93.95465, -0.08657753, 6.021883)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_194" type="MeshInstance3D" parent="ROADS" unique_id=1399056777]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -88.04046, 0, 6.0616837)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -88.04046, -0.08657753, 6.0616837)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_195" type="MeshInstance3D" parent="ROADS" unique_id=1348842812]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -82.17088, 0, 6.1026306)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -82.17088, -0.08657753, 6.1026306)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_196" type="MeshInstance3D" parent="ROADS" unique_id=357200400]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -76.28306, 0, 6.1440034)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -76.28306, -0.08657753, 6.1440034)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_197" type="MeshInstance3D" parent="ROADS" unique_id=1457315906]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -70.33831, 0, 6.1843915)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -70.33831, -0.08657753, 6.1843915)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_198" type="MeshInstance3D" parent="ROADS" unique_id=1170513573]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -64.44429, 0, 6.2244735)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -64.44429, -0.08657753, 6.2244735)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_199" type="MeshInstance3D" parent="ROADS" unique_id=883839542]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -58.547535, 0, 6.2654757)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -58.547535, -0.08657753, 6.2654757)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_200" type="MeshInstance3D" parent="ROADS" unique_id=899039977]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -52.674236, 0, 6.3052645)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -52.674236, -0.08657753, 6.3052645)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_201" type="MeshInstance3D" parent="ROADS" unique_id=58847522]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -46.793602, 0, 6.343967)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -46.793602, -0.08657753, 6.343967)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_202" type="MeshInstance3D" parent="ROADS" unique_id=798476551]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -40.860264, 0, 6.383761)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -40.860264, -0.08657753, 6.383761)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_203" type="MeshInstance3D" parent="ROADS" unique_id=1328875087]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -34.959705, 0, 6.4250584)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -34.959705, -0.08657753, 6.4250584)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_204" type="MeshInstance3D" parent="ROADS" unique_id=1824072982]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -29.200048, 0, 6.4653697)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -29.200048, -0.08657753, 6.4653697)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_205" type="MeshInstance3D" parent="ROADS" unique_id=229790876]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -23.518982, 0, 6.5051312)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -23.518982, -0.08657753, 6.5051312)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_206" type="MeshInstance3D" parent="ROADS" unique_id=713456791]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -18.017685, 0, 6.5436344)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -18.017685, -0.08657753, 6.5436344)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_207" type="MeshInstance3D" parent="ROADS" unique_id=2000810351]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -12.108032, 0, 6.5849957)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -12.108032, -0.08657753, 6.5849957)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_208" type="MeshInstance3D" parent="ROADS" unique_id=1645204315]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -6.5692606, 0, 6.623761)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -6.5692606, -0.08657753, 6.623761)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_209" type="MeshInstance3D" parent="ROADS" unique_id=90558676]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, -0.77653456, 0, 6.6643043)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, -0.77653456, -0.08657753, 6.6643043)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_210" type="MeshInstance3D" parent="ROADS" unique_id=471024160]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 4.8986254, 0, 6.7040243)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 4.8986254, -0.08657753, 6.7040243)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_211" type="MeshInstance3D" parent="ROADS" unique_id=1352606334]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 10.724036, 0, 6.744796)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 10.724036, -0.08657753, 6.744796)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_212" type="MeshInstance3D" parent="ROADS" unique_id=227539028]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 16.487717, 0, 6.7851353)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 16.487717, -0.08657753, 6.7851353)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_213" type="MeshInstance3D" parent="ROADS" unique_id=177965301]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 22.203804, 0, 6.825142)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 22.203804, -0.08657753, 6.825142)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_214" type="MeshInstance3D" parent="ROADS" unique_id=157220927]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 28.065332, 0, 6.866166)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 28.065332, -0.08657753, 6.866166)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_215" type="MeshInstance3D" parent="ROADS" unique_id=489076083]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 33.78534, 0, 6.9062)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 33.78534, -0.08657753, 6.9062)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_216" type="MeshInstance3D" parent="ROADS" unique_id=139135827]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 39.682255, 0, 6.947472)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 39.682255, -0.08657753, 6.947472)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_217" type="MeshInstance3D" parent="ROADS" unique_id=135762647]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 45.417175, 0, 6.9876103)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 45.417175, -0.08657753, 6.9876103)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_218" type="MeshInstance3D" parent="ROADS" unique_id=1785423077]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 51.243397, 0, 7.0283875)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 51.243397, -0.08657753, 7.0283875)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_219" type="MeshInstance3D" parent="ROADS" unique_id=1189416961]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 56.728085, 0, 7.0667744)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 56.728085, -0.08657753, 7.0667744)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_220" type="MeshInstance3D" parent="ROADS" unique_id=1452026352]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 62.51218, 0, 7.107257)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 62.51218, -0.08657753, 7.107257)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_221" type="MeshInstance3D" parent="ROADS" unique_id=201159328]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 68.42576, 0, 7.1486454)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 68.42576, -0.08657753, 7.1486454)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_222" type="MeshInstance3D" parent="ROADS" unique_id=1899308205]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 79.949684, 0, 7.2293005)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 79.949684, -0.08657753, 7.2293005)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_224" type="MeshInstance3D" parent="ROADS" unique_id=679818692]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 90.782555, 0, 7.305119)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 90.782555, -0.08657753, 7.305119)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_388" type="MeshInstance3D" parent="ROADS" unique_id=367340051]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 96.742424, 0, 7.346832)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 96.742424, -0.08657753, 7.346832)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_389" type="MeshInstance3D" parent="ROADS" unique_id=1977289078]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 102.424614, 0, 7.386601)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 102.424614, -0.08657753, 7.386601)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_390" type="MeshInstance3D" parent="ROADS" unique_id=79612213]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 107.73253, 0, 7.423751)
+transform = Transform3D(1.3888711, -297.44324, -8.674065e-06, 0, -1.3001975e-05, 198.44432, -198.43944, -2.0817955, -6.070949e-08, 107.73253, 0, 7.423751)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_225" type="MeshInstance3D" parent="ROADS" unique_id=1727000548]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 85.54576, 0, 7.268467)
+transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 85.54576, -0.08657753, 7.268467)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_223" type="MeshInstance3D" parent="ROADS" unique_id=564624013]
-transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 74.08006, 0, 7.1882195)
+transform = Transform3D(1.3888605, -297.44324, -3.8653525e-12, -2.3655826e-05, -2.4817962e-07, 198.44432, -198.43945, -2.0817823, -2.365641e-05, 74.08006, -0.08657753, 7.1882195)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
@@ -7279,7 +7270,7 @@ mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 
 [node name="Plane_354" type="MeshInstance3D" parent="ROADS" unique_id=1135155082]
-transform = Transform3D(-198.4443, 2.600395e-05, 7.583294e-13, 0, -1.3001975e-05, 198.44432, 1.7348551e-05, 297.45053, 8.674277e-06, 6.3702583, -0.083, -2.1414595)
+transform = Transform3D(-198.4443, 4.491378e-05, 1.3097794e-12, 0, -1.3001975e-05, 198.44432, 2.9964258e-05, 297.45053, 8.674277e-06, 6.3702583, -0.083, -2.1414595)
 mesh = SubResource("ArrayMesh_bxh1j")
 skeleton = NodePath("")
 

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cm3wujgc2v1xn" path="res://Scenes/Levels/level_2.tscn" id="9_uao64"]
 [ext_resource type="PackedScene" uid="uid://djcrj5qtfce1x" path="res://Scenes/win_screen_2.tscn" id="10_kpxnr"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/timer_hud_2.tscn" id="11_knihf"]
+[ext_resource type="AudioStream" uid="uid://boo22e6mv71lv" path="res://gaming-game-minecraft-background-music-372242.mp3" id="11_v7hsc"]
 [ext_resource type="Script" uid="uid://pfxoentbiusb" path="res://Scenes/Levels/timer_hud_2.gd" id="12_qfm02"]
 [ext_resource type="PackedScene" uid="uid://dk50kfrqx4gxs" path="res://Scenes/Levels/hud_2.tscn" id="12_whrx3"]
 
@@ -45,3 +46,9 @@ script = ExtResource("12_qfm02")
 [node name="LoseScreen" parent="." unique_id=174884586 instance=ExtResource("9_lose")]
 
 [node name="WinScreen" parent="." unique_id=1747548582 instance=ExtResource("10_kpxnr")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1158039612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 54.90532, 0)
+stream = ExtResource("11_v7hsc")
+volume_db = 8.389
+autoplay = true

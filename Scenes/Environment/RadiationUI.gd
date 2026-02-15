@@ -22,7 +22,7 @@ func _ready():
 	if radiation_bar:
 		print("✅ ProgressBar found!")
 		radiation_bar.min_value = 0
-		radiation_bar.max_value = 100
+		radiation_bar.max_value = 30
 		radiation_bar.value = 0
 		radiation_bar.show_percentage = false
 		print("   Min:", radiation_bar.min_value, "Max:", radiation_bar.max_value)
@@ -43,11 +43,11 @@ func _process(_delta):
 		radiation_label.text = "☢ RADIATION LEVEL: %.1f μSv/h" % current_radiation
 		
 		# Change color based on level
-		if current_radiation < 20:
+		if current_radiation < 1:
 			radiation_label.modulate = Color(0.2, 1.0, 0.2)  # Green
-		elif current_radiation < 50:
+		elif current_radiation < 5:
 			radiation_label.modulate = Color(1.0, 1.0, 0.0)  # Yellow
-		elif current_radiation < 80:
+		elif current_radiation < 10:
 			radiation_label.modulate = Color(1.0, 0.5, 0.0)  # Orange
 		else:
 			radiation_label.modulate = Color(1.0, 0.0, 0.0)  # Red
@@ -56,17 +56,17 @@ func _process(_delta):
 		radiation_bar.value = current_radiation
 		
 		# Change bar color
-		if current_radiation < 20:
+		if current_radiation < 1:
 			radiation_bar.modulate = Color(0.2, 1.0, 0.2)
-		elif current_radiation < 50:
+		elif current_radiation < 5:
 			radiation_bar.modulate = Color(1.0, 1.0, 0.0)
-		elif current_radiation < 80:
+		elif current_radiation < 10:
 			radiation_bar.modulate = Color(1.0, 0.5, 0.0)
 		else:
 			radiation_bar.modulate = Color(1.0, 0.0, 0.0)
 
 func set_radiation(value: float):
-	current_radiation = clamp(value, 0.0, 100.0)
+	current_radiation = clamp(value, 0.0, 30)
 	print("🎯 RADIATION SET TO:", current_radiation)
 	
 	if radiation_bar:

@@ -60,6 +60,10 @@ func _ready():
 	print("=== LEVEL 2 READY ===")
 
 func _input(event: InputEvent):
+	# ✅ CRITICAL FIX: Only trigger Q input if game is NOT paused (paused = in a menu/dialog)
+	if get_tree().paused:
+		return
+	
 	# Press Q to open the quiz
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
