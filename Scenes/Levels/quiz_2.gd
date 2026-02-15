@@ -43,7 +43,7 @@ var questions = [
 	{
 		"question": "Where does most of our daily radiation exposure come from?",
 		"options": ["Nuclear power plants", "Cell phones", "Natural sources", "Medical X-rays"],
-		"correct": 3
+		"correct": 2
 	},
 	{
 		"question": "What does ALARA stand for in radiation safety?",
@@ -58,17 +58,17 @@ var questions = [
 	{
 		"question": "WHow much space does 60 years of US nuclear waste occupy?",
 		"options": ["10 football fields", "One football field", "Entire state of Nevada", "One swimming pool"],
-		"correct": 2
-	},
-	{
-		"question": "Which energy source causes the FEWEST deaths per terawatt-hour (TWh)?",
-		"options": ["Coal (24.6 deaths/TWh)", "Oil (18.4 deaths/TWh)", "Solar (0.02 deaths/TWh)", "Nuclear (0.07 deaths/TWh)"],
 		"correct": 1
 	},
 	{
+		"question": "Which energy source causes the FEWEST deaths per terawatt-hour (TWh)?",
+		"options": ["Coal", "Oil", "Sola", "Nuclear"],
+		"correct": 3
+	},
+	{
 		"question": "How many countries are currently members of the Nuclear Non-Proliferation Treaty (NPT)?",
-		"options": ["176", "185", "190", "195"],
-		"correct": 0
+		"options": ["176", "180", "190", "195"],
+		"correct": 1
 	}
 ]
 
@@ -178,7 +178,7 @@ func show_results():
 		note_label.visible = false
 
 	# Rewire next button to go back to level
-	next_button.text = "Back to Level"
+	next_button.text = "Back to Menu"
 	next_button.disabled = false
 	next_button.pressed.disconnect(_on_next_pressed)
 	next_button.pressed.connect(_go_back_to_level)

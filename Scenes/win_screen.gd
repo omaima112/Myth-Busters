@@ -6,10 +6,22 @@ extends Control
 @onready var retry_button = $Panel/VBoxContainer/RetryButton
 @onready var menu_button = $Panel/VBoxContainer/MenuButton
 
+# ✅ SAFE: Use get_node_or_null instead of @onready for Level2Button
+var level2_button: Button
+
 var stars_earned: int = 0
 
 func _ready():
 	hide()
+	
+	# ✅ SAFE: Get Level2Button only if it exists
+	level2_button = get_node_or_null("Panel/VBoxContainer/Level2Button")
+	
+	print("🎯 Win screen initialized")
+	print("   Retry button exists: ", retry_button != null)
+	print("   Menu button exists: ", menu_button != null)
+	print("   Level 2 button exists: ", level2_button != null)
+	
 	if GameManager:
 		GameManager.game_won.connect(_on_game_won)
 
@@ -24,10 +36,17 @@ func _on_game_won(stars: int):
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	# ✅ CONNECT BUTTON SIGNALS
-	if not retry_button.pressed.is_connected(_on_retry_button_pressed):
+	# ✅ CONNECT ALL BUTTON SIGNALS (if they exist)
+	if level2_button and not level2_button.pressed.is_connected(_on_level_2_button_pressed):
+		print("✅ Connecting Level 2 button...")
+		level2_button.pressed.connect(_on_level_2_button_pressed)
+	
+	if retry_button and not retry_button.pressed.is_connected(_on_retry_button_pressed):
+		print("✅ Connecting Retry button...")
 		retry_button.pressed.connect(_on_retry_button_pressed)
-	if not menu_button.pressed.is_connected(_on_menu_button_pressed):
+	
+	if menu_button and not menu_button.pressed.is_connected(_on_menu_button_pressed):
+		print("✅ Connecting Menu button...")
 		menu_button.pressed.connect(_on_menu_button_pressed)
 
 func display_stars(count: int):
@@ -38,30 +57,34 @@ func display_stars(count: int):
 	star2.modulate = gold if count >= 2 else dim
 	star3.modulate = gold if count >= 3 else dim
 
+func _on_level_2_button_pressed():
+	"""Load Level 2 with loading screen"""
+	print("🎮 Level 2 button pressed!")
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("📺 Loading Level 2 with loading screen...")
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreen_Level2_Final.tscn")
+
 func _on_retry_button_pressed():
-	"""Retry current level — identical behaviour to lose screen retry"""
+	"""Retry current level"""
+	print("🔄 Retry button pressed!")
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if GameManager:
-		GameManager.reset_level()  # resets orbs + timer value back to full
-		GameManager.start_timer()  # kicks the countdown off again
+		GameManager.reset_level()
+		GameManager.start_timer()
 	get_tree().reload_current_scene()
-
-func _on_quizbutton_pressed():
-	"""Load the Quiz scene"""
-	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print("🎓 Loading quiz scene...")
-	get_tree().change_scene_to_file("res://Scenes/Levels/quiz.tscn")
 
 func _on_menu_button_pressed():
 	"""Return to main menu"""
+	print("🏠 Menu button pressed!")
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("🏠 Loading main menu...")
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
 func _input(event: InputEvent):
-	# ✅ CRITICAL FIX: Only allow Q input if win screen is actually visible
+	# Only allow Q input if win screen is visible
 	if not visible:
 		return
 	
@@ -69,7 +92,6 @@ func _input(event: InputEvent):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
 			print("🎓 Q pressed — loading quiz...")
-			# ✅ CRITICAL FIX: Unpause BEFORE changing scene
 			get_tree().paused = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			get_tree().change_scene_to_file("res://Scenes/Levels/quiz.tscn")

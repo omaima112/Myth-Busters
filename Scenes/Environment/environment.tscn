@@ -630,9 +630,6 @@ func is_player(body) -> bool:
 		or body.is_in_group(\"player\")
 "
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2d4ng"]
-size = Vector3(88.032425, 3.9718018, 60.49226)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3flo4"]
 size = Vector3(119.37362, 4.7909546, 213.47162)
 
@@ -641,6 +638,9 @@ size = Vector3(14.087341, 9.181763, 15.972656)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq1i7"]
 size = Vector3(57.644775, 2.6464844, 20.120117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2d4ng"]
+size = Vector3(88.032425, 3.9718018, 60.49226)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnel6"]
 albedo_texture = ExtResource("84_i2u67")
@@ -1736,25 +1736,25 @@ info_title = "Space Exploration 🚀"
 info_text = "Mars rovers like Curiosity run on nuclear power (RTGs)."
 info_image = ExtResource("14_ww86s")
 
-[node name="Orb8" parent="OrbsContainer" unique_id=1569398064 instance=ExtResource("1_jhh7m")]
+[node name="Orb8" parent="OrbsContainer" unique_id=370603265 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(-1.1446825, 0, -0.11046233, 0, 1.15, 0, 0.11046233, 0, -1.1446825, -53.773056, 1.5699991, -40.17907)
 info_title = "Clean Power 🌿"
 info_text = "Nuclear avoids 2.1 billion tons CO₂ per year globally, helping fight climate change"
 info_image = ExtResource("16_3flo4")
 
-[node name="Orb9" parent="OrbsContainer" unique_id=296740904 instance=ExtResource("4_owdl0")]
+[node name="Orb9" parent="OrbsContainer" unique_id=870861655 instance=ExtResource("4_owdl0")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 63.58559, 0.93139964, 30.479221)
 info_title = "Global Cooperation 🌍"
 info_text = "Nuclear treaties (NPT) prevent proliferation while promoting energy use"
 info_image = ExtResource("16_jsww7")
 
-[node name="Orb10" parent="OrbsContainer" unique_id=517534259 instance=ExtResource("4_owdl0")]
+[node name="Orb10" parent="OrbsContainer" unique_id=1222428709 instance=ExtResource("4_owdl0")]
 transform = Transform3D(0.39379478, 0, 1.0804747, 0, 1.15, 0, -1.0804747, 0, 0.39379478, -68.56983, 0.67235494, 69.82593)
 info_title = "Different Paths 🔄"
 info_text = "Nuclear energy does not mean weapons! Reactors produce energy, not bombs"
 info_image = ExtResource("17_lxj0b")
 
-[node name="Orb11" parent="OrbsContainer" unique_id=497013329 instance=ExtResource("5_ebn4v")]
+[node name="Orb11" parent="OrbsContainer" unique_id=1380377405 instance=ExtResource("5_ebn4v")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 27.768307, 1.5699981, 30.56473)
 info_title = "IAEA Watch 🔍"
 info_text = "International inspections ensure reactors are used for energy only"
@@ -1766,55 +1766,55 @@ info_title = "Tech Spin-Offs 🔩"
 info_text = "Nuclear tech aids desalination, medicine, & space exploration."
 info_image = ExtResource("19_1kb8p")
 
-[node name="Orb13" parent="OrbsContainer" unique_id=1995986705 instance=ExtResource("1_jhh7m")]
+[node name="Orb13" parent="OrbsContainer" unique_id=4883159 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, -31.871826, 1.570002, -30.673832)
 info_title = "Safety"
 info_text = "Strict international safety standards make nuclear reactors extremely safe, comparable to flying."
 info_image = SubResource("CompressedTexture2D_3flo4")
 
-[node name="Orb15" parent="OrbsContainer" unique_id=796674532 instance=ExtResource("4_owdl0")]
+[node name="Orb15" parent="OrbsContainer" unique_id=2055812264 instance=ExtResource("4_owdl0")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 21.948137, 0.6479724, 61.32098)
 info_title = "Energy Density ⚡"
 info_text = "1 kg of uranium ≈ 2–3 million kg of coal in energy output"
 info_image = ExtResource("18_eva83")
 
-[node name="Orb16" parent="OrbsContainer" unique_id=511986257 instance=ExtResource("4_owdl0")]
+[node name="Orb16" parent="OrbsContainer" unique_id=1193197620 instance=ExtResource("4_owdl0")]
 transform = Transform3D(0.39379478, 0, 1.0804747, 0, 1.15, 0, -1.0804747, 0, 0.39379478, 41.308647, 1.3912014, -58.63437)
 info_title = "Waste in Perspective 📦"
 info_text = "All US nuclear waste (60 years) fits on a football field"
 info_image = SubResource("CompressedTexture2D_eva83")
 
-[node name="Orb17" parent="OrbsContainer" unique_id=2131192216 instance=ExtResource("5_ebn4v")]
+[node name="Orb17" parent="OrbsContainer" unique_id=1087022834 instance=ExtResource("5_ebn4v")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 47.79425, 1.0509826, -89.2033)
 info_title = "Safe Storage 🏗️"
 info_text = "Waste is stored in dry casks or deep repositories (e.g., Finland’s Onkalo)"
 info_image = ExtResource("22_lxj0b")
 
-[node name="Orb18" parent="OrbsContainer" unique_id=363064101 instance=ExtResource("9_rsqt7")]
+[node name="Orb18" parent="OrbsContainer" unique_id=1061460580 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 47.21173, 0.33691967, -79.6902)
 info_title = "State of waste🤔"
 info_text = "Nuclear waste is solid, stable, and safely contained."
 info_image = ExtResource("20_x3dms")
 
-[node name="Orb19" parent="OrbsContainer" unique_id=797432981 instance=ExtResource("1_jhh7m")]
+[node name="Orb19" parent="OrbsContainer" unique_id=1710120247 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, 29.081173, 0.57675076, -9.578362)
 info_title = "Record vs. Fossil Fuels 📊"
 info_text = "Nuclear energy is extremely safe: ~0.07 deaths/TWh, while coal causes ~100x more due to air pollution."
 info_image = ExtResource("23_1kb8p")
 
-[node name="Orb21" parent="OrbsContainer" unique_id=1400876374 instance=ExtResource("4_owdl0")]
+[node name="Orb21" parent="OrbsContainer" unique_id=823344729 instance=ExtResource("4_owdl0")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -45.08044, 2.3329713, -54.484383)
 info_title = "Reliable Power 💡"
 info_text = "Nuclear provides reliable 24/7 power, unlike solar or wind that depend on weather."
 info_image = ExtResource("23_cq1i7")
 
-[node name="Orb26" parent="OrbsContainer" unique_id=1930783256 instance=ExtResource("5_ebn4v")]
+[node name="Orb26" parent="OrbsContainer" unique_id=78351 instance=ExtResource("5_ebn4v")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -95.61885, 1.5699984, -53.9454)
 info_title = "Modern Design 🛠️"
 info_text = "New reactors use passive safety (no human intervention needed)"
 info_image = ExtResource("26_cq1i7")
 
-[node name="Orb24" parent="OrbsContainer" unique_id=62966763 instance=ExtResource("9_rsqt7")]
+[node name="Orb24" parent="OrbsContainer" unique_id=1201996771 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(0.82028025, 0, -0.8060027, 0, 1.15, 0, 0.8060027, 0, 0.82028025, -30.429014, 0.4987967, 76.852455)
 info_title = "Nuclear Weapons & Radiation"
 info_text = "Advanced reactors can reuse old nuclear waste, reducing its hazard and volume."
@@ -1834,7 +1834,7 @@ info_text = "Q: Most radiation comes from nuclear power plants
 Ans: False! Less than 1% of our radiation exposure comes from nuclear plants"
 info_image = ExtResource("31_3flo4")
 
-[node name="Orb31" parent="OrbsContainer" unique_id=669810665 instance=ExtResource("40_saevq")]
+[node name="Orb31" parent="OrbsContainer" unique_id=777207888 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.9000001, 0, 0, 0, 0.8999986, 0.0015707953, 0, -0.0015707954, 0.89999855, -90.12321, 0.5450464, 42.34944)
 info_title = "Myth"
 info_text = "The IAEA exists to promote nuclear weapons?
@@ -1850,7 +1850,7 @@ info_text = "Nuclear Radiation is worse then Medical radiation
  False (Medical Radiation is much higher)"
 info_image = ExtResource("32_jr6re")
 
-[node name="Orb37" parent="OrbsContainer" unique_id=689539759 instance=ExtResource("40_saevq")]
+[node name="Orb37" parent="OrbsContainer" unique_id=589812254 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -104.07695, 1.1213416, 95.84477)
 info_title = "Myth"
 info_text = "Nuclear plants emit more radiation than coal plants
@@ -1858,7 +1858,7 @@ info_text = "Nuclear plants emit more radiation than coal plants
 False, coal plants emits more "
 info_image = ExtResource("33_qaipu")
 
-[node name="Orb42" parent="OrbsContainer" unique_id=298651652 instance=ExtResource("41_86ndy")]
+[node name="Orb42" parent="OrbsContainer" unique_id=2034255399 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 4.867758, 1.5797989, 4.902359)
 info_title = "International Cooperation"
 info_text = "How Many countries cooperate on nuclear energy tech?
@@ -1866,7 +1866,7 @@ info_text = "How Many countries cooperate on nuclear energy tech?
 180 IAEA member states collaborate on peaceful nuclear technology and safety standards"
 info_image = ExtResource("16_jsww7")
 
-[node name="Orb54" parent="OrbsContainer" unique_id=1580798509 instance=ExtResource("41_86ndy")]
+[node name="Orb54" parent="OrbsContainer" unique_id=1206067023 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.16508, 1.5811819, 3.4577656)
 info_title = "Myth 🤔"
 info_text = "Chernobyl caused more deaths than coal pollution
@@ -1874,7 +1874,7 @@ info_text = "Chernobyl caused more deaths than coal pollution
 Wrong! One year of coal air pollution causes vastly more deaths than the entire Chernobyl disaster"
 info_image = ExtResource("23_1kb8p")
 
-[node name="Orb55" parent="OrbsContainer" unique_id=1056417118 instance=ExtResource("41_86ndy")]
+[node name="Orb55" parent="OrbsContainer" unique_id=874392395 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 93.64434, 1.5811819, 24.617607)
 info_title = "Percentage of Global Electricity"
 info_text = "What percentage of global electricity is from nuclear?
@@ -1882,7 +1882,7 @@ info_text = "What percentage of global electricity is from nuclear?
 About 10%"
 info_image = ExtResource("36_dbj8p")
 
-[node name="Orb60" parent="OrbsContainer" unique_id=1544311442 instance=ExtResource("41_86ndy")]
+[node name="Orb60" parent="OrbsContainer" unique_id=1036641144 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -50.13419, 0.7920702, -97.87621)
 info_title = "Myth"
 info_text = "Nuclear accidents are more deadly than coal.
@@ -1890,7 +1890,7 @@ info_text = "Nuclear accidents are more deadly than coal.
 FALSE! Coal causes 24.6 deaths per TWh vs nuclear's 0.07  making nuclear ~350x safer."
 info_image = ExtResource("16_3flo4")
 
-[node name="Orb64" parent="OrbsContainer" unique_id=1372728452 instance=ExtResource("41_86ndy")]
+[node name="Orb64" parent="OrbsContainer" unique_id=1806588615 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.09858, 0.7920702, -97.87621)
 info_title = "Myth"
 info_text = "Nuclear reactors can explode like nuclear weapons
@@ -1898,7 +1898,7 @@ info_text = "Nuclear reactors can explode like nuclear weapons
 False! Power reactors can't explode like bombs"
 info_image = ExtResource("35_dbj8p")
 
-[node name="Orb59" parent="OrbsContainer" unique_id=1704118596 instance=ExtResource("41_86ndy")]
+[node name="Orb59" parent="OrbsContainer" unique_id=345061121 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 93.64434, 1.5811819, 61.111855)
 info_title = "Myth"
 info_text = "Kerala is less radioactive than nuclear reactors
@@ -1906,7 +1906,7 @@ info_text = "Kerala is less radioactive than nuclear reactors
 Wrong! Natural background radiation in parts of Kerala (~1–2 µSv/h) is higher than the average radiation levels measured around nuclear power plants (~0.1–0.3 µSv/h)."
 info_image = ExtResource("37_lxj0b")
 
-[node name="Orb4" parent="OrbsContainer" unique_id=267016232 instance=ExtResource("9_rsqt7")]
+[node name="Orb4" parent="OrbsContainer" unique_id=436761035 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(0.82028025, 0, -0.8060027, 0, 1.15, 0, 0.8060027, 0, 0.82028025, 27.001919, 0, 12.643257)
 info_title = "Custom TitleFood Safety 🍎"
 info_text = "Irradiation kills bacteria in food, extending shelf life without chemicals"
@@ -5904,20 +5904,6 @@ transform = Transform3D(0.97657096, 0, -0.2151955, 0, 1, 0, 0.2151955, 0, 0.9765
 
 [node name="RadiationUI" parent="." unique_id=73818288 instance=ExtResource("74_7la4x")]
 
-[node name="RadiationZone" type="Area3D" parent="." unique_id=322640688]
-script = ExtResource("75_x3dms")
-max_radiation = 0.1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone" unique_id=287234122]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.16574, 1.4859009, -58.50885)
-shape = SubResource("BoxShape3D_2d4ng")
-debug_color = Color(0.75188565, 0.4533617, 0, 1)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RadiationZone" unique_id=231034091]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.681637, 1.4859009, -58.50885)
-shape = SubResource("BoxShape3D_2d4ng")
-debug_color = Color(0.75188565, 0.4533617, 0, 1)
-
 [node name="RadiationZone6" type="Area3D" parent="." unique_id=1320635920]
 script = ExtResource("75_x3dms")
 max_radiation = 0.2
@@ -5946,6 +5932,20 @@ max_radiation = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.74668, 0.8232403, 89.26994)
 shape = SubResource("BoxShape3D_cq1i7")
 debug_color = Color(0, 0, 0, 1)
+
+[node name="RadiationZone" type="Area3D" parent="." unique_id=322640688]
+script = ExtResource("75_x3dms")
+max_radiation = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RadiationZone" unique_id=287234122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.16574, 1.4859009, -58.50885)
+shape = SubResource("BoxShape3D_2d4ng")
+debug_color = Color(0.75188565, 0.4533617, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RadiationZone" unique_id=231034091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.681637, 1.4859009, -58.50885)
+shape = SubResource("BoxShape3D_2d4ng")
+debug_color = Color(0.75188565, 0.4533617, 0, 1)
 
 [node name="Sketchfab_Scene6" parent="." unique_id=25216245 instance=ExtResource("80_jr6re")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.927044, 0.0043298006, 82.73163)

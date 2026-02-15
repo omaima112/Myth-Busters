@@ -4044,7 +4044,7 @@ info_text = "Hospitals are completely safe than Reactors
 False! Hospitals have daily risks, while nuclear reactors use stronger layered safety systems"
 info_image = ExtResource("57_1axn8")
 
-[node name="Orb56" parent="orbs" unique_id=545993257 instance=ExtResource("56_4m2nc")]
+[node name="Orb56" parent="orbs" unique_id=786260794 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -41.20928, 1.5797989, 43.94311)
 info_title = "Myth"
 info_text = "Nuclear reactors are extremely dangerous
@@ -4052,7 +4052,7 @@ info_text = "Nuclear reactors are extremely dangerous
 Reactors are heavily protected and monitored, often safer than many everyday facilities"
 info_image = ExtResource("58_k5w7j")
 
-[node name="Orb57" parent="orbs" unique_id=1341541730 instance=ExtResource("56_4m2nc")]
+[node name="Orb57" parent="orbs" unique_id=1267451624 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 95.44515, 1.8650293, -49.303215)
 info_title = "Myth"
 info_text = "Only nuclear facilities use dangerous radiation
@@ -4060,7 +4060,7 @@ info_text = "Only nuclear facilities use dangerous radiation
 Hospitals use radiation openly; reactors keep radiation sealed inside thick containment."
 info_image = ExtResource("59_6l0ih")
 
-[node name="Orb59" parent="orbs" unique_id=394628280 instance=ExtResource("56_4m2nc")]
+[node name="Orb59" parent="orbs" unique_id=1682457365 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -62.061657, 1.5798008, 67.78913)
 info_title = "Myth"
 info_text = "A nuclear accident can happen easily
@@ -4068,7 +4068,7 @@ info_text = "A nuclear accident can happen easily
 False! Reactor accidents are rare due to backups; hospital risks occur daily"
 info_image = ExtResource("60_nv54f")
 
-[node name="Orb58" parent="orbs" unique_id=122806554 instance=ExtResource("56_4m2nc")]
+[node name="Orb58" parent="orbs" unique_id=842147315 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 63.69876, 1.579797, -54.45957)
 info_title = "Myth"
 info_text = "CT scans are completely safe and expose no radiation
@@ -4076,7 +4076,7 @@ info_text = "CT scans are completely safe and expose no radiation
 False! A single CT scan can expose about 7 mSv of radiation which is 700x higher than Reactor"
 info_image = ExtResource("61_ts53n")
 
-[node name="Orb60" parent="orbs" unique_id=19101467 instance=ExtResource("56_4m2nc")]
+[node name="Orb60" parent="orbs" unique_id=830168783 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -67.28606, 1.5797989, -65.3251)
 info_title = "Myth"
 info_text = "Coal plants are safer than nuclear plants
@@ -4084,7 +4084,7 @@ info_text = "Coal plants are safer than nuclear plants
 False! Coal plants emit radiation about 0.6uSv/hr which is more than six times"
 info_image = ExtResource("62_401bf")
 
-[node name="Orb61" parent="orbs" unique_id=117960309 instance=ExtResource("56_4m2nc")]
+[node name="Orb61" parent="orbs" unique_id=1172849561 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -78.769264, 1.5797989, 1.8050213)
 info_title = "Myth"
 info_text = "Coal is better for the environment than nuclear energy
@@ -4092,7 +4092,7 @@ info_text = "Coal is better for the environment than nuclear energy
 No! Coal enerygy emits pollution which causes alot of death per year"
 info_image = ExtResource("63_j4kp1")
 
-[node name="Orb62" parent="orbs" unique_id=1064706905 instance=ExtResource("56_4m2nc")]
+[node name="Orb62" parent="orbs" unique_id=4979127 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -39.453156, 1.5797989, -79.81031)
 info_title = "Myth"
 info_text = "Coal waste is less harmful than nuclear waste
@@ -4100,7 +4100,7 @@ info_text = "Coal waste is less harmful than nuclear waste
 False! Coal waste spreads into soil and water, while nuclear waste is sealed, tracked, and isolated"
 info_image = ExtResource("64_dfa61")
 
-[node name="Orb63" parent="orbs" unique_id=1273502607 instance=ExtResource("56_4m2nc")]
+[node name="Orb63" parent="orbs" unique_id=1254928215 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.30171, 1.5798008, -32.66798)
 info_title = "Myth"
 info_text = "Coal will never run out
@@ -4108,7 +4108,7 @@ info_text = "Coal will never run out
 Totally False! Coal is limited source of Energy while nuclear fuel yields massive energy from small amounts"
 info_image = ExtResource("65_yfegl")
 
-[node name="Orb64" parent="orbs" unique_id=2025976404 instance=ExtResource("56_4m2nc")]
+[node name="Orb64" parent="orbs" unique_id=1526477971 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -26.81269, 1.5797989, -36.918938)
 info_title = "Myth"
 info_text = "Coal Plant is safer than Reactor
@@ -4116,7 +4116,7 @@ info_text = "Coal Plant is safer than Reactor
 False! Coal plants cause air pollution that leads to respiratory and heart diseases. Nuclear plants have strict safety systems"
 info_image = ExtResource("66_bjwfc")
 
-[node name="Orb65" parent="orbs" unique_id=781524858 instance=ExtResource("56_4m2nc")]
+[node name="Orb65" parent="orbs" unique_id=1098573998 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 69.86073, 1.5797989, 78.59723)
 info_title = "Myth"
 info_text = "Radiation exposure in nuclear reactors is uncontrolled and unavoidable
@@ -4124,7 +4124,7 @@ info_text = "Radiation exposure in nuclear reactors is uncontrolled and unavoida
 Nuclear reactors follow ALARA, keeping radiation As Low As Reasonably Achievable through strict controls"
 info_image = ExtResource("67_khwgn")
 
-[node name="Orb66" parent="orbs" unique_id=37328109 instance=ExtResource("56_4m2nc")]
+[node name="Orb66" parent="orbs" unique_id=742053161 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 103.93149, 1.5797989, -72.53064)
 info_title = "Myth"
 info_text = "Hospitals do not harm the environment in the long term
@@ -4132,7 +4132,7 @@ info_text = "Hospitals do not harm the environment in the long term
 Not so true! Hospital waste is constant; nuclear waste is smaller and strictly controlled"
 info_image = ExtResource("68_kjhhu")
 
-[node name="Orb67" parent="orbs" unique_id=900621829 instance=ExtResource("56_4m2nc")]
+[node name="Orb67" parent="orbs" unique_id=2106378870 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -79.40091, 1.5797951, -79.23822)
 info_title = "Myth"
 info_text = "Chernobyl caused more deaths than coal pollution
@@ -4140,7 +4140,7 @@ info_text = "Chernobyl caused more deaths than coal pollution
 False! Air pollution from coal kills far more people in a single year than Chernobyl did in total"
 info_image = ExtResource("63_j4kp1")
 
-[node name="Orb68" parent="orbs" unique_id=2116361486 instance=ExtResource("56_4m2nc")]
+[node name="Orb68" parent="orbs" unique_id=1092090774 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -0.85713625, 1.5797989, 64.55777)
 info_title = "Myth"
 info_text = "Nuclear accidents happen frequently

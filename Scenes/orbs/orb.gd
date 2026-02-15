@@ -40,16 +40,44 @@ func _on_car_entered(body):
 		collected = true
 		print("✨ COLLECTED: ", info_title)
 		
-		# Collect in GameManager
+		# ✅ SEPARATED: Play sound independently (completely separate)
+		play_sound_only()
+		
+		# ✅ SEPARATED: Show popup and remove orb instantly (no sound link)
 		GameManager.collect_orb()
-		
-		# Show popup - it will pause the game
 		GameManager.show_orb_popup(info_title, info_text, info_image)
-		
-		# Remove orb after a tiny delay (after popup shows)
-		await get_tree().create_timer(0.1).timeout
 		queue_free()
-		print("🗑️ Orb removed from scene")
+		
+		print("✅ Popup shown, orb removed instantly")
+		print("🔊 Sound playing independently")
+
+func play_sound_only():
+	"""Play sound completely independently - not linked to anything"""
+	# Create a completely separate audio player (not a child)
+	var audio_player = AudioStreamPlayer3D.new()
+	
+	# Load the correct path
+	var sound = load("res://Scenes/driken5482-retro-coin-1-236677.mp3")
+	
+	if sound == null:
+		print("❌ Sound file not found at: res://Scenes/driken5482-retro-coin-1-236677.mp3")
+		return
+	
+	print("✅ Sound loaded from correct path")
+	audio_player.stream = sound
+	audio_player.bus = &"Master"
+	
+	# Add to scene root (not to orb, so it survives orb deletion)
+	get_tree().root.add_child(audio_player)
+	
+	print("🔊 Playing sound...")
+	audio_player.play()
+	
+	# Clean up when done (completely independent)
+	audio_player.finished.connect(func(): 
+		print("🔊 Sound finished, cleaning up audio player")
+		audio_player.queue_free()
+	)
 
 func _on_car_exited(body):
 	if body.is_in_group("vehicles") or body.collision_layer & (1 << 1):
