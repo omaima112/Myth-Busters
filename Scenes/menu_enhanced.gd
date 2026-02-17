@@ -1,26 +1,32 @@
 extends Control
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	print("🎮 Menu initialized")
-	# You can add any initialization here, like playing background music
-	pass
+	print("MENU LOADED - Script is working!")
+	# Manually connect buttons in case scene connections fail
+	var start_btn = get_node_or_null("MainContainer/LeftPanel/StartButton")
+	var quit_btn = get_node_or_null("MainContainer/LeftPanel/QuitButton")
 
-# Called when Start button is pressed
+	
+	if start_btn:
+		if not start_btn.pressed.is_connected(_on_start_button_pressed):
+			start_btn.pressed.connect(_on_start_button_pressed)
+
+	if quit_btn:
+		if not quit_btn.pressed.is_connected(_on_quit_button_pressed):
+			quit_btn.pressed.connect(_on_quit_button_pressed)
+
 func _on_start_button_pressed():
-	print("🎮 START GAME clicked - Loading tutorial via loading screen...")
-	# ✅ CHANGE: Load the loading screen instead of main scene directly
-	get_tree().change_scene_to_file("res://Scenes/LoadingScreen.tscn")
+	print("START GAME clicked")
+	get_tree().change_scene_to_file("res://scenes/LoadingScreen.tscn")
 
-# Called when Quit button is pressed
+	print("MULTIPLAYER clicked!")
+	var path = "res://scenes/multiplayer.tscn"
+	if ResourceLoader.exists(path):
+		print("Scene found, loading: " + path)
+		get_tree().change_scene_to_file(path)
+	else:
+		print("ERROR: Scene not found at: " + path)
+
 func _on_quit_button_pressed():
-	print("👋 QUIT clicked - Exiting game...")
-	# Quit the game
+	print("QUIT clicked")
 	get_tree().quit()
-
-# Optional: Add keyboard controls
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		_on_quit_button_pressed()
-	elif event.is_action_pressed("ui_accept"):
-		_on_start_button_pressed()

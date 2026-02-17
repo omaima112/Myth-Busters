@@ -1,3 +1,13 @@
 .exe 
 pck 
 .godot/ 
+Build/ 
+build/ 
+exports/ 
+.exe 
+pck 
+.apk 
+aab 
+*.mp4 
+.import/ 
+.godot/ 
