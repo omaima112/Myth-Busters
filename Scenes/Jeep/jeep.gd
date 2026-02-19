@@ -47,6 +47,9 @@ var initial_mesh_scales = {}  # Store original mesh scales
 var initial_wheel_positions = {}  # Store original wheel positions
 
 func _ready():
+	# ✅ FIX: Add jeep to "vehicles" group so orbs can detect it
+	add_to_group("vehicles")
+
 	# Store initial transform
 	initial_position = global_position
 	initial_rotation = rotation

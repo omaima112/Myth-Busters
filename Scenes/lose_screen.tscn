@@ -2,14 +2,117 @@
 
 [ext_resource type="Script" uid="uid://caobrspnot0u8" path="res://Scenes/lose_screen.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="2_488pv"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="3_burbank"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_go37l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.03, 0.03, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.08, 0.08, 0.9)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.9, 0.0, 0.0, 0.35)
+shadow_size = 24
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_divider"]
+bg_color = Color(0.85, 0.08, 0.08, 0.6)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_retry"]
+bg_color = Color(0.75, 0.06, 0.06, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.0, 0.3, 0.3, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1.0, 0.0, 0.0, 0.4)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_retry_hover"]
+bg_color = Color(0.95, 0.1, 0.1, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.0, 0.5, 0.5, 1.0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(1.0, 0.0, 0.0, 0.6)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu"]
+bg_color = Color(0.1, 0.1, 0.12, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.4, 0.5, 0.7)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu_hover"]
+bg_color = Color(0.18, 0.18, 0.22, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.7, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("3_burbank")
+font_size = 72
+font_color = Color(1.0, 0.1, 0.1, 1.0)
+shadow_color = Color(1.0, 0.0, 0.0, 0.8)
+shadow_offset = Vector2(0, 0)
+shadow_size = 18
+outline_size = 4
+outline_color = Color(0.0, 0.0, 0.0, 1.0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_message"]
 font = ExtResource("2_488pv")
-font_size = 100
+font_size = 22
+font_color = Color(0.85, 0.65, 0.65, 1.0)
+shadow_color = Color(0.5, 0.0, 0.0, 0.5)
+shadow_offset = Vector2(0, 1)
+shadow_size = 4
 
-[sub_resource type="LabelSettings" id="LabelSettings_nk27f"]
-font_size = 34
-font_color = Color(0.7194535, 2.5509298e-06, 5.7756904e-07, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_icon"]
+font = ExtResource("3_burbank")
+font_size = 64
+font_color = Color(1.0, 0.15, 0.15, 1.0)
+shadow_color = Color(1.0, 0.0, 0.0, 0.6)
+shadow_offset = Vector2(0, 0)
+shadow_size = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_btn"]
+font = ExtResource("3_burbank")
+font_size = 28
+font_color = Color(1.0, 1.0, 1.0, 1.0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_btn_menu"]
+font = ExtResource("3_burbank")
+font_size = 28
+font_color = Color(0.75, 0.75, 0.85, 1.0)
 
 [node name="LoseScreen" type="Control" unique_id=174884586]
 process_mode = 3
@@ -28,61 +131,101 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.7)
+color = Color(0.02, 0.0, 0.0, 0.88)
 
-[node name="Panel" type="Panel" parent="." unique_id=1192163033]
+[node name="TopVignette" type="ColorRect" parent="." unique_id=5510000001]
+layout_mode = 1
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+color = Color(0.6, 0.0, 0.0, 0.18)
+mouse_filter = 2
+
+[node name="BottomVignette" type="ColorRect" parent="." unique_id=5510000002]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.6, 0.0, 0.0, 0.18)
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1192163033]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -200.0
-offset_right = 300.0
-offset_bottom = 200.0
+offset_left = -280.0
+offset_top = -240.0
+offset_right = 280.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1587996314]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
-
-[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=1041541755]
+[node name="Margins" type="MarginContainer" parent="Panel" unique_id=5510000030]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Margins" unique_id=1587996314]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="IconLabel" type="Label" parent="Panel/Margins/VBoxContainer" unique_id=5510000010]
+layout_mode = 2
+text = "💀"
+label_settings = SubResource("LabelSettings_icon")
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Panel/Margins/VBoxContainer" unique_id=1041541755]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.1, 0.1, 1.0)
 text = "TIME'S UP!"
-label_settings = SubResource("LabelSettings_go37l")
+label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
-[node name="Message" type="Label" parent="Panel/VBoxContainer" unique_id=327711249]
+[node name="Message" type="Label" parent="Panel/Margins/VBoxContainer" unique_id=327711249]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "You ran out of time!"
-label_settings = SubResource("LabelSettings_nk27f")
+label_settings = SubResource("LabelSettings_message")
 horizontal_alignment = 1
 
-[node name="RetryButton" type="Button" parent="Panel/VBoxContainer" unique_id=1939801141]
+[node name="Divider" type="PanelContainer" parent="Panel/Margins/VBoxContainer" unique_id=5510000020]
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
-text = "Retry"
+custom_minimum_size = Vector2(0, 2)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_divider")
 
-[node name="MenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1845872872]
+[node name="RetryButton" type="Button" parent="Panel/Margins/VBoxContainer" unique_id=1939801141]
 layout_mode = 2
-theme_override_font_sizes/font_size = 38
-text = "Main Menu"
+custom_minimum_size = Vector2(0, 54)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_retry")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_retry_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_retry")
+theme_override_font_sizes/font_size = 28
+text = "↺  TRY AGAIN"
+label_settings = SubResource("LabelSettings_btn")
 
-[connection signal="pressed" from="Panel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[node name="MenuButton" type="Button" parent="Panel/Margins/VBoxContainer" unique_id=1845872872]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 54)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_menu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_menu_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_menu")
+theme_override_font_sizes/font_size = 28
+text = "⌂  MAIN MENU"
+label_settings = SubResource("LabelSettings_btn_menu")
+
+[connection signal="pressed" from="Panel/Margins/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

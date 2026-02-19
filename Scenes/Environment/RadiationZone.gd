@@ -61,6 +61,9 @@ func _on_body_exited(body):
 		print("🚪 PLAYER EXITED RADIATION ZONE:", zone_name)
 
 func is_player(body) -> bool:
+	# Exclude police/enemies — they are CharacterBody3D but should never trigger radiation
+	if body.is_in_group("enemies"):
+		return false
 	# Detects VehicleBody3D, CharacterBody3D, or anything in "player" group
 	return body is VehicleBody3D \
 		or body is CharacterBody3D \

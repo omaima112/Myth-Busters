@@ -35,6 +35,13 @@ func _ready():
 	# Initial display
 	set_radiation(0.0)
 	
+	# Hide when game ends
+	if GameManager:
+		GameManager.game_won.connect(func(_s): _hide_ui())
+		GameManager.game_lost.connect(func(): _hide_ui())
+		if GameManager.has_signal("game_busted"):
+			GameManager.game_busted.connect(func(): _hide_ui())
+	
 	print("==========================================")
 
 func _process(_delta):
@@ -71,3 +78,10 @@ func set_radiation(value: float):
 	
 	if radiation_bar:
 		radiation_bar.value = current_radiation
+
+
+func _hide_ui():
+	visible = false
+
+func _show_ui():
+	visible = true

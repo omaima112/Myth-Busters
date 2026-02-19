@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://degcodedonkny"]
+
+[ext_resource type="Script" uid="uid://ctkq6jxtbbyag" path="res://Scenes/nitro_hud.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="2"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_container"]
+bg_color = Color(0.04, 0.05, 0.07, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 0.5)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 1, 1, 0.078431375)
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_icon"]
+font = ExtResource("3")
+font_size = 20
+font_color = Color(0, 1, 1, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_key"]
+font = ExtResource("2")
+font_size = 13
+font_color = Color(0.6, 0.9, 0.9, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_bg"]
+bg_color = Color(0.06, 0.1, 0.12, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6, 0.6, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_fill"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 1, 1, 0.3019608)
+shadow_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_boost"]
+font = ExtResource("3")
+font_size = 14
+font_color = Color(0.1, 1, 0.4, 1)
+shadow_size = 0
+shadow_color = Color(0, 1, 0.3, 0.7)
+shadow_offset = Vector2(0, 0)
+
+[node name="NitroHUD" type="Control" unique_id=1342601964]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="NitroContainer" type="PanelContainer" parent="." unique_id=1870490001]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -110.0
+offset_right = 197.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_container")
+
+[node name="Margins" type="MarginContainer" parent="NitroContainer" unique_id=1805980034]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VLayout" type="VBoxContainer" parent="NitroContainer/Margins" unique_id=12217462]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="IconRow" type="HBoxContainer" parent="NitroContainer/Margins/VLayout" unique_id=186792166]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="IconLabel" type="Label" parent="NitroContainer/Margins/VLayout/IconRow" unique_id=497515193]
+layout_mode = 2
+text = "⚡ NITRO"
+label_settings = SubResource("LabelSettings_icon")
+vertical_alignment = 1
+
+[node name="KeyHint" type="Label" parent="NitroContainer/Margins/VLayout/IconRow" unique_id=1087794383]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[SHIFT]"
+label_settings = SubResource("LabelSettings_key")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BarArea" type="Control" parent="NitroContainer/Margins/VLayout" unique_id=496576329]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FillGlow" type="ColorRect" parent="NitroContainer/Margins/VLayout/BarArea" unique_id=243063324]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 1, 0)
+
+[node name="NitroBar" type="ProgressBar" parent="NitroContainer/Margins/VLayout/BarArea" unique_id=1338048513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
+value = 100.0
+show_percentage = false
+
+[node name="BoostLabel" type="Label" parent="NitroContainer/Margins/VLayout" unique_id=1335650105]
+layout_mode = 2
+text = "▲ BOOST ACTIVE"
+label_settings = SubResource("LabelSettings_boost")
+horizontal_alignment = 1

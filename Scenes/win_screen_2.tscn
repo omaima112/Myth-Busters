@@ -2,8 +2,135 @@
 
 [ext_resource type="Script" uid="uid://dnajaupwv5qmy" path="res://Scenes/win_screen.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_awi1s"]
-[ext_resource type="FontFile" uid="uid://b2eehe7wokx72" path="res://Fonts/Lost Tumbler.ttf" id="3_bwc64"]
-[ext_resource type="FontFile" uid="uid://bt5kel71bjdgk" path="res://Fonts/SwanseaBold-D0ox.ttf" id="3_mjwtv"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="3_fortnite"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.04, 0.05, 0.03, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.0, 0.78, 0.1, 0.85)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(1.0, 0.8, 0.0, 0.3)
+shadow_size = 28
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_divider"]
+bg_color = Color(1.0, 0.75, 0.08, 0.5)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_retry"]
+bg_color = Color(0.1, 0.12, 0.1, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.6, 0.4, 0.7)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_retry_hover"]
+bg_color = Color(0.16, 0.2, 0.14, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.8, 0.5, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu"]
+bg_color = Color(0.08, 0.08, 0.1, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.35, 0.45, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu_hover"]
+bg_color = Color(0.14, 0.14, 0.18, 1.0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.5, 0.65, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quiz_bg"]
+bg_color = Color(0.06, 0.07, 0.04, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.0, 0.78, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1.0, 0.7, 0.0, 0.3)
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("2_awi1s")
+font_size = 68
+font_color = Color(1.0, 0.85, 0.1, 1.0)
+shadow_color = Color(1.0, 0.65, 0.0, 0.9)
+shadow_offset = Vector2(0, 0)
+shadow_size = 20
+outline_size = 4
+outline_color = Color(0.0, 0.0, 0.0, 1.0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_subtitle"]
+font = ExtResource("3_fortnite")
+font_size = 18
+font_color = Color(0.75, 0.9, 0.6, 1.0)
+shadow_color = Color(0.3, 0.6, 0.1, 0.5)
+shadow_offset = Vector2(0, 1)
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_star_gold"]
+font = ExtResource("2_awi1s")
+font_size = 80
+font_color = Color(1.0, 0.84, 0.0, 1.0)
+shadow_color = Color(1.0, 0.6, 0.0, 0.8)
+shadow_offset = Vector2(0, 0)
+shadow_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_btn_secondary"]
+font = ExtResource("2_awi1s")
+font_size = 26
+font_color = Color(0.8, 0.9, 0.75, 1.0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_btn_menu"]
+font = ExtResource("2_awi1s")
+font_size = 26
+font_color = Color(0.65, 0.65, 0.75, 1.0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_quiz"]
+font = ExtResource("2_awi1s")
+font_size = 22
+font_color = Color(1.0, 0.85, 0.1, 1.0)
+shadow_color = Color(1.0, 0.6, 0.0, 0.7)
+shadow_offset = Vector2(0, 0)
+shadow_size = 8
 
 [node name="WinScreen" type="Control" unique_id=1747548582]
 process_mode = 3
@@ -22,101 +149,137 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.7)
+color = Color(0.02, 0.03, 0.01, 0.9)
 
-[node name="Panel" type="Panel" parent="." unique_id=387698769]
+[node name="TopVignette" type="ColorRect" parent="." unique_id=6610000001]
+layout_mode = 1
+anchor_right = 1.0
+offset_bottom = 140.0
+grow_horizontal = 2
+color = Color(0.5, 0.4, 0.0, 0.15)
+mouse_filter = 2
+
+[node name="BottomVignette" type="ColorRect" parent="." unique_id=6610000002]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -140.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.5, 0.4, 0.0, 0.15)
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=387698769]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -321.0
-offset_right = 571.0
-offset_bottom = 320.0
+offset_left = -280.0
+offset_top = -270.0
+offset_right = 280.0
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=227982440]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -193.5
-offset_top = -82.5
-offset_right = 206.5
-offset_bottom = 217.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="Title" type="Label" parent="Panel/VBoxContainer" unique_id=2012933307]
+[node name="Margins" type="MarginContainer" parent="Panel" unique_id=6610000030]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.8, 0, 1)
-theme_override_fonts/font = ExtResource("2_awi1s")
-theme_override_font_sizes/font_size = 64
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Margins" unique_id=227982440]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Panel/Margins/VBoxContainer" unique_id=2012933307]
+layout_mode = 2
 text = "LEVEL COMPLETE!"
+label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
-[node name="RetryButton" type="Button" parent="Panel/VBoxContainer" unique_id=1765913309]
+[node name="Subtitle" type="Label" parent="Panel/Margins/VBoxContainer" unique_id=6610000010]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_mjwtv")
-theme_override_font_sizes/font_size = 32
-text = "Retry  ⭮"
+text = "Outstanding performance, agent!"
+label_settings = SubResource("LabelSettings_subtitle")
+horizontal_alignment = 1
 
-[node name="MenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1727775841]
+[node name="Stars" type="HBoxContainer" parent="Panel/Margins/VBoxContainer" unique_id=101027265]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_mjwtv")
-theme_override_font_sizes/font_size = 32
-text = "Menu  ☰"
-
-[node name="Stars" type="HBoxContainer" parent="Panel" unique_id=101027265]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.5
-offset_top = -227.5
-offset_right = 149.5
-offset_bottom = -116.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Star1" type="Label" parent="Panel/Stars" unique_id=942750672]
+[node name="Star1" type="Label" parent="Panel/Margins/VBoxContainer/Stars" unique_id=942750672]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_bwc64")
-theme_override_font_sizes/font_size = 80
 text = "★"
-
-[node name="Star2" type="Label" parent="Panel/Stars" unique_id=1017813173]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_awi1s")
-theme_override_font_sizes/font_size = 80
-text = "★"
-
-[node name="Star3" type="Label" parent="Panel/Stars" unique_id=148677130]
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "★"
-
-[node name="Title2" type="Label" parent="." unique_id=641634661]
-layout_mode = 0
-offset_left = 358.0
-offset_top = 519.0
-offset_right = 823.0
-offset_bottom = 547.0
-theme_override_colors/font_color = Color(0, 0.8, 0, 1)
-theme_override_fonts/font = ExtResource("3_mjwtv")
-theme_override_font_sizes/font_size = 38
-text = "PRESS Q TO START QUIZ"
+label_settings = SubResource("LabelSettings_star_gold")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[node name="Star2" type="Label" parent="Panel/Margins/VBoxContainer/Stars" unique_id=1017813173]
+layout_mode = 2
+text = "★"
+label_settings = SubResource("LabelSettings_star_gold")
+horizontal_alignment = 1
+
+[node name="Star3" type="Label" parent="Panel/Margins/VBoxContainer/Stars" unique_id=148677130]
+layout_mode = 2
+text = "★"
+label_settings = SubResource("LabelSettings_star_gold")
+horizontal_alignment = 1
+
+[node name="Divider" type="PanelContainer" parent="Panel/Margins/VBoxContainer" unique_id=6610000020]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 2)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_divider")
+
+[node name="RetryButton" type="Button" parent="Panel/Margins/VBoxContainer" unique_id=1765913309]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 54)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_retry")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_retry_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_retry")
+theme_override_font_sizes/font_size = 26
+text = "↺  RETRY"
+
+[node name="MenuButton" type="Button" parent="Panel/Margins/VBoxContainer" unique_id=1727775841]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 54)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_menu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_menu_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_menu")
+theme_override_font_sizes/font_size = 26
+text = "⌂  MAIN MENU"
+
+[node name="QuizHint" type="PanelContainer" parent="." unique_id=641634661]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -62.0
+offset_right = 200.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_quiz_bg")
+
+[node name="Title2" type="Label" parent="QuizHint" unique_id=6610000040]
+layout_mode = 2
+text = "PRESS Q TO START QUIZ"
+label_settings = SubResource("LabelSettings_quiz")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/Margins/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/Margins/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

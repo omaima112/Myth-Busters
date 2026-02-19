@@ -7,6 +7,19 @@ signal all_orbs_collected
 signal timer_updated(time_remaining: int)
 signal game_won(stars: int)
 signal game_lost
+@warning_ignore("unused_signal")
+signal player_busted
+@warning_ignore("unused_signal")
+signal game_busted
+@warning_ignore("unused_signal")
+signal player_in_bust_zone
+@warning_ignore("unused_signal")
+signal player_left_bust_zone
+@warning_ignore("unused_signal")
+signal police_chase_started
+@warning_ignore("unused_signal")
+signal police_chase_ended
+
 
 var total_orbs: int = 0
 var collected_orbs: int = 0
@@ -17,9 +30,37 @@ var time_limit: int = 420      # 7 minutes in seconds
 var time_remaining_f: float = 420.0  # float for accurate delta subtraction
 var time_remaining: int = 420        # int used for display / signals
 var timer_running: bool = false
+var active_voice_player: AudioStreamPlayer = null
 
 func _ready():
-	pass
+	# Spawn siren HUD into every scene automatically
+	get_tree().root.connect("child_entered_tree", _on_scene_changed)
+
+
+func _on_scene_changed(node: Node):
+	# Wait one frame for scene to fully load then inject siren HUD
+	if node == get_tree().current_scene:
+		await get_tree().process_frame
+		_inject_siren_hud()
+
+
+func _inject_siren_hud():
+	var scene = get_tree().current_scene
+	if scene == null:
+		return
+	# Don't add to menu scenes
+	if scene.name in ["menu", "Menu", "LoadingScreen", "LoadingScreen_Level2_Final"]:
+		return
+	# Don't add if already present
+	if scene.find_child("PoliceSirenHUD", true, false):
+		return
+	var packed = load("res://Scenes/police_siren_hud.tscn")
+	if packed == null:
+		print("⚠️ police_siren_hud.tscn not found")
+		return
+	var hud = packed.instantiate()
+	scene.add_child(hud)
+	print("✅ PoliceSirenHUD injected into: ", scene.name)
 
 func _process(delta):
 	if timer_running:

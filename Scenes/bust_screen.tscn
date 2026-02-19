@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://c36prxeasuk1"]
+
+[ext_resource type="Script" uid="uid://bl147qfjn4kw" path="res://Scenes/bust_screen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_alert"]
+font = ExtResource("2")
+font_size = 72
+font_color = Color(1, 0.08, 0.08, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(1, 0, 0, 0.9)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_countdown"]
+font = ExtResource("2")
+font_size = 160
+outline_size = 6
+outline_color = Color(0.6, 0, 0, 1)
+shadow_size = 30
+shadow_color = Color(1, 0, 0, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sub"]
+font = ExtResource("3")
+font_size = 30
+font_color = Color(1, 0.7, 0, 1)
+shadow_size = 0
+shadow_color = Color(0.8, 0.3, 0, 0.7)
+shadow_offset = Vector2(0, 0)
+
+[node name="BustScreen" type="Control" unique_id=1609210744]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=800358531]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.85, 0, 0.05, 0.15)
+
+[node name="LeftEdge" type="ColorRect" parent="." unique_id=1246663630]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 18.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.9, 0, 0, 0.55)
+
+[node name="RightEdge" type="ColorRect" parent="." unique_id=981827713]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.9, 0, 0, 0.55)
+
+[node name="TopEdge" type="ColorRect" parent="." unique_id=926246407]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.9, 0, 0, 0.55)
+
+[node name="BottomEdge" type="ColorRect" parent="." unique_id=1335721290]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.9, 0, 0, 0.55)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2070057981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VLayout" type="VBoxContainer" parent="CenterContainer" unique_id=22926278]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="AlertLabel" type="Label" parent="CenterContainer/VLayout" unique_id=621881004]
+layout_mode = 2
+text = "⚠ BUSTING ⚠"
+label_settings = SubResource("LabelSettings_alert")
+horizontal_alignment = 1
+
+[node name="CountdownLabel" type="Label" parent="CenterContainer/VLayout" unique_id=1876321429]
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_countdown")
+horizontal_alignment = 1
+
+[node name="SubLabel" type="Label" parent="CenterContainer/VLayout" unique_id=1959746685]
+layout_mode = 2
+text = "Drive the car away from the range"
+label_settings = SubResource("LabelSettings_sub")
+horizontal_alignment = 1
+
+[node name="BottomBar" type="Control" parent="." unique_id=790890189]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BgBar" type="ColorRect" parent="BottomBar" unique_id=222968824]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0, 0, 0.9)
+
+[node name="BarFill" type="ColorRect" parent="BottomBar" unique_id=1358508392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.05, 0.05, 1)
