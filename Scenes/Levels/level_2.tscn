@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c0qt4yic5fqd7" path="res://steel fence/wall/wall.obj" id="6_mn78l"]
 [ext_resource type="PackedScene" uid="uid://dwyyqmeqn1snj" path="res://Scenes/Levels/Models/factory_low-poly.glb" id="6_u40f0"]
 [ext_resource type="PackedScene" uid="uid://f3yulr67iqnt" path="res://Scenes/Levels/Models/coal_deposit.glb" id="7_0x4y1"]
+[ext_resource type="FontFile" uid="uid://bt5kel71bjdgk" path="res://Fonts/SwanseaBold-D0ox.ttf" id="7_k5w7j"]
 [ext_resource type="Texture2D" uid="uid://dbm2g35dx31ke" path="res://Scenes/Roads/parking_lot_39.jpg" id="8_18dqt"]
 [ext_resource type="PackedScene" uid="uid://dbgaw6lkfccre" path="res://Scenes/Levels/Models/generic_factory_with_smoke_towers.glb" id="8_uqiic"]
 [ext_resource type="PackedScene" uid="uid://38ltm57tfg6e" path="res://Scenes/Levels/Models/factory_conveyer.glb" id="9_eopvx"]
@@ -105,6 +106,9 @@ fog_sky_affect = 0.392
 volumetric_fog_density = 0.3696
 volumetric_fog_detail_spread = 6.0
 adjustment_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6l0ih"]
+albedo_color = Color(0.87058824, 0.8745098, 0.90588236, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2pnm"]
 resource_name = "gate_m"
@@ -1854,7 +1858,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 25.41872, -0.10288954, -53.906754)
 
 [node name="Label3D" type="Label3D" parent="Sketchfab_Scene5" unique_id=1201909848]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, -1.3630981, 250.48935, 457.79968)
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, -1.3630371, 266.96304, 457.79956)
 modulate = Color(0.91, 0.16380002, 0.18867333, 1)
 text = "ICU"
 font = ExtResource("6_jip10")
@@ -1862,7 +1866,7 @@ font_size = 600
 outline_size = 0
 
 [node name="Label3D2" type="Label3D" parent="Sketchfab_Scene5" unique_id=1910753770]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 2813.3103, 250.48935, 457.79932)
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 2813.3103, 268.2708, 457.79932)
 modulate = Color(0.91, 0.16380002, 0.18867333, 1)
 text = "Radiology Room"
 font = ExtResource("6_jip10")
@@ -1870,12 +1874,293 @@ font_size = 600
 outline_size = 0
 
 [node name="Label3D3" type="Label3D" parent="Sketchfab_Scene5" unique_id=459898684]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 1396.8989, 250.48935, 457.79932)
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 1396.8989, 263.7937, 457.79932)
 modulate = Color(0.91, 0.16380002, 0.18867333, 1)
 text = "CT Scan Room"
 font = ExtResource("6_jip10")
 font_size = 600
 outline_size = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1716352046]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, -224.20605, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1860937281]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 221.54248, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D5" type="Label3D" parent="Sketchfab_Scene5" unique_id=903799510]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, -248.09045, 113.18181, 458.85437)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D6" type="Label3D" parent="Sketchfab_Scene5" unique_id=1015935847]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 200.4148, 113.18181, 458.854)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1563226110]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1170.0913, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=610837324]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1615.8396, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D7" type="Label3D" parent="Sketchfab_Scene5" unique_id=1131142661]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1146.207, 113.18181, 458.85413)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D8" type="Label3D" parent="Sketchfab_Scene5" unique_id=709253222]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1594.7124, 113.18181, 458.854)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1286815020]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 2588.821, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1828345049]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 3034.5693, 114.43039, 456.06592)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D9" type="Label3D" parent="Sketchfab_Scene5" unique_id=1393069642]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 2564.9368, 113.18181, 458.854)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D10" type="Label3D" parent="Sketchfab_Scene5" unique_id=1766850562]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 3013.442, 113.18181, 458.854)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D4" type="Label3D" parent="Sketchfab_Scene5" unique_id=1953481873]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, -1.3630371, 260.7256, -1123.5505)
+modulate = Color(0.91, 0.16380002, 0.18867333, 1)
+text = "ICU"
+font = ExtResource("6_jip10")
+font_size = 600
+outline_size = 0
+
+[node name="Label3D11" type="Label3D" parent="Sketchfab_Scene5" unique_id=183635342]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 2813.3103, 265.9786, -1123.5515)
+modulate = Color(0.91, 0.16380002, 0.18867333, 1)
+text = "Radiology Room"
+font = ExtResource("6_jip10")
+font_size = 600
+outline_size = 0
+
+[node name="Label3D12" type="Label3D" parent="Sketchfab_Scene5" unique_id=1817060148]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 1396.8989, 267.79318, -1123.5515)
+modulate = Color(0.91, 0.16380002, 0.18867333, 1)
+text = "CT Scan Room"
+font = ExtResource("6_jip10")
+font_size = 600
+outline_size = 0
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1953685022]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, -224.20605, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1725990677]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 221.54248, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=781571256]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 221.54248, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=647248641]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 221.54248, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D13" type="Label3D" parent="Sketchfab_Scene5" unique_id=1687023110]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, -248.0904, 113.18181, -1122.4958)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D14" type="Label3D" parent="Sketchfab_Scene5" unique_id=1378655824]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 200.4148, 113.18181, -1122.4966)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D19" type="Label3D" parent="Sketchfab_Scene5" unique_id=1676151043]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 200.4148, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=872665704]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, -224.94873, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D20" type="Label3D" parent="Sketchfab_Scene5" unique_id=844374333]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, -246.07642, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1050198093]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1170.166, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D21" type="Label3D" parent="Sketchfab_Scene5" unique_id=1681584570]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1149.0381, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=425226203]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1615.845, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D22" type="Label3D" parent="Sketchfab_Scene5" unique_id=1542171879]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1594.717, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=476421293]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 2588.1555, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D23" type="Label3D" parent="Sketchfab_Scene5" unique_id=1842127245]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 2567.0276, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1034664323]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 3031.3027, 114.43039, -456.95264)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D24" type="Label3D" parent="Sketchfab_Scene5" unique_id=1220493653]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 3010.1748, 113.18181, -459.792)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=595867478]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1170.0916, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=915677625]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 1615.8396, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D15" type="Label3D" parent="Sketchfab_Scene5" unique_id=1735628832]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1146.2073, 113.18181, -1122.4966)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D16" type="Label3D" parent="Sketchfab_Scene5" unique_id=1698803514]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 1594.7124, 113.18181, -1122.4966)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=272799150]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 2588.8213, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Sketchfab_Scene5" unique_id=1304430043]
+transform = Transform3D(1, -4.2351647e-22, 3.3745681e-21, -4.2351647e-22, 1, 0, -1.7763567e-15, -1.7763568e-15, 1, 3034.5696, 114.43039, -1125.2847)
+size = Vector3(190.1669, 158.67537, 5.4805717)
+material = SubResource("StandardMaterial3D_6l0ih")
+
+[node name="Label3D17" type="Label3D" parent="Sketchfab_Scene5" unique_id=1843155124]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 2564.937, 113.18181, -1122.4966)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
+
+[node name="Label3D18" type="Label3D" parent="Sketchfab_Scene5" unique_id=1126241115]
+transform = Transform3D(3.0152174e-09, -0.06674596, -5.8351164e-09, -0.068980135, -2.9175586e-09, 0, -2.635987e-16, 5.8351173e-09, -0.06674595, 3013.4421, 113.18181, -1122.4966)
+pixel_size = 8.2886
+modulate = Color(0.93333334, 0.32941177, 0.34117648, 1)
+outline_modulate = Color(0.93333334, 0.3254902, 0.3372549, 1)
+text = "+"
+font = ExtResource("7_k5w7j")
+font_size = 361
 
 [node name="Sketchfab_Scene8" parent="." unique_id=1512328719 instance=ExtResource("6_u40f0")]
 transform = Transform3D(-0.013, 0, -1.9629456e-09, 0, 0.013, 0, 1.9629456e-09, 0, -0.013, -22.731327, 0.8181305, 79.63968)
@@ -2294,30 +2579,6 @@ transform = Transform3D(0.23382674, 0, -1.9862844, 0, 2, 0, 1.9862844, 0, 0.2338
 
 [node name="Sketchfab_Scene100" parent="." unique_id=556767881 instance=ExtResource("5_1jlnc")]
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 25.41872, -0.10288954, -93.44923)
-
-[node name="Label3D" type="Label3D" parent="Sketchfab_Scene100" unique_id=794475676]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, -1.3631592, 272.57083, 457.7998)
-modulate = Color(0.91, 0.16380002, 0.18867333, 1)
-text = "ICU"
-font = ExtResource("6_jip10")
-font_size = 600
-outline_size = 0
-
-[node name="Label3D2" type="Label3D" parent="Sketchfab_Scene100" unique_id=1058754600]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 2813.31, 272.57083, 457.79932)
-modulate = Color(0.91, 0.16380002, 0.18867333, 1)
-text = "Radiology Room"
-font = ExtResource("6_jip10")
-font_size = 600
-outline_size = 0
-
-[node name="Label3D3" type="Label3D" parent="Sketchfab_Scene100" unique_id=2072477805]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 1396.8989, 272.57083, 457.79932)
-modulate = Color(0.91, 0.16380002, 0.18867333, 1)
-text = "CT Scan Room"
-font = ExtResource("6_jip10")
-font_size = 600
-outline_size = 0
 
 [node name="Sketchfab_Scene2" parent="." unique_id=1718411513 instance=ExtResource("11_iunut")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 33.53525, -0.21900606, -90.816025)

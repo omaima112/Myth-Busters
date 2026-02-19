@@ -19,6 +19,19 @@ var current_question = 0
 var score = 0
 var selected_answer = -1
 
+# Result screen nodes (built in code)
+var result_overlay: Panel = null
+var anim_time: float = 0.0
+var animating: bool = false
+var earned_stars: int = 0
+var star_labels: Array = []
+var score_ring_label: Label = null
+var grade_label: Label = null
+var result_note_label: Label = null
+var back_btn: Button = null
+var result_title: Label = null
+var pulse_time: float = 0.0
+
 var questions = [
 	{
 		"question": "What percentage of global electricity comes from nuclear power?",
@@ -72,27 +85,122 @@ var questions = [
 	}
 ]
 
+# ─────────────────────────────────────────────
+#  STYLE HELPERS
+# ─────────────────────────────────────────────
+func _make_stylebox(border_color: Color, bg_color: Color) -> StyleBoxFlat:
+	var s = StyleBoxFlat.new()
+	s.bg_color = bg_color
+	s.border_color = border_color
+	s.border_width_left   = 5
+	s.border_width_right  = 5
+	s.border_width_top    = 5
+	s.border_width_bottom = 5
+	s.corner_radius_top_left     = 10
+	s.corner_radius_top_right    = 10
+	s.corner_radius_bottom_left  = 10
+	s.corner_radius_bottom_right = 10
+	return s
+
+func _make_panel_style(bg: Color, border: Color, radius: int = 18) -> StyleBoxFlat:
+	var s = StyleBoxFlat.new()
+	s.bg_color = bg
+	s.border_color = border
+	s.border_width_left   = 3
+	s.border_width_right  = 3
+	s.border_width_top    = 3
+	s.border_width_bottom = 3
+	s.corner_radius_top_left     = radius
+	s.corner_radius_top_right    = radius
+	s.corner_radius_bottom_left  = radius
+	s.corner_radius_bottom_right = radius
+	return s
+
+func _clear_button_styles():
+	for btn in option_buttons:
+		btn.remove_theme_stylebox_override("normal")
+		btn.remove_theme_stylebox_override("hover")
+		btn.remove_theme_stylebox_override("pressed")
+		btn.remove_theme_stylebox_override("disabled")
+		btn.modulate = Color.WHITE
+
+# ─────────────────────────────────────────────
+#  READY
+# ─────────────────────────────────────────────
 func _ready():
 	print("🟢 quiz_2.gd _ready() called!")
-	
-	# ✅ CRITICAL FIX: Ensure game is unpaused
 	get_tree().paused = false
-	
-	# ✅ CRITICAL FIX: Set mouse mode AFTER unpausing
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
-	# ✅ CRITICAL FIX: Connect signals AFTER setting mouse mode
+
 	for i in range(option_buttons.size()):
 		option_buttons[i].pressed.connect(_on_option_pressed.bind(i))
-	
+
 	next_button.pressed.connect(_on_next_pressed)
 	next_button.disabled = true
-	
+
 	print("✅ Quiz initialized with ", questions.size(), " questions")
 	load_question()
 
+# ─────────────────────────────────────────────
+#  PROCESS — drives result screen animations
+# ─────────────────────────────────────────────
+func _process(delta: float):
+	if not animating:
+		return
+	anim_time += delta
+	pulse_time += delta
+
+	# Pulse the back button glow
+	if back_btn != null:
+		var a = 0.75 + 0.25 * sin(pulse_time * 3.0)
+		back_btn.modulate = Color(1.0, a, 0.0, 1.0)
+
+	# Animate stars popping in one by one
+	for i in range(star_labels.size()):
+		var delay = 0.4 + i * 0.55
+		if anim_time > delay:
+			var t = clamp((anim_time - delay) / 0.35, 0.0, 1.0)
+			var ease_t = 1.0 - pow(1.0 - t, 3.0)   # ease-out cubic
+			if i < earned_stars:
+				# earned star — gold, bouncy scale
+				var sc = lerp(0.0, 1.0, ease_t)
+				star_labels[i].scale = Vector2(sc, sc)
+				star_labels[i].modulate = Color(1.0, 0.85, 0.0, ease_t)
+			else:
+				# unearned star — dim grey
+				var sc = lerp(0.0, 0.85, ease_t)
+				star_labels[i].scale = Vector2(sc, sc)
+				star_labels[i].modulate = Color(0.35, 0.35, 0.35, ease_t * 0.7)
+
+	# Fade-in score bar label and animate bar fill after stars
+	if anim_time > 2.2:
+		var t = clamp((anim_time - 2.2) / 0.5, 0.0, 1.0)
+		# Animate bar fill width
+		if result_overlay != null and result_overlay.has_meta("bar_fill"):
+			var bar_fill = result_overlay.get_meta("bar_fill")
+			var bar_track = result_overlay.get_meta("bar_track")
+			var target_pct = result_overlay.get_meta("target_pct")
+			var fill_t = clamp((anim_time - 2.2) / 0.9, 0.0, 1.0)
+			var ease_fill = 1.0 - pow(1.0 - fill_t, 3.0)
+			var track_w = bar_track.size.x
+			bar_fill.offset_right = track_w * target_pct * ease_fill
+			bar_fill.modulate.a = clamp((anim_time - 2.2) / 0.5, 0.0, 1.0)
+			bar_track.modulate.a = clamp((anim_time - 2.2) / 0.5, 0.0, 1.0)
+		if grade_label:
+			grade_label.modulate.a = t
+
+	# Fade-in note label last
+	if anim_time > 3.0:
+		var t = clamp((anim_time - 3.0) / 0.6, 0.0, 1.0)
+		if result_note_label:
+			result_note_label.modulate.a = t
+		if back_btn:
+			back_btn.modulate.a = clamp((anim_time - 3.2) / 0.5, 0.0, 1.0)
+
+# ─────────────────────────────────────────────
+#  QUIZ LOGIC
+# ─────────────────────────────────────────────
 func load_question():
-	"""Load and display the current question"""
 	if current_question >= questions.size():
 		show_results()
 		return
@@ -100,10 +208,10 @@ func load_question():
 	var q = questions[current_question]
 	question_label.text = q["question"]
 
+	_clear_button_styles()
 	for i in range(option_buttons.size()):
 		option_buttons[i].text = q["options"][i]
 		option_buttons[i].disabled = false
-		option_buttons[i].modulate = Color.WHITE
 		option_buttons[i].visible = true
 
 	progress_label.text = "Question " + str(current_question + 1) + " / " + str(questions.size())
@@ -113,16 +221,30 @@ func load_question():
 	print("📝 Question ", current_question + 1, ": ", q["question"])
 
 func _on_option_pressed(index: int):
-	"""Called when an option button is clicked"""
-	print("✅ Option ", index, " clicked!")  # ✅ DEBUG
+	print("✅ Option ", index, " clicked!")
 	selected_answer = index
+
+	var correct_index = questions[current_question]["correct"]
+
 	for i in range(option_buttons.size()):
-		option_buttons[i].modulate = Color.YELLOW if i == index else Color.WHITE
 		option_buttons[i].disabled = true
+
+		if i == correct_index:
+			var s = _make_stylebox(Color(0.0, 0.9, 0.2), Color(0.0, 0.35, 0.08))
+			option_buttons[i].add_theme_stylebox_override("normal", s)
+			option_buttons[i].add_theme_stylebox_override("disabled", s)
+			option_buttons[i].modulate = Color.WHITE
+		elif i == index:
+			var s = _make_stylebox(Color(0.95, 0.1, 0.1), Color(0.4, 0.04, 0.04))
+			option_buttons[i].add_theme_stylebox_override("normal", s)
+			option_buttons[i].add_theme_stylebox_override("disabled", s)
+			option_buttons[i].modulate = Color.WHITE
+		else:
+			option_buttons[i].modulate = Color(0.6, 0.6, 0.6, 1.0)
+
 	next_button.disabled = false
 
 func _on_next_pressed():
-	"""Called when Next button is pressed"""
 	if selected_answer == -1:
 		return
 
@@ -131,7 +253,7 @@ func _on_next_pressed():
 		print("✅ Correct!")
 		score += 1
 	else:
-		print("❌ Wrong! Correct was: ", questions[current_question]["options"][correct_index])
+		print("❌ Wrong!")
 
 	current_question += 1
 	if current_question < questions.size():
@@ -139,21 +261,14 @@ func _on_next_pressed():
 	else:
 		show_results()
 
+# ─────────────────────────────────────────────
+#  BEAUTIFUL RESULT SCREEN
+# ─────────────────────────────────────────────
 func show_results():
-	"""Show final score with stars and optional note"""
 	var percentage = (score * 100) / questions.size()
 	print("🏆 Quiz finished! Score: ", score, " / ", questions.size(), " (", percentage, "%)")
 
-	# Hide question UI
-	for button in option_buttons:
-		button.visible = false
-
-	# Show score in question label
-	question_label.text = "Quiz Complete!\nYour Score: " + str(score) + " / " + str(questions.size())
-	progress_label.text = str(percentage) + "%"
-
-	# --- Star rating ---
-	var earned_stars = 0
+	# Calculate stars
 	if score > 8:
 		earned_stars = 3
 	elif score > 6:
@@ -163,28 +278,234 @@ func show_results():
 	else:
 		earned_stars = 0
 
-	display_stars(earned_stars)
-
-	# --- Note for low performance ---
-	
-	if earned_stars <= 1:
-		note_label.visible = true
-		note_label.text = "YOUR LEARNING PROCESS IS NOT COMPLETED WELL. PLEASE TRY AGAIN!"
-		
-	elif score > 6:
-		note_label.visible = true
-		note_label.text = "CONGRATULATIONS! YOU ARE NOW WELL INFORMED AND CLEARED OF MISCONCEPTIONS ABOUT NUCLEAR POWER PLANTS"
+	# Grade label
+	var grade_text = ""
+	var grade_color = Color.WHITE
+	if earned_stars == 3:
+		grade_text = "🏆  EXPERT!"
+		grade_color = Color(1.0, 0.85, 0.0)
+	elif earned_stars == 2:
+		grade_text = "🎯  GREAT JOB!"
+		grade_color = Color(0.9, 0.75, 0.2)
+	elif earned_stars == 1:
+		grade_text = "📚  KEEP LEARNING"
+		grade_color = Color(0.7, 0.7, 0.7)
 	else:
-		note_label.visible = false
+		grade_text = "💡  TRY AGAIN!"
+		grade_color = Color(0.55, 0.55, 0.55)
 
-	# Rewire next button to go back to level
-	next_button.text = "Back to Menu"
-	next_button.disabled = false
-	next_button.pressed.disconnect(_on_next_pressed)
-	next_button.pressed.connect(_go_back_to_level)
+	# Note text
+	var note_text = ""
+	if earned_stars <= 1:
+		note_text = "Your learning journey isn't complete yet.\nReview the facts and try again!"
+	else:
+		note_text = "You are now well informed and free\nof misconceptions about Nuclear Power!"
+
+	# ── Hide all quiz UI ──
+	for btn in option_buttons:
+		btn.visible = false
+	question_label.visible = false
+	progress_label.visible = false
+	next_button.visible = false
+	stars_container.visible = false
+	note_label.visible = false
+
+	# ── Build result overlay ──
+	result_overlay = Panel.new()
+	result_overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	var overlay_style = StyleBoxFlat.new()
+	overlay_style.bg_color = Color(0.10, 0.10, 0.10, 0.96)
+	result_overlay.add_theme_stylebox_override("panel", overlay_style)
+	add_child(result_overlay)
+
+	# ── Card ──
+	# Layout (top to bottom inside card, total height 660):
+	#   32  top padding
+	#   50  QUIZ COMPLETE title
+	#   18  gap
+	#    3  divider
+	#   28  gap
+	#   40  bar
+	#   28  gap
+	#   44  grade badge
+	#   28  gap
+	#   70  stars row
+	#   28  gap
+	#   62  note text
+	#   (flexible gap fills remaining space)
+	#   54  back button
+	#   32  bottom padding
+	# Total = 32+50+18+3+28+40+28+44+28+70+28+62+~90+54+32 = ~609 => card ±330
+	var card = Panel.new()
+	card.set_anchors_preset(Control.PRESET_CENTER)
+	card.offset_left   = -280
+	card.offset_top    = -265
+	card.offset_right  =  270
+	card.offset_bottom =  265
+	var card_style = StyleBoxFlat.new()
+	card_style.bg_color = Color(0.15, 0.15, 0.15, 1.0)
+	card_style.border_color = Color(1.0, 0.82, 0.0, 0.9)
+	card_style.border_width_left   = 3
+	card_style.border_width_right  = 3
+	card_style.border_width_top    = 3
+	card_style.border_width_bottom = 3
+	card_style.corner_radius_top_left     = 24
+	card_style.corner_radius_top_right    = 24
+	card_style.corner_radius_bottom_left  = 24
+	card_style.corner_radius_bottom_right = 24
+	card_style.shadow_color = Color(1.0, 0.8, 0.0, 0.35)
+	card_style.shadow_size  = 20
+	card.add_theme_stylebox_override("panel", card_style)
+	result_overlay.add_child(card)
+
+	# ── TITLE  (top=32, h=50) ──
+	result_title = Label.new()
+	result_title.text = "QUIZ COMPLETE"
+	result_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	result_title.add_theme_font_size_override("font_size", 46)
+	result_title.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0))
+	result_title.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	result_title.offset_top    = 32
+	result_title.offset_bottom = 82
+	card.add_child(result_title)
+
+	# ── DIVIDER  (top=100, h=3) ──
+	var divider = Panel.new()
+	divider.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	divider.offset_left   = 30
+	divider.offset_right  = -30
+	divider.offset_top    = 100
+	divider.offset_bottom = 103
+	var div_style = StyleBoxFlat.new()
+	div_style.bg_color = Color(1.0, 0.82, 0.0, 0.6)
+	divider.add_theme_stylebox_override("panel", div_style)
+	card.add_child(divider)
+
+	# ── PROGRESS BAR  (top=131, h=40) ──
+	var bar_track = Panel.new()
+	bar_track.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	bar_track.offset_left   = -230
+	bar_track.offset_right  =  230
+	bar_track.offset_top    = 131
+	bar_track.offset_bottom = 171
+	var track_style = StyleBoxFlat.new()
+	track_style.bg_color = Color(0.22, 0.22, 0.22, 1.0)
+	track_style.corner_radius_top_left     = 20
+	track_style.corner_radius_top_right    = 20
+	track_style.corner_radius_bottom_left  = 20
+	track_style.corner_radius_bottom_right = 20
+	bar_track.add_theme_stylebox_override("panel", track_style)
+	card.add_child(bar_track)
+
+	var bar_fill = Panel.new()
+	bar_fill.set_anchors_preset(Control.PRESET_LEFT_WIDE)
+	bar_fill.offset_left   = 0
+	bar_fill.offset_right  = 0
+	bar_fill.offset_top    = 0
+	bar_fill.offset_bottom = 0
+	var fill_style = StyleBoxFlat.new()
+	fill_style.bg_color = Color(1.0, 0.82, 0.0, 1.0)
+	fill_style.corner_radius_top_left     = 20
+	fill_style.corner_radius_top_right    = 20
+	fill_style.corner_radius_bottom_left  = 20
+	fill_style.corner_radius_bottom_right = 20
+	bar_fill.add_theme_stylebox_override("panel", fill_style)
+	bar_track.add_child(bar_fill)
+
+	var pct_label = Label.new()
+	var pct = int((float(score) / float(questions.size())) * 100.0)
+	pct_label.text = str(pct) + "%"
+	pct_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	pct_label.vertical_alignment   = VERTICAL_ALIGNMENT_CENTER
+	pct_label.set_anchors_preset(Control.PRESET_FULL_RECT)
+	pct_label.add_theme_font_size_override("font_size", 20)
+	pct_label.add_theme_color_override("font_color", Color(0.12, 0.10, 0.0))
+	bar_track.add_child(pct_label)
+
+	# Store refs for _process animation
+	result_overlay.set_meta("bar_fill", bar_fill)
+	result_overlay.set_meta("bar_track", bar_track)
+	result_overlay.set_meta("target_pct", float(score) / float(questions.size()))
+	score_ring_label = Label.new()
+	score_ring_label.visible = false
+	card.add_child(score_ring_label)
+
+	# ── GRADE BADGE  (top=199, h=44) ──
+	grade_label = Label.new()
+	grade_label.text = grade_text
+	grade_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	grade_label.add_theme_font_size_override("font_size", 32)
+	grade_label.add_theme_color_override("font_color", grade_color)
+	grade_label.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	grade_label.offset_left   = -230
+	grade_label.offset_right  =  230
+	grade_label.offset_top    = 199
+	grade_label.offset_bottom = 243
+	grade_label.modulate.a = 0.0
+	card.add_child(grade_label)
+
+	# ── STARS ROW  (top=271, h=70) ──
+	var stars_row = HBoxContainer.new()
+	stars_row.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	stars_row.offset_left   = -150
+	stars_row.offset_right  =  150
+	stars_row.offset_top    = 271
+	stars_row.offset_bottom = 341
+	stars_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	stars_row.add_theme_constant_override("separation", 14)
+	card.add_child(stars_row)
+
+	star_labels.clear()
+	for i in range(3):
+		var star = Label.new()
+		star.text = "★"
+		star.add_theme_font_size_override("font_size", 64)
+		star.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		star.scale = Vector2.ZERO
+		star.pivot_offset = Vector2(32, 32)
+		star.modulate.a = 0.0
+		stars_row.add_child(star)
+		star_labels.append(star)
+
+	# ── NOTE TEXT  (top=369, h=62) ──
+	result_note_label = Label.new()
+	result_note_label.text = note_text
+	result_note_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	result_note_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	result_note_label.add_theme_font_size_override("font_size", 19)
+	result_note_label.add_theme_color_override("font_color", Color(0.75, 0.75, 0.75))
+	result_note_label.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	result_note_label.offset_left   = -230
+	result_note_label.offset_right  =  230
+	result_note_label.offset_top    = 369
+	result_note_label.offset_bottom = 431
+	result_note_label.modulate.a = 0.0
+	card.add_child(result_note_label)
+
+	# ── BACK BUTTON  anchored to BOTTOM with 32px padding ──
+	back_btn = Button.new()
+	back_btn.text = "☰ BACK TO MENU"
+	back_btn.add_theme_font_size_override("font_size", 24)
+	back_btn.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	back_btn.offset_left   = 60
+	back_btn.offset_right  = -60
+	back_btn.offset_top    = -86
+	back_btn.offset_bottom = -32
+	back_btn.modulate.a = 0.0
+	var btn_normal = _make_panel_style(Color(0.22, 0.19, 0.02, 1.0), Color(1.0, 0.82, 0.0), 22)
+	back_btn.add_theme_stylebox_override("normal", btn_normal)
+	var btn_hover = _make_panel_style(Color(0.35, 0.30, 0.02, 1.0), Color(1.0, 0.95, 0.3), 22)
+	back_btn.add_theme_stylebox_override("hover", btn_hover)
+	back_btn.add_theme_color_override("font_color", Color(1.0, 0.9, 0.2))
+	back_btn.pressed.connect(_go_back_to_level)
+	card.add_child(back_btn)
+
+		# ── Start animation ──
+	anim_time  = 0.0
+	pulse_time = 0.0
+	animating  = true
 
 func display_stars(count: int):
-	"""Light up earned stars gold, dim the rest"""
 	var dim  = Color(0.3, 0.3, 0.3, 1.0)
 	var gold = Color(1.0, 0.84, 0.0, 1.0)
 	stars_container.visible = true
@@ -194,8 +515,7 @@ func display_stars(count: int):
 	print("⭐ Stars earned: ", count)
 
 func _go_back_to_level():
-	"""Return to level 2"""
-	print("📍 Returning to level 2...")
+	print("📍 Returning to menu...")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

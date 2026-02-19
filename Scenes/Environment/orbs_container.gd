@@ -15,6 +15,17 @@ func _ready():
 	print("==========================================")
 	GameManager.start_timer(300)
 	
+	# Hide orbs container on game end and police chase
+	if GameManager:
+		GameManager.game_won.connect(func(_s): visible = false)
+		GameManager.game_lost.connect(func(): visible = false)
+		if GameManager.has_signal("game_busted"):
+			GameManager.game_busted.connect(func(): visible = false)
+		if GameManager.has_signal("police_chase_started"):
+			GameManager.police_chase_started.connect(func(): visible = false)
+		if GameManager.has_signal("police_chase_ended"):
+			GameManager.police_chase_ended.connect(func(): visible = true)
+	
 	# Verify it started
 	await get_tree().create_timer(0.5).timeout
 	print("⏱ Timer display: ", GameManager.get_time_display())

@@ -1,19 +1,87 @@
 [gd_scene format=3 uid="uid://bkql7a8enl67p"]
 
 [ext_resource type="Script" uid="uid://bhdeivk0vvert" path="res://Scenes/popups.gd" id="1_45svt"]
+[ext_resource type="FontFile" uid="uid://dbs06fd2x4iid" path="res://Fonts/fortnite.otf" id="2_62nyy"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="2_xpg3u"]
 [ext_resource type="Texture2D" uid="uid://b8q0vkog06v51" path="res://Images/person-walking-in-park.webp" id="4_62nyy"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_p7gdj"]
-line_spacing = -23.0
-font = ExtResource("2_xpg3u")
-font_size = 29
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_progress_bg"]
+bg_color = Color(0.05, 0.12, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6, 0.6, 0.5)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_progress_fill"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 1, 1, 0.6)
+shadow_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_continue"]
+font = ExtResource("2_62nyy")
+font_size = 20
+font_color = Color(0, 1, 1, 1)
+shadow_color = Color(0, 1, 1, 0.5529412)
 shadow_offset = Vector2(0, 0)
 
-[sub_resource type="FontVariation" id="FontVariation_62nyy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_popup_panel"]
+bg_color = Color(0.04, 0.06, 0.08, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 1, 1, 0.25)
+shadow_size = 16
 
-[sub_resource type="LabelSettings" id="LabelSettings_xpg3u"]
-font = SubResource("FontVariation_62nyy")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title_bg"]
+bg_color = Color(0, 0.08, 0.08, 0.95)
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 0.7)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+line_spacing = -23.0
+font = ExtResource("2_xpg3u")
+font_size = 36
+font_color = Color(0, 1, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 1, 1, 0.5)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_info"]
+line_spacing = 5.0
+font = ExtResource("2_62nyy")
+font_size = 20
+font_color = Color(0.85, 0.97, 0.97, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_image_frame"]
+bg_color = Color(0.02, 0.07, 0.07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 1, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 1, 1, 0.3)
+shadow_size = 10
 
 [node name="Popups" type="Control" unique_id=1958666967]
 layout_mode = 3
@@ -25,98 +93,121 @@ size_flags_vertical = 3
 [node name="UI" type="CanvasLayer" parent="." unique_id=409621439]
 script = ExtResource("1_45svt")
 
+[node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=-984967295]
+visible = false
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_styles/background = SubResource("StyleBoxFlat_progress_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_progress_fill")
+max_value = 3.0
+show_percentage = false
+
+[node name="ContinueLabel" type="Label" parent="UI" unique_id=-984967294]
+offset_left = 515.0
+offset_top = 509.0
+offset_right = 708.0
+offset_bottom = 529.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Move Forward to Continue "
+label_settings = SubResource("LabelSettings_continue")
+horizontal_alignment = 1
+
 [node name="ItemPopup" type="PopupPanel" parent="UI" unique_id=1828356851]
 unique_name_in_owner = true
 oversampling_override = 1.0
 title = "Tile Sample Inside"
 initial_position = 1
-size = Vector2i(560, 300)
+size = Vector2i(680, 360)
 visible = true
-max_size = Vector2i(560, 300)
+max_size = Vector2i(680, 360)
 keep_title_visible = true
 content_scale_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_popup_panel")
 
-[node name="MainLayout" type="HBoxContainer" parent="UI/ItemPopup" unique_id=1624407756]
+[node name="MainLayout" type="VBoxContainer" parent="UI/ItemPopup" unique_id=1624407756]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 0
 
-[node name="LeftColumn" type="VBoxContainer" parent="UI/ItemPopup/MainLayout" unique_id=2092042484]
-clip_contents = true
-custom_minimum_size = Vector2(10, 10)
+[node name="TitleBar" type="PanelContainer" parent="UI/ItemPopup/MainLayout" unique_id=-884967295]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_title_bg")
 
-[node name="TitleLabel" type="Label" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=2145378009]
+[node name="TitleLabel" type="Label" parent="UI/ItemPopup/MainLayout/TitleBar" unique_id=2145378009]
+custom_minimum_size = Vector2(0, 54)
 layout_mode = 2
 size_flags_vertical = 0
 text = "NUCLEAR"
-label_settings = SubResource("LabelSettings_p7gdj")
+label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="InfoLabel" type="Label" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=315377222]
-custom_minimum_size = Vector2(350, 150)
+[node name="ContentRow" type="HBoxContainer" parent="UI/ItemPopup/MainLayout" unique_id=-884967294]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 16
+theme_override_constants/separation = 10
+
+[node name="LeftColumn" type="VBoxContainer" parent="UI/ItemPopup/MainLayout/ContentRow" unique_id=2092042484]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="InfoLabel" type="Label" parent="UI/ItemPopup/MainLayout/ContentRow/LeftColumn" unique_id=315377222]
+custom_minimum_size = Vector2(340, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 17
 text = "Information asdasd asd as das dasd as dasd sa "
-label_settings = SubResource("LabelSettings_xpg3u")
+label_settings = SubResource("LabelSettings_info")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Line2D" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=532395366]
-position = Vector2(1, -16)
-scale = Vector2(1.0444444, 0.99224806)
-points = PackedVector2Array(-1, 49, 173, 49, 348, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
+[node name="AccentLineBottom" type="Line2D" parent="UI/ItemPopup/MainLayout/ContentRow/LeftColumn" unique_id=638077604]
+position = Vector2(12, 0)
+points = PackedVector2Array(0, 0, 320, 0)
+width = 1.5
+default_color = Color(0, 1, 1, 0.3)
 
-[node name="Line2D5" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=638077604]
-position = Vector2(1, 242)
-points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
+[node name="ImageSection" type="PanelContainer" parent="UI/ItemPopup/MainLayout/ContentRow" unique_id=-884967286]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_image_frame")
 
-[node name="Line2D3" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=2036740239]
-position = Vector2(50, 3)
-rotation = 1.5707964
-points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
-
-[node name="Line2D4" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=1900305998]
-position = Vector2(397, -1)
-rotation = 1.5707964
-points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
-
-[node name="Line2D2" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=1072972044]
-position = Vector2(-4, -48)
-points = PackedVector2Array(-1, 49, 173, 49, 353, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
-
-[node name="Line2D6" type="Line2D" parent="UI/ItemPopup/MainLayout/LeftColumn" unique_id=981529975]
-position = Vector2(-4, -48)
-points = PackedVector2Array(-1, 49, 173, 49, 222, 49, 353, 49)
-width = 2.0
-default_color = Color(0, 1, 1, 1)
-
-[node name="OrbImage" type="TextureRect" parent="UI/ItemPopup/MainLayout" unique_id=1123963535]
+[node name="ImageContainer" type="Control" parent="UI/ItemPopup/MainLayout/ContentRow/ImageSection" unique_id=-884967285]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.08
+size_flags_vertical = 3
+
+[node name="OrbImage" type="TextureRect" parent="UI/ItemPopup/MainLayout/ContentRow/ImageSection/ImageContainer" unique_id=1123963535]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_62nyy")
 expand_mode = 3
-stretch_mode = 4
+stretch_mode = 6
+
+[node name="AccentLineTop" type="Line2D" parent="UI/ItemPopup/MainLayout" unique_id=532395366]
+position = Vector2(16, 0)
+points = PackedVector2Array(0, 0, 648, 0)
+width = 1.5
+default_color = Color(0, 1, 1, 0.25)
