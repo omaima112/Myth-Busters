@@ -60,18 +60,33 @@
 [ext_resource type="Texture2D" uid="uid://d0creau2h6ahx" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.45 PM (7).jpeg" id="57_1axn8"]
 [ext_resource type="Texture2D" uid="uid://0f42e765yvg1" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM.jpeg" id="58_k5w7j"]
 [ext_resource type="Texture2D" uid="uid://dtf55qjjd7rgr" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.45 PM (8).jpeg" id="59_6l0ih"]
+[ext_resource type="AudioStream" uid="uid://brtfxxd0geoe5" path="res://voices level2/1.mpeg.wav" id="59_i3efm"]
 [ext_resource type="Texture2D" uid="uid://dhsubvkv5igqx" path="res://Images/WhatsApp Image 2026-01-30 at 12.45.59 AM (2).jpeg" id="60_nv54f"]
+[ext_resource type="AudioStream" uid="uid://n5g6gpomflsi" path="res://voices level2/2.mpeg.wav" id="61_7kirv"]
 [ext_resource type="Texture2D" uid="uid://dstf4xqe264xn" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.45 PM (4).jpeg" id="61_ts53n"]
 [ext_resource type="Texture2D" uid="uid://eekb3ddrdn2g" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (2).jpeg" id="62_401bf"]
+[ext_resource type="AudioStream" uid="uid://bgcafbs8a0sy8" path="res://voices level2/3.mpeg.wav" id="63_ciw3c"]
 [ext_resource type="Texture2D" uid="uid://bbsc3n3oxkl2p" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (5).jpeg" id="63_j4kp1"]
 [ext_resource type="Texture2D" uid="uid://bi1aoaap7ufik" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (3).jpeg" id="64_dfa61"]
+[ext_resource type="AudioStream" uid="uid://bif8ehfut42jl" path="res://voices level2/4.mpeg.wav" id="65_jni7c"]
 [ext_resource type="Texture2D" uid="uid://dlah8wldgsser" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (1).jpeg" id="65_yfegl"]
 [ext_resource type="Texture2D" uid="uid://2jkqvvv1i3rx" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (4).jpeg" id="66_bjwfc"]
 [ext_resource type="Texture2D" uid="uid://dwy3lvcwyy71r" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.45 PM.jpeg" id="67_khwgn"]
+[ext_resource type="AudioStream" uid="uid://isbwg555jft1" path="res://voices level2/10.mpeg.wav" id="67_mxgr0"]
 [ext_resource type="Texture2D" uid="uid://chhfxmu7oqidr" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.45 PM (1).jpeg" id="68_kjhhu"]
+[ext_resource type="AudioStream" uid="uid://chmevmq5y6fmx" path="res://voices level2/6.mpeg.wav" id="69_rmhrp"]
 [ext_resource type="Texture2D" uid="uid://dbv1joubx43g2" path="res://Scenes/Levels/images/ChatGPT Image Feb 15, 2026, 02_37_13 PM.png" id="70_1axn8"]
 [ext_resource type="Texture2D" uid="uid://bukphwmrlwuly" path="res://Scenes/Levels/images/WhatsApp Image 2026-02-14 at 11.38.44 PM (6).jpeg" id="70_itlvq"]
+[ext_resource type="AudioStream" uid="uid://bfhkgbn7jxt0u" path="res://voices level2/11.mp3" id="71_dbqre"]
 [ext_resource type="Script" uid="uid://jr5x4j7f6h2a" path="res://Scenes/Environment/RadiationZone.gd" id="73_mxgr0"]
+[ext_resource type="AudioStream" uid="uid://bo50w1dtwc87n" path="res://voices level2/12.mp3" id="73_x7035"]
+[ext_resource type="AudioStream" uid="uid://bep1rnv4raoee" path="res://voices level2/13.mp3" id="75_ksshh"]
+[ext_resource type="AudioStream" uid="uid://b3mxsouxbp1ka" path="res://voices level2/14.mp3" id="77_yckq3"]
+[ext_resource type="AudioStream" uid="uid://2w6j741gicdj" path="res://voices level2/15.mp3" id="79_pp6jf"]
+[ext_resource type="AudioStream" uid="uid://okp6mlsrfowx" path="res://voices level2/7.mpeg.wav" id="81_w7612"]
+[ext_resource type="AudioStream" uid="uid://cpujlw7ox2sjy" path="res://voices level2/8.mpeg.wav" id="83_nhcdk"]
+[ext_resource type="AudioStream" uid="uid://dhhf10b8b2kog" path="res://voices level2/9.mpeg.wav" id="84_caci1"]
+[ext_resource type="AudioStream" uid="uid://cpc78q5ip8pt1" path="res://voices level2/5.mpeg.wav" id="86_g7o7e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86fwl"]
 albedo_texture = ExtResource("1_aopyj")
@@ -4296,6 +4311,7 @@ info_text = "Nuclear reactors give more radiation than a normal city
 
 Wrong! Radiation from a reactor is very tiny (less than 1%) of natural background radiation in a city"
 info_image = ExtResource("70_1axn8")
+info_voice = ExtResource("59_i3efm")
 
 [node name="Orb55" parent="orbs" unique_id=820223595 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 25.825037, 1.5797989, -73.45653)
@@ -4304,6 +4320,7 @@ info_text = "Hospitals are completely safe than Reactors
 
 False! Hospitals have daily risks, while nuclear reactors use stronger layered safety systems"
 info_image = ExtResource("57_1axn8")
+info_voice = ExtResource("61_7kirv")
 
 [node name="Orb56" parent="orbs" unique_id=786260794 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -41.20928, 1.5797989, 43.94311)
@@ -4312,6 +4329,7 @@ info_text = "Nuclear reactors are extremely dangerous
 
 Reactors are heavily protected and monitored, often safer than many everyday facilities"
 info_image = ExtResource("58_k5w7j")
+info_voice = ExtResource("63_ciw3c")
 
 [node name="Orb57" parent="orbs" unique_id=1267451624 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 95.44515, 1.8650293, -49.303215)
@@ -4320,6 +4338,7 @@ info_text = "Only nuclear facilities use dangerous radiation
 
 Hospitals use radiation openly; reactors keep radiation sealed inside thick containment."
 info_image = ExtResource("59_6l0ih")
+info_voice = ExtResource("65_jni7c")
 
 [node name="Orb59" parent="orbs" unique_id=1682457365 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -62.061657, 1.5798008, 67.78913)
@@ -4328,6 +4347,7 @@ info_text = "A nuclear accident can happen easily
 
 False! Reactor accidents are rare due to backups; hospital risks occur daily"
 info_image = ExtResource("60_nv54f")
+info_voice = ExtResource("86_g7o7e")
 
 [node name="Orb58" parent="orbs" unique_id=842147315 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 63.69876, 1.579797, -54.45957)
@@ -4336,6 +4356,7 @@ info_text = "CT scans are completely safe and expose no radiation
 
 False! A single CT scan can expose about 7 mSv of radiation which is 700x higher than Reactor"
 info_image = ExtResource("61_ts53n")
+info_voice = ExtResource("69_rmhrp")
 
 [node name="Orb60" parent="orbs" unique_id=830168783 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -67.28606, 1.5797989, -65.3251)
@@ -4344,6 +4365,7 @@ info_text = "Coal plants are safer than nuclear plants
 
 False! Coal plants emit radiation about 0.6uSv/hr which is more than six times"
 info_image = ExtResource("62_401bf")
+info_voice = ExtResource("71_dbqre")
 
 [node name="Orb61" parent="orbs" unique_id=1172849561 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -78.769264, 1.5797989, 1.8050213)
@@ -4352,6 +4374,7 @@ info_text = "Coal is better for the environment than nuclear energy
 
 No! Coal enerygy emits pollution which causes alot of death per year"
 info_image = ExtResource("63_j4kp1")
+info_voice = ExtResource("73_x7035")
 
 [node name="Orb62" parent="orbs" unique_id=4979127 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -39.453156, 1.5797989, -79.81031)
@@ -4360,6 +4383,7 @@ info_text = "Coal waste is less harmful than nuclear waste
 
 False! Coal waste spreads into soil and water, while nuclear waste is sealed, tracked, and isolated"
 info_image = ExtResource("64_dfa61")
+info_voice = ExtResource("75_ksshh")
 
 [node name="Orb63" parent="orbs" unique_id=1254928215 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.30171, 1.5798008, -32.66798)
@@ -4368,6 +4392,7 @@ info_text = "Coal will never run out
 
 Totally False! Coal is limited source of Energy while nuclear fuel yields massive energy from small amounts"
 info_image = ExtResource("65_yfegl")
+info_voice = ExtResource("77_yckq3")
 
 [node name="Orb64" parent="orbs" unique_id=1526477971 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -26.81269, 1.5797989, -36.918938)
@@ -4376,6 +4401,7 @@ info_text = "Coal Plant is safer than Reactor
 
 False! Coal plants cause air pollution that leads to respiratory and heart diseases. Nuclear plants have strict safety systems"
 info_image = ExtResource("66_bjwfc")
+info_voice = ExtResource("79_pp6jf")
 
 [node name="Orb65" parent="orbs" unique_id=1098573998 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 69.86073, 1.5797989, 78.59723)
@@ -4384,6 +4410,7 @@ info_text = "Radiation exposure in nuclear reactors is uncontrolled and unavoida
 
 Nuclear reactors follow ALARA, keeping radiation As Low As Reasonably Achievable through strict controls"
 info_image = ExtResource("67_khwgn")
+info_voice = ExtResource("81_w7612")
 
 [node name="Orb66" parent="orbs" unique_id=742053161 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 103.93149, 1.5797989, -72.53064)
@@ -4392,6 +4419,7 @@ info_text = "Hospitals do not harm the environment in the long term
 
 Not so true! Hospital waste is constant; nuclear waste is smaller and strictly controlled"
 info_image = ExtResource("68_kjhhu")
+info_voice = ExtResource("83_nhcdk")
 
 [node name="Orb67" parent="orbs" unique_id=2106378870 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -79.40091, 1.5797951, -79.23822)
@@ -4400,6 +4428,7 @@ info_text = "Chernobyl caused more deaths than coal pollution
 
 False! Air pollution from coal kills far more people in a single year than Chernobyl did in total"
 info_image = ExtResource("63_j4kp1")
+info_voice = ExtResource("84_caci1")
 
 [node name="Orb68" parent="orbs" unique_id=1092090774 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -0.85713625, 1.5797989, 64.55777)
@@ -4408,6 +4437,7 @@ info_text = "Nuclear accidents happen frequently
 
 Coal causes continuous health damage every day, while nuclear accidents are extremely rare worldwide"
 info_image = ExtResource("70_itlvq")
+info_voice = ExtResource("67_mxgr0")
 
 [node name="city" type="Area3D" parent="." unique_id=257315998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.191345, 0, 33.8089)
