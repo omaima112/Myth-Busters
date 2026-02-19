@@ -29,6 +29,10 @@ GameManager="*res://game_manager.gd"
 
 window/stretch/mode="canvas_items"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false

@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://b0lc52fahv8ua" path="res://Scenes/Tutorial/barrel_popup_manager.gd" id="4_nrevq"]
 [ext_resource type="Texture2D" uid="uid://d3s3bdu3qo04c" path="res://white-bathroom-tiles.jpg" id="4_p3i08"]
 [ext_resource type="PackedScene" uid="uid://dgfq6qyj8e84x" path="res://Scenes/Tutorial/path/old_metal_wardrobe_gameready.glb" id="5_1n4ff"]
-[ext_resource type="Texture2D" uid="uid://cdvm3nyda7irb" path="res://Images/2.png" id="5_mr02u"]
 [ext_resource type="FontFile" uid="uid://cbxajc26jcuq1" path="res://Fonts/Burbank Big Condensed Black.otf" id="5_n53el"]
 [ext_resource type="Texture2D" uid="uid://bvi48mm4lcbe7" path="res://Images/1.png" id="5_nrevq"]
 [ext_resource type="Texture2D" uid="uid://dbkf42xt4m3fp" path="res://Sign/stop sign/4224.jpg" id="5_rp3sh"]
@@ -17,6 +16,7 @@
 [ext_resource type="Script" uid="uid://b8qbo0lnjojy7" path="res://Scenes/Tutorial/item_popup_manager.gd" id="6_n7yiw"]
 [ext_resource type="PackedScene" uid="uid://bqxe6a8vwtjej" path="res://Scenes/Jeep/Jeep.tscn" id="6_nrevq"]
 [ext_resource type="Script" uid="uid://n32smt6e1ae1" path="res://Scenes/Tutorial/camera_rig_tutorial.gd" id="7_xpl50"]
+[ext_resource type="Texture2D" uid="uid://cdvm3nyda7irb" path="res://Images/2.png" id="10_t0s0g"]
 [ext_resource type="PackedScene" uid="uid://dnqj67e4b7ybv" path="res://Scenes/Tutorial/path/control_panel.glb" id="15_37jl6"]
 [ext_resource type="PackedScene" uid="uid://cbvlomfvscv7o" path="res://Scenes/Tutorial/path/metal_door.glb" id="16_rp3sh"]
 [ext_resource type="PackedScene" uid="uid://bgetpsumjo4kh" path="res://Scenes/Tutorial/path/rusty_industrial_wardrobe.glb" id="17_t0s0g"]
@@ -302,7 +302,7 @@ info_image = ExtResource("5_nrevq")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.6967273, 1.8619347, 0.61554456)
 info_title = "Waste in Perspective 📦"
 info_text = "All US nuclear waste (60 years) fits on a football field"
-info_image = ExtResource("5_mr02u")
+info_image = ExtResource("10_t0s0g")
 
 [node name="Orb17" parent="Barrels" unique_id=965096034 instance=ExtResource("3_tvnyb")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -17.119106, 1.9017782, 0.39863133)

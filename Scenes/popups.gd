@@ -65,14 +65,14 @@ func _show_popup(title: String, text: String, image: Texture2D):
 		print("⚠️ Jeep is null - cannot disable controls")
 	
 	# Start timer - 3.5 seconds
-	popup_timer.wait_time = 3.5
+	popup_timer.wait_time = 6
 	popup_timer.one_shot = true
 	popup_timer.start()
 	print("⏱️ Popup will auto-hide in 3.5 seconds")
 
 func _on_popup_timer_timeout():
-	"""Called after 3.5 seconds"""
-	print("⏰ 3.5 seconds elapsed!")
+	"""Called after 5 seconds"""
+	print("⏰ 5 seconds elapsed!")
 	popup_timer.stop()
 	_hide_popup()
 
