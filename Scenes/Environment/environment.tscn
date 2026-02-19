@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8mnf11uf1v5m" path="res://citrus_orchard_road_puresky_1k.exr" id="2_d54yu"]
 [ext_resource type="PackedScene" uid="uid://cluap3u4bamqy" path="res://Scenes/orbs/orb2.tscn" id="4_owdl0"]
 [ext_resource type="Script" uid="uid://bieef0ues8b6e" path="res://Scenes/Environment/orbs_container.gd" id="5_6idwj"]
-[ext_resource type="PackedScene" uid="uid://cfs0u3v8en6si" path="res://Scenes/orbs/orb3.tscn" id="5_ebn4v"]
 [ext_resource type="PackedScene" uid="uid://dj1enshisvxc" path="res://Scenes/clif1.tscn" id="5_ouf2a"]
 [ext_resource type="PackedScene" uid="uid://dh3uvuwb2nfa8" path="res://Scenes/clif2.tscn" id="6_tav7l"]
 [ext_resource type="PackedScene" uid="uid://d18vqvemgvqfv" path="res://Scenes/nuclear_powerplant.tscn" id="7_ae2a8"]
@@ -15,19 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bqtx6jkhtcgf3" path="res://Scenes/CountryHome.tscn" id="9_6idwj"]
 [ext_resource type="PackedScene" uid="uid://dc5vpf3gk08ql" path="res://Scenes/orbs/orb4.tscn" id="9_rsqt7"]
 [ext_resource type="PackedScene" uid="uid://cfu453p4eumht" path="res://Scenes/pole.tscn" id="11_0xcjn"]
-[ext_resource type="Texture2D" uid="uid://dxdf4lqe2ljct" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.47 AM (1).jpeg" id="13_qaipu"]
-[ext_resource type="Texture2D" uid="uid://blarbu4sm8f75" path="res://Images/food-steral.webp" id="14_1bq07"]
-[ext_resource type="Texture2D" uid="uid://btub8ninc24ry" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.48 AM (1).jpeg" id="14_ww86s"]
 [ext_resource type="Texture2D" uid="uid://djrrpa8r3aceq" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.51 AM.jpeg" id="16_3flo4"]
-[ext_resource type="Texture2D" uid="uid://dudy53xhpltib" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.51 AM (1).jpeg" id="16_jsww7"]
 [ext_resource type="Texture2D" uid="uid://di4tp5evaeaio" path="res://Images/WhatsApp Image 2026-01-30 at 12.45.58 AM.jpeg" id="17_lxj0b"]
-[ext_resource type="Texture2D" uid="uid://p52av3fhmunr" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.52 AM (1).jpeg" id="18_eva83"]
 [ext_resource type="PackedScene" uid="uid://chhwheqc0484y" path="res://Scenes/Trees/tree7.tscn" id="18_saevq"]
-[ext_resource type="Texture2D" uid="uid://ecdhhaymr5d" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.48 AM.jpeg" id="19_1kb8p"]
-[ext_resource type="Texture2D" uid="uid://bhv6fwymccf16" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.50 AM.jpeg" id="19_d0ug1"]
 [ext_resource type="Texture2D" uid="uid://elijybbs4ko5" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.52 AM.jpeg" id="20_x3dms"]
-[ext_resource type="Texture2D" uid="uid://d0jq44wve0c6x" path="res://Images/ChatGPT Image Feb 1, 2026, 01_18_54 PM.png" id="22_lxj0b"]
-[ext_resource type="Texture2D" uid="uid://s32fg0d8wyhq" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.53 AM.jpeg" id="23_1kb8p"]
 [ext_resource type="Texture2D" uid="uid://b6mshhxemdgf1" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.53 AM (1).jpeg" id="23_cq1i7"]
 [ext_resource type="Texture2D" uid="uid://1xmceyuhplsx" path="res://Images/WhatsApp Image 2026-01-30 at 12.46.00 AM (1).jpeg" id="26_cq1i7"]
 [ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="28_jsww7"]
@@ -36,12 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://dqm6unjttqgvl" path="res://Buildings pack - Aug 2017/Textures/Hotel.png" id="32_86ndy"]
 [ext_resource type="Texture2D" uid="uid://bgwmbpcaiphoy" path="res://Images/ChatGPT Image Feb 1, 2026, 02_08_38 PM.png" id="32_deloa"]
 [ext_resource type="Texture2D" uid="uid://bxmil5p7epxsg" path="res://Images/WhatsApp Image 2026-01-30 at 12.45.59 AM.jpeg" id="32_jr6re"]
-[ext_resource type="Texture2D" uid="uid://5toaivdivbvk" path="res://Images/WhatsApp Image 2026-01-30 at 12.46.03 AM (1).jpeg" id="33_qaipu"]
 [ext_resource type="ArrayMesh" uid="uid://bdhqh7e3c7s4a" path="res://Buildings pack - Aug 2017/OBJ/Hospital.obj" id="34_huij4"]
 [ext_resource type="Texture2D" uid="uid://7756m8ghkr7q" path="res://Images/ChatGPT Image Feb 1, 2026, 12_43_09 PM.png" id="35_dbj8p"]
 [ext_resource type="Material" uid="uid://b5n605itbxpnk" path="res://Models/Cliffs/cliff2.tres" id="35_kukah"]
 [ext_resource type="ArrayMesh" uid="uid://be1f2a45nwlbs" path="res://Buildings pack - Aug 2017/OBJ/Shop.obj" id="36_d54yu"]
-[ext_resource type="Texture2D" uid="uid://dos1duj73xexp" path="res://Images/ChatGPT Image Feb 1, 2026, 12_10_55 PM.png" id="36_dbj8p"]
 [ext_resource type="Texture2D" uid="uid://slbcmoqty1st" path="res://Buildings pack - Aug 2017/Textures/Shop.png" id="37_840wd"]
 [ext_resource type="Texture2D" uid="uid://cabx6lp8i2qx7" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.56 AM.jpeg" id="37_lxj0b"]
 [ext_resource type="ArrayMesh" uid="uid://cjwlwit47fknn" path="res://Buildings pack - Aug 2017/OBJ/Flat.obj" id="37_xeifb"]
@@ -396,13 +384,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t1kd7")
 
-[sub_resource type="AudioStream" id="AudioStream_uy52e"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3flo4"]
 load_path = "res://.godot/imported/WhatsApp Image 2026-01-30 at 12.46.05 AM (1).jpeg-e1c9c5a25eebd164b3a3046845f4cae1.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eva83"]
-load_path = "res://.godot/imported/WhatsApp Image 2026-01-30 at 12.46.03 AM.jpeg-c9707aa1b73c03384f93530b6df6c86b.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83erk"]
 albedo_texture = ExtResource("32_86ndy")
@@ -717,7 +700,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x0305")
 
-[node name="Environment" type="Node3D" unique_id=1071230692]
+[node name="Orb21" type="Node3D" unique_id=1071230692]
 script = ExtResource("1_8x6ym")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1621779423]
@@ -1583,44 +1566,11 @@ transform = Transform3D(0.525, 0, 0, 0, 0.52500004, 0, 0, 0, 0.525, 89.88235, 0,
 [node name="OrbsContainer" type="Node3D" parent="." unique_id=355580312]
 script = ExtResource("5_6idwj")
 
-[node name="Orb65" parent="OrbsContainer" unique_id=1928754747 instance=ExtResource("40_saevq")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4.8469124, 1.4559786, -58.684647)
-info_title = "Nuclear Fuel"
-info_text = "What country reprocesses nuclear fuel to reduce waste?
-
-France"
-info_image = ExtResource("20_x3dms")
-info_voice = SubResource("AudioStream_uy52e")
-
 [node name="Orb" parent="OrbsContainer" unique_id=953888495 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, 51.218666, 1.2665638, 90.032326)
 info_title = "Medical Marvels 🏥"
-info_text = "Nuclear medicine treats cancer (e.g., iodine-131 for thyroid cancer)"
+info_text = " Nuclear technology is widely used in medicine for diagnosis and cancer treatment."
 info_image = ExtResource("7_rs2mo")
-
-[node name="Orb2" parent="OrbsContainer" unique_id=1333296512 instance=ExtResource("4_owdl0")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -55.616646, 2.4240746, 39.6897)
-info_title = "Safety Layers 🛡️"
-info_text = "Modern reactors have 5+ safety barriers. Containment buildings can withstand earthquakes & floods"
-info_image = ExtResource("13_qaipu")
-
-[node name="Orb3" parent="OrbsContainer" unique_id=1846426153 instance=ExtResource("5_ebn4v")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 70.61738, 0.8896625, -33.62179)
-info_title = "Space Exploration 🚀"
-info_text = "Mars rovers like Curiosity run on nuclear power (RTGs)."
-info_image = ExtResource("14_ww86s")
-
-[node name="Orb8" parent="OrbsContainer" unique_id=867094272 instance=ExtResource("1_jhh7m")]
-transform = Transform3D(-1.1446825, 0, -0.11046233, 0, 1.15, 0, 0.11046233, 0, -1.1446825, -53.773056, 1.5699991, -40.17907)
-info_title = "Clean Power 🌿"
-info_text = "Nuclear avoids 2.1 billion tons CO₂ per year globally, helping fight climate change"
-info_image = ExtResource("16_3flo4")
-
-[node name="Orb9" parent="OrbsContainer" unique_id=1356008404 instance=ExtResource("4_owdl0")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 63.58559, 0.93139964, 30.479221)
-info_title = "Global Cooperation 🌍"
-info_text = "Nuclear treaties (NPT) prevent proliferation while promoting energy use"
-info_image = ExtResource("16_jsww7")
 
 [node name="Orb10" parent="OrbsContainer" unique_id=1248144388 instance=ExtResource("4_owdl0")]
 transform = Transform3D(0.39379478, 0, 1.0804747, 0, 1.15, 0, -1.0804747, 0, 0.39379478, -68.56983, 0.67235494, 69.82593)
@@ -1628,41 +1578,11 @@ info_title = "Different Paths 🔄"
 info_text = "Nuclear energy does not mean weapons! Reactors produce energy, not bombs"
 info_image = ExtResource("17_lxj0b")
 
-[node name="Orb11" parent="OrbsContainer" unique_id=1116950483 instance=ExtResource("5_ebn4v")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 27.768307, 1.5699981, 30.56473)
-info_title = "IAEA Watch 🔍"
-info_text = "International inspections ensure reactors are used for energy only"
-info_image = ExtResource("19_d0ug1")
-
-[node name="Orb12" parent="OrbsContainer" unique_id=1775727505 instance=ExtResource("9_rsqt7")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 24.10832, 0.7288091, 90.36602)
-info_title = "Tech Spin-Offs 🔩"
-info_text = "Nuclear tech aids desalination, medicine, & space exploration."
-info_image = ExtResource("19_1kb8p")
-
 [node name="Orb13" parent="OrbsContainer" unique_id=169081756 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, -31.871826, 1.570002, -30.673832)
 info_title = "Safety"
-info_text = "Strict international safety standards make nuclear reactors extremely safe, comparable to flying."
+info_text = "Energy choices affect public health, environmental quality, and climate stability."
 info_image = SubResource("CompressedTexture2D_3flo4")
-
-[node name="Orb15" parent="OrbsContainer" unique_id=91160069 instance=ExtResource("4_owdl0")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 21.948137, 0.6479724, 61.32098)
-info_title = "Energy Density ⚡"
-info_text = "1 kg of uranium ≈ 2–3 million kg of coal in energy output"
-info_image = ExtResource("18_eva83")
-
-[node name="Orb16" parent="OrbsContainer" unique_id=272138750 instance=ExtResource("4_owdl0")]
-transform = Transform3D(0.39379478, 0, 1.0804747, 0, 1.15, 0, -1.0804747, 0, 0.39379478, 41.308647, 1.3912014, -58.63437)
-info_title = "Waste in Perspective 📦"
-info_text = "All US nuclear waste (60 years) fits on a football field"
-info_image = SubResource("CompressedTexture2D_eva83")
-
-[node name="Orb17" parent="OrbsContainer" unique_id=1822932632 instance=ExtResource("5_ebn4v")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 47.79425, 1.0509826, -89.2033)
-info_title = "Safe Storage 🏗️"
-info_text = "Waste is stored in dry casks or deep repositories (e.g., Finland’s Onkalo)"
-info_image = ExtResource("22_lxj0b")
 
 [node name="Orb18" parent="OrbsContainer" unique_id=287362324 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 47.21173, 0.33691967, -79.6902)
@@ -1673,25 +1593,19 @@ info_image = ExtResource("20_x3dms")
 [node name="Orb19" parent="OrbsContainer" unique_id=205049617 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, 29.081173, 0.57675076, -9.578362)
 info_title = "Record vs. Fossil Fuels 📊"
-info_text = "Nuclear energy is extremely safe: ~0.07 deaths/TWh, while coal causes ~100x more due to air pollution."
-info_image = ExtResource("23_1kb8p")
+info_text = "It produces electricity without smoke or air pollution during operation."
+info_image = ExtResource("26_cq1i7")
 
 [node name="Orb21" parent="OrbsContainer" unique_id=1406536904 instance=ExtResource("4_owdl0")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -45.08044, 2.3329713, -54.484383)
 info_title = "Reliable Power 💡"
-info_text = "Nuclear provides reliable 24/7 power, unlike solar or wind that depend on weather."
+info_text = "Nuclear power provides electricity continuously, day and night."
 info_image = ExtResource("23_cq1i7")
-
-[node name="Orb26" parent="OrbsContainer" unique_id=1207653105 instance=ExtResource("5_ebn4v")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -95.61885, 1.5699984, -53.9454)
-info_title = "Modern Design 🛠️"
-info_text = "New reactors use passive safety (no human intervention needed)"
-info_image = ExtResource("26_cq1i7")
 
 [node name="Orb24" parent="OrbsContainer" unique_id=844915696 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(0.82028025, 0, -0.8060027, 0, 1.15, 0, 0.8060027, 0, 0.82028025, -30.429014, 0.4987967, 76.852455)
 info_title = "Nuclear Weapons & Radiation"
-info_text = "Advanced reactors can reuse old nuclear waste, reducing its hazard and volume."
+info_text = "Modern reactors automatically shut down if abnormal conditions are detected."
 info_image = ExtResource("30_deloa")
 
 [node name="Orb27" parent="OrbsContainer" unique_id=1670677355 instance=ExtResource("38_c4k7n")]
@@ -1703,73 +1617,41 @@ info_image = ExtResource("28_jsww7")
 [node name="Orb29" parent="OrbsContainer" unique_id=1432592493 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.8916229, 0.027685435, 0.119341925, -0.01794376, 0.89677495, -0.073976845, -0.12118997, 0.070908874, 0.8889796, -37.61821, 0.75191784, -19.253927)
 info_title = "Myth"
-info_text = "Q: Most radiation comes from nuclear power plants
+info_text = "Myth: Living near a nuclear plant causes cancer.
 
-Ans: False! Less than 1% of our radiation exposure comes from nuclear plants"
+Correction: Radiation exposure from properly operating nuclear plants is very low and remains within strict international safety limits."
 info_image = ExtResource("31_3flo4")
 
 [node name="Orb31" parent="OrbsContainer" unique_id=2052847891 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.9000001, 0, 0, 0, 0.8999986, 0.0015707953, 0, -0.0015707954, 0.89999855, -90.12321, 0.5450464, 42.34944)
 info_title = "Myth"
-info_text = "The IAEA exists to promote nuclear weapons?
+info_text = "Myth: Nuclear energy leads directly to nuclear weapons.
 
-False! The IAEA promotes safe, peaceful nuclear use and prevents weapon spread"
+Correction: Civilian nuclear energy programs operate under international safeguards and inspections to prevent weapon use."
 info_image = ExtResource("32_deloa")
 
 [node name="Orb30" parent="OrbsContainer" unique_id=820223595 instance=ExtResource("41_86ndy")]
 transform = Transform3D(2.08, 0, 0, 0, 2.0800002, 0, 0, 0, 2.08, 63.652554, 1.2285268, 90.1841)
 info_title = "Myth"
-info_text = "Nuclear Radiation is worse then Medical radiation
+info_text = "Myth: Nuclear energy is the most dangerous form of electricity.
 
- False (Medical Radiation is much higher)"
+Correction: Research shows nuclear energy has one of the lowest death rates per unit of electricity produced."
 info_image = ExtResource("32_jr6re")
-
-[node name="Orb37" parent="OrbsContainer" unique_id=256603161 instance=ExtResource("40_saevq")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -104.07695, 1.1213416, 95.84477)
-info_title = "Myth"
-info_text = "Nuclear plants emit more radiation than coal plants
-
-False, coal plants emits more "
-info_image = ExtResource("33_qaipu")
-
-[node name="Orb42" parent="OrbsContainer" unique_id=1814583956 instance=ExtResource("41_86ndy")]
-transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 4.867758, 1.5797989, 4.902359)
-info_title = "International Cooperation"
-info_text = "How many countries are currently members of the IAEA?
-
-181 IAEA member states collaborate on peaceful nuclear technology and safety standards"
-info_image = ExtResource("16_jsww7")
-
-[node name="Orb54" parent="OrbsContainer" unique_id=1611733317 instance=ExtResource("41_86ndy")]
-transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.16508, 1.5811819, 3.4577656)
-info_title = "Myth 🤔"
-info_text = "Chernobyl caused more deaths than coal pollution
-
-Wrong! One year of coal air pollution causes vastly more deaths than the entire Chernobyl disaster"
-info_image = ExtResource("23_1kb8p")
-
-[node name="Orb55" parent="OrbsContainer" unique_id=1874742877 instance=ExtResource("41_86ndy")]
-transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 93.64434, 1.5811819, 24.617607)
-info_title = "Percentage of Global Electricity"
-info_text = "What percentage of global electricity is from nuclear?
-
-About 10%"
-info_image = ExtResource("36_dbj8p")
 
 [node name="Orb60" parent="OrbsContainer" unique_id=1855102836 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -50.13419, 0.7920702, -97.87621)
 info_title = "Myth"
-info_text = "Nuclear accidents are more deadly than coal.
+info_text = "Myth: Nuclear plants emit more radiation than coal plants.
 
-FALSE! Coal causes 24.6 deaths per TWh vs nuclear's 0.07  making nuclear ~350x safer."
+Correction: Studies show coal plants release more naturally occurring radiation into the environment than nuclear plants during normal operation."
 info_image = ExtResource("16_3flo4")
 
 [node name="Orb64" parent="OrbsContainer" unique_id=1704884894 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.09858, 0.7920702, -97.87621)
 info_title = "Myth"
-info_text = "Nuclear reactors can explode like nuclear weapons
+info_text = "Myth: Nuclear power plants can explode like atomic bombs.
 
-False! Power reactors can't explode like bombs"
+Correction: Nuclear power plants use low enriched fuel that cannot produce a nuclear weapon explosion."
 info_image = ExtResource("35_dbj8p")
 
 [node name="Orb59" parent="OrbsContainer" unique_id=200590045 instance=ExtResource("41_86ndy")]
@@ -1780,11 +1662,13 @@ info_text = "Kerala is less radioactive than nuclear reactors
 Wrong! Natural background radiation in parts of Kerala (~1–2 µSv/h) is higher than the average radiation levels measured around nuclear power plants (~0.1–0.3 µSv/h)."
 info_image = ExtResource("37_lxj0b")
 
-[node name="Orb4" parent="OrbsContainer" unique_id=2027012328 instance=ExtResource("9_rsqt7")]
-transform = Transform3D(0.82028025, 0, -0.8060027, 0, 1.15, 0, 0.8060027, 0, 0.82028025, 27.001919, 0, 12.643257)
-info_title = "Custom TitleFood Safety 🍎"
-info_text = "Irradiation kills bacteria in food, extending shelf life without chemicals"
-info_image = ExtResource("14_1bq07")
+[node name="Orb61" parent="OrbsContainer" unique_id=1779244539 instance=ExtResource("41_86ndy")]
+transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.845276, 1.5811819, 50.00884)
+info_title = "Myth"
+info_text = "Myth: Nuclear waste leaks into the air or water.
+
+Correction: Used nuclear fuel is solid and stored in secure, monitored facilities."
+info_image = ExtResource("30_deloa")
 
 [node name="Barrel" parent="." unique_id=551307218 instance=ExtResource("8_x5xjc")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22.663431, -0.0069646835, -76.68287)

@@ -34,43 +34,13 @@ var pulse_time: float = 0.0
 
 var questions = [
 	{
-		"question": "What percentage of global electricity comes from nuclear power?",
-		"options": ["5%", "10%", "25%", " 50%"],
-		"correct": 1
-	},
-	{
 		"question": "What is the typical radiation dose from ONE CT scan?",
 		"options": ["0.02 mSv", "1 mSv", "1-6 mSv", "7-10 mSv"],
 		"correct": 3
 	},
 	{
-		"question": "How much CO₂ does nuclear energy avoid annually?",
-		"options": ["1 billion tons", "2 billion tons", "3 billion tons", "4 billion tons"],
-		"correct": 1
-	},
-	{
-		"question": "How many deaths does coal-caused air pollution cause annually worldwide?",
-		"options": ["10,000+", "500,000+", "800,000+", "1,000,000"],
-		"correct": 2
-	},
-	{
-		"question": "Where does most of our daily radiation exposure come from?",
-		"options": ["Nuclear power plants", "Cell phones", "Natural sources", "Medical X-rays"],
-		"correct": 2
-	},
-	{
-		"question": "What does ALARA stand for in radiation safety?",
-		"options": ["As Low As Reasonably Achievable", "Always Low And Reliable Administration", "Advanced Laser And Radiation Application", "Avoid Long-term Accumulated Radiation Absorption"],
-		"correct": 0
-	},
-	{
-		"question": "Which releases MORE radiation into the environment?",
+		"question": "Which releases MORE radiation into the surrounding environment?",
 		"options": ["Nuclear power plant vicinity", "Coal plant vicinity", "They're exactly the same", "Neither releases radiation"],
-		"correct": 1
-	},
-	{
-		"question": "WHow much space does 60 years of US nuclear waste occupy?",
-		"options": ["10 football fields", "One football field", "Entire state of Nevada", "One swimming pool"],
 		"correct": 1
 	},
 	{
@@ -79,10 +49,41 @@ var questions = [
 		"correct": 3
 	},
 	{
-		"question": "How many countries are currently members of the IAEA?",
-		"options": ["176", "181", "190", "195"],
+		"question": "What does ALARA stand for in radiation safety?",
+		"options": ["As Low As Reasonably Achievable", "Always Low And Reliable Administration", "Advanced Laser And Radiation Application", "Avoid Long-term Accumulated Radiation Absorption"],
+		"correct": 0
+	},
+	{
+		"question": "Can a nuclear power plant explode like an atomic bomb?",
+		"options": ["Yes, if the reactor overheats", "Yes, under extreme conditions", "No, reactors cannot produce a nuclear explosion", "Only older reactor designs can"],
+		"correct": 2
+	},
+	{
+		"question": "What happens to modern reactors if abnormal conditions are detected?",
+		"options": ["They increase power output", "They require manual shutdown by operators", "They automatically shut down", "They release steam to cool down"],
+		"correct": 2
+	},
+	{
+		"question": "How is used nuclear fuel waste stored?",
+		"options": ["Released as gas into the atmosphere", "Pumped into deep ocean trenches", "As solid material in secure, monitored facilities", "Mixed with concrete and buried in landfills"],
+		"correct": 2
+	},
+	{
+		"question": "Nuclear technology in medicine is used for which of the following?",
+		"options": ["Only surgery", "Diagnosis and cancer treatment", "Producing vaccines", "Blood transfusions"],
+		"correct": 1
+	},
+	{
+		"question": "Where does most of our daily radiation exposure come from?",
+		"options": ["Nuclear power plants", "Cell phones", "Natural sources", "Medical X-rays"],
+		"correct": 2
+	},
+	{
+		"question": "What is a key advantage of nuclear power over solar and wind energy?",
+		"options": ["It is cheaper to build", "It produces electricity continuously, day and night", "It requires no water", "It emits no waste of any kind"],
 		"correct": 1
 	}
+
 ]
 
 # ─────────────────────────────────────────────
