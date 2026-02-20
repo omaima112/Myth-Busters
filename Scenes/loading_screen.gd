@@ -8,16 +8,11 @@ var is_loading: bool = false
 
 # Educational tips array - Level 1 focused
 var loading_tips = [
-	"Nuclear energy prevents 2 million deaths annually by replacing coal.",
-	"A banana contains more radiation than properly stored nuclear waste.",
+	"A banana contains more radiation than properly stored nuclear waste!",
 	"Modern nuclear reactors have 5 independent layers of safety containment.",
-	"Nuclear energy produces zero carbon emissions during operation.",
-	"One uranium pellet produces as much energy as 1 ton of coal.",
 	"Nuclear power is 350 times safer than coal per unit of energy produced.",
 	"Flying in an airplane exposes you to more radiation than working at a nuclear plant.",
-	"Nuclear fuel is 95% recyclable - we can reuse it to generate more power.",
 	"Nuclear energy has the lowest death rate per terawatt-hour: just 0.07 deaths.",
-	"Ocean water naturally contains uranium - about 3 parts per billion.",
 	"Nuclear plants can operate continuously for 18-24 months without refueling.",
 	"A single nuclear fuel pellet the size of a fingertip contains massive energy.",
 	"Natural radiation varies worldwide - some beaches have higher levels than reactors.",
@@ -27,7 +22,7 @@ var loading_tips = [
 	"Civilian nuclear programs operate under strict international inspections.",
 	"Nuclear reactors cannot explode like atomic bombs - the physics is different.",
 	"Background radiation exists everywhere - from soil, rocks, and even food.",
-	"Nuclear waste is stored in solid form in secure, monitored facilities."
+
 ]
 
 var current_tip: String = ""

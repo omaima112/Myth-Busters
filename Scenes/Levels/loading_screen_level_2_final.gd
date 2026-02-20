@@ -9,7 +9,6 @@ var is_loading: bool = false
 # Educational tips array - Level 2 focused (Hospital/Coal)
 var loading_tips = [
 	"Coal plants release 100x more radiation into the environment than nuclear plants.",
-	"CT scans expose you to more radiation than living near a nuclear reactor.",
 	"Kerala, India has higher natural background radiation than nuclear plant vicinities.",
 	"Medical X-rays use electromagnetic radiation - similar to visible light but higher energy.",
 	"A single CT scan delivers 7-10 millisieverts - far more than annual nuclear plant exposure.",
@@ -19,11 +18,9 @@ var loading_tips = [
 	"Nuclear plants are surrounded by exclusion zones monitored constantly for safety.",
 	"Coal mining causes 24.6 deaths per terawatt-hour compared to nuclear's 0.07.",
 	"Potassium-40 in bananas makes them slightly radioactive - completely harmless.",
-	"Coal plants produce over 100 million tons of toxic ash waste annually.",
 	"Nuclear waste is 95% recyclable and stored safely in solid concrete containers.",
 	"Radiation exposure from coal plants affects nearby communities more than nuclear.",
 	"Medical isotopes used in hospitals come from nuclear reactors worldwide.",
-	"Coal emissions cause respiratory diseases affecting millions annually.",
 	"The ALARA principle: As Low As Reasonably Achievable - used in radiation safety.",
 	"Natural background radiation varies by location due to soil composition.",
 	"Thorium in monazite sand causes Kerala's higher natural radiation levels.",
