@@ -75,13 +75,14 @@ func _process(delta):
 			time_remaining = int(time_remaining_f)
 			timer_updated.emit(time_remaining)
 
-func start_timer(duration: int = 420):
-	"""Start the countdown timer with specified duration in seconds"""
+func start_timer(duration: int = -1):
+	"""Start the countdown timer. Uses difficulty-set time_limit if no duration given."""
+	if duration == -1:
+		duration = time_limit   # use whatever was set from the menu (difficulty)
 	time_limit = duration
 	time_remaining_f = float(duration)
 	time_remaining = duration
 	timer_running = true
-	print("Timer started: ", format_time(time_remaining))
 
 func stop_timer():
 	"""Stop the timer"""

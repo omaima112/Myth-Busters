@@ -16,12 +16,10 @@ func _physics_process(delta):
 
 func _on_chase_started():
 	chase_active = true
-	print("🚨 Chase started — locking all orbs")
 	_set_orbs_locked(true)
 
 func _on_chase_ended():
 	chase_active = false
-	print("✅ Chase ended — unlocking all orbs")
 	_set_orbs_locked(false)
 
 func _set_orbs_locked(locked: bool) -> void:
@@ -37,8 +35,6 @@ func _set_orbs_locked(locked: bool) -> void:
 		if trigger:
 			trigger.monitoring = not locked
 			trigger.monitorable = not locked
-
-	print("🔒 Orbs locked: ", locked, " (", all_nodes.size(), " orbs)")
 
 func _find_orbs_recursive(node: Node) -> Array:
 	var result = []

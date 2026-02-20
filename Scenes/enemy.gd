@@ -40,7 +40,6 @@ func _ready():
 
 	await get_tree().process_frame
 	jeep = get_tree().root.find_child("Jeep", true, false)
-	print("🚔 Police ready | Jeep found: ", jeep != null)
 
 
 func setup_lights():
@@ -122,16 +121,12 @@ func _physics_process(delta):
 		var dist_to_jeep = global_transform.origin.distance_to(jeep.global_transform.origin)
 
 		if dist_to_jeep <= BUST_RADIUS and not jeep_in_zone:
-			# Jeep just entered the zone
 			jeep_in_zone = true
-			print("🚨 Jeep entered bust zone")
 			if GameManager and GameManager.has_signal("player_in_bust_zone"):
 				GameManager.player_in_bust_zone.emit()
 
 		elif dist_to_jeep > BUST_RADIUS and jeep_in_zone:
-			# Jeep just left the zone
 			jeep_in_zone = false
-			print("✅ Jeep left bust zone")
 			if GameManager and GameManager.has_signal("player_left_bust_zone"):
 				GameManager.player_left_bust_zone.emit()
 
@@ -182,7 +177,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
 func _set_barrels_visible(active: bool) -> void:
 	var barrels = get_tree().get_nodes_in_group("barrels")
 	for barrel in barrels:
@@ -190,7 +184,6 @@ func _set_barrels_visible(active: bool) -> void:
 			barrel.set_active(active)
 		else:
 			barrel.visible = active
-	print("🛢️ Barrels active: ", active, " (", barrels.size(), " barrels)")
 
 func update_target_location(target_location):
 	player_position = target_location

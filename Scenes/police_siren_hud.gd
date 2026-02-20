@@ -8,7 +8,6 @@ const FLASH_SPEED: float = 5.0
 
 var flash_time: float = 0.0
 var is_chasing: bool = false
-var check_timer: float = 0.0
 
 var style_red: StyleBoxFlat
 var style_blue: StyleBoxFlat
@@ -20,7 +19,6 @@ func _ready():
 	siren_box.visible = false
 	red_box.add_theme_stylebox_override("panel", style_dim)
 	blue_box.add_theme_stylebox_override("panel", style_dim)
-	print("🚨 PoliceSirenHUD _ready — node: ", name, " | parent: ", get_parent().name)
 
 
 func _build_styles():
@@ -42,20 +40,12 @@ func _build_styles():
 
 
 func _process(delta: float) -> void:
-	# Debug: every 2 seconds print enemy count
-	check_timer += delta
-	if check_timer >= 2.0:
-		check_timer = 0.0
-		var enemies = get_tree().get_nodes_in_group("enemies")
-		print("🔍 SirenHUD check — enemies found: ", enemies.size(), " | any chasing: ", _any_chasing(enemies))
-
 	var any_chasing = _any_chasing(get_tree().get_nodes_in_group("enemies"))
 
 	if any_chasing != is_chasing:
 		is_chasing = any_chasing
 		siren_box.visible = is_chasing
 		flash_time = 0.0
-		print("🚨 Siren HUD visible: ", is_chasing)
 		if not is_chasing:
 			red_box.add_theme_stylebox_override("panel", style_dim)
 			blue_box.add_theme_stylebox_override("panel", style_dim)

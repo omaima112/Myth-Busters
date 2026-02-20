@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="myth-busters"
-run/main_scene="uid://mwf5g12kuph3"
+run/main_scene="uid://br0fledc3bpng"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/image="uid://bsg4pubo8x7c5"
 config/icon="res://icon.svg"

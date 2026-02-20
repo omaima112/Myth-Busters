@@ -29,7 +29,6 @@ func _ready():
 
 	await get_tree().process_frame
 	jeep = get_tree().root.find_child("Jeep", true, false)
-	print("✅ Popup manager ready | jeep found: ", jeep != null)
 
 
 func _on_close_requested():
@@ -59,8 +58,6 @@ func _show_popup(title: String, text: String, image: Texture2D):
 
 	if jeep:
 		jeep.can_drive = false
-
-	print("🔋 Popup shown")
 
 
 func _process(delta: float) -> void:
@@ -96,11 +93,9 @@ func _process(delta: float) -> void:
 		if elapsed >= READ_TIME:
 			waiting_for_input = true
 			continue_label.visible = true
-			print("✅ 3s done — press W to continue")
 
 	# Close on Gas (W) — same action as jeep
 	if waiting_for_input and Input.is_action_just_pressed("Gas"):
-		print("▶️  Gas pressed — closing popup")
 		_close_everything()
 
 
@@ -111,7 +106,7 @@ func _close_everything():
 	popup_visible = false
 	waiting_for_input = false
 
-	# 🎙️ Stop voice if still playing when popup closes
+	# Stop voice if still playing when popup closes
 	if GameManager.active_voice_player != null:
 		GameManager.active_voice_player.stop()
 		GameManager.active_voice_player.queue_free()
@@ -120,8 +115,6 @@ func _close_everything():
 	if jeep:
 		jeep.can_drive = true
 
-	print("✅ Popup closed, driving enabled")
-
 
 func _hide_popup():
 	_close_everything()
@@ -129,4 +122,3 @@ func _hide_popup():
 
 func hide_popup_immediately():
 	_close_everything()
-	print("⚡ Force closed")

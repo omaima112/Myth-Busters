@@ -24,9 +24,6 @@ func _ready():
 	jeep = get_tree().root.find_child("Jeep", true, false)
 	if jeep:
 		nitro_bar.max_value = jeep.max_nitro
-		print("✅ NitroHUD: Jeep found")
-	else:
-		print("⚠️ NitroHUD: Jeep not found")
 	
 	# Hide when game ends
 	if GameManager:
@@ -47,7 +44,6 @@ func _process(delta: float) -> void:
 
 	# Update bar
 	nitro_bar.value = nitro
-
 
 	# Bar fill color based on ratio
 	var bar_color: Color

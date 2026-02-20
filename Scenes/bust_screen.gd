@@ -23,7 +23,6 @@ func _ready():
 
 
 func _on_entered_zone():
-	# Show bust screen and start countdown — car keeps driving
 	show()
 	active = true
 	elapsed = 0.0
@@ -31,16 +30,13 @@ func _on_entered_zone():
 	bar_width = get_viewport_rect().size.x
 	bar_fill.size.x = bar_width
 	countdown_label.text = "5"
-	print("🚨 Bust screen ON")
 
 
 func _on_left_zone():
-	# Player escaped — hide and fully reset
 	active = false
 	hide()
 	elapsed = 0.0
 	bar_fill.size.x = get_viewport_rect().size.x
-	print("✅ Bust screen OFF — player escaped")
 
 
 func _process(delta: float) -> void:
@@ -73,7 +69,6 @@ func _process(delta: float) -> void:
 
 func _trigger_busted():
 	hide()
-	print("🚔 BUSTED!")
 	if GameManager and GameManager.has_signal("game_busted"):
 		GameManager.game_busted.emit()
 	elif GameManager:

@@ -29,14 +29,10 @@ var popup_duration: float = 4.0
 var fade_speed: float = 0.5
 
 func _ready() -> void:
-	"""Initialize the popup UI"""
 	layer = 10  # Ensure it appears on top
 	create_popup_ui()
-	print("✅ BarrelPopupManager initialized")
 
 func create_popup_ui() -> void:
-	"""Create all UI elements for the popup"""
-	
 	# Main panel with dark background
 	popup_panel = Panel.new()
 	popup_panel.name = "BarrelPopupPanel"
@@ -124,20 +120,9 @@ func create_popup_ui() -> void:
 	close_button.pressed.connect(_on_close_button_pressed)
 	
 	hbox_buttons.add_child(close_button)
-	
-	print("✅ Popup UI created successfully")
 
 func show_popup(image: Texture2D, title: String = "Tutorial Info") -> void:
-	"""
-	Display the popup with the given image
-	
-	Args:
-		image: The texture to display
-		title: The title text to show (optional)
-	"""
-	
 	if not image:
-		print("❌ No image provided for popup")
 		return
 	
 	# Set content
@@ -148,19 +133,13 @@ func show_popup(image: Texture2D, title: String = "Tutorial Info") -> void:
 	popup_timer = popup_duration
 	popup_panel.visible = true
 	is_visible = true
-	
-	print("📺 Popup shown with title: '", title, "' for ", popup_duration, " seconds")
 
 func hide_popup() -> void:
-	"""Hide the popup"""
 	popup_panel.visible = false
 	is_visible = false
 	popup_timer = 0.0
-	print("✅ Popup hidden")
 
 func _process(delta: float) -> void:
-	"""Handle popup timer countdown"""
-	
 	if is_visible and popup_panel.visible:
 		popup_timer -= delta
 		
@@ -168,12 +147,9 @@ func _process(delta: float) -> void:
 			hide_popup()
 
 func _input(event: InputEvent) -> void:
-	"""Allow ESC key to close popup"""
-	
 	if is_visible and event.is_action_pressed("ui_cancel"):
 		hide_popup()
 		get_tree().root.set_input_as_handled()
 
 func _on_close_button_pressed() -> void:
-	"""Called when close button is pressed"""
 	hide_popup()

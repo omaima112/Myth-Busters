@@ -38,6 +38,8 @@ transform = Transform3D(-0.0063525885, -0.07104613, 0.99745274, 0.02638465, 0.99
 max_engine_force = 650.0
 max_steer_angle = 0.45
 steer_speed = 3.2
+nitro_drain_rate = 20.0
+nitro_recharge_rate = 40.0
 
 [node name="Popups" parent="." unique_id=779390533 instance=ExtResource("4_jjvhh")]
 offset_left = 8.999999

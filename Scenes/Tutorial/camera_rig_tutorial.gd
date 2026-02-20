@@ -12,27 +12,18 @@ var angle_h: float = 0.0  # Horizontal angle
 var angle_v: float = 0.0  # Vertical angle
 
 func _ready() -> void:
-	print("=== SIMPLE ORBIT CAMERA START ===")
-	
 	# Get camera child
 	camera = $Camera3D
 	if not camera:
-		print("❌ NO CAMERA FOUND!")
 		return
 	
 	camera.current = true
-	print("✅ Camera set as current")
 	
 	# Get vehicle
 	if target_vehicle:
 		vehicle = get_node(target_vehicle)
 	else:
 		vehicle = get_parent().get_node("Jeep")
-	
-	if vehicle:
-		print("✅ Vehicle found: ", vehicle.name)
-	else:
-		print("❌ Vehicle not found")
 	
 	set_process_input(true)
 	set_process(true)
@@ -41,7 +32,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var motion = event as InputEventMouseMotion
-		# Simple mouse movement
 		angle_h -= motion.relative.x * sensitivity
 		angle_v -= motion.relative.y * sensitivity
 		# Limit vertical

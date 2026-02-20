@@ -24,15 +24,8 @@ func _ready() -> void:
 	# Get Jeep and fix its rotation/position
 	jeep = $Jeep
 	if jeep:
-		print("✅ Found Jeep, fixing rotation...")
-		# Set completely level rotation (identity quaternion)
 		jeep.rotation = Vector3.ZERO
-		# Position slightly above ground
 		jeep.position.y = 0.5
-		print("✅ Jeep rotation fixed to: ", jeep.rotation)
-		print("✅ Jeep Y position set to: ", jeep.position.y)
-	else:
-		print("❌ Jeep not found!")
 	
 	# Get UI labels
 	barrel_counter_label = $TutorialUI/BarrelCounter
@@ -41,7 +34,6 @@ func _ready() -> void:
 	# Get ItemPopup
 	item_popup = $TutorialUI/ItemPopup
 	if not item_popup:
-		print("ERROR: ItemPopup not found")
 		return
 	
 	item_popup.visible = false
@@ -65,27 +57,16 @@ func find_texture_rect(node: Node) -> TextureRect:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		print("ESC PRESSED - is_popup_active: ", is_popup_active)
-		
 		if is_popup_active:
-			print("Popup is active, closing it...")
 			close_current_popup()
 			get_tree().root.set_input_as_handled()
 			
-			print("Barrels collected: ", orbs_collected, "/", total_orbs)
-			
 			if orbs_collected >= total_orbs:
-				print("All barrels collected! Calling complete_tutorial()...")
 				complete_tutorial()
-			else:
-				print("Need more barrels...")
-		else:
-			print("Popup not active")
 	
 	# E key to skip tutorial anytime
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_E:
-			print("E KEY PRESSED - Skipping tutorial!")
 			skip_tutorial()
 
 func setup_orb_collection() -> void:
@@ -93,14 +74,10 @@ func setup_orb_collection() -> void:
 	
 	var barrels_node = $Barrels
 	if not barrels_node:
-		print("ERROR: Barrels node not found")
 		return
-	
-	print("Setting up ", barrels_node.get_child_count(), " barrels")
 	
 	for i in range(barrels_node.get_child_count()):
 		var orb = barrels_node.get_child(i)
-		print("Setting up barrel: ", orb.name)
 		
 		barrels_data.append({
 			"node": orb,
@@ -111,25 +88,20 @@ func setup_orb_collection() -> void:
 		
 		if "info_image" in orb:
 			barrels_data[i]["image"] = orb.info_image
-			print("  - Has info_image")
 		
 		if "info_title" in orb:
 			barrels_data[i]["title"] = orb.info_title
-			print("  - Has info_title: ", orb.info_title)
 		
 		if orb.has_signal("collected"):
 			orb.collected.connect(_on_orb_collected.bind(orb, i))
-			print("  - Connected to 'collected' signal")
 		else:
 			orb.tree_exited.connect(_on_orb_disappeared.bind(orb, i))
-			print("  - Connected to 'tree_exited' signal")
 
 func _on_orb_collected(_orb: Node, barrel_index: int) -> void:
 	if collection_complete:
 		return
 	
 	orbs_collected += 1
-	print("Barrel collected! Total: ", orbs_collected)
 	show_barrel_popup(barrel_index)
 	update_ui()
 
@@ -138,7 +110,6 @@ func _on_orb_disappeared(_orb: Variant, barrel_index: int) -> void:
 		return
 	
 	orbs_collected += 1
-	print("Barrel disappeared! Total: ", orbs_collected)
 	show_barrel_popup(barrel_index)
 	update_ui()
 
@@ -147,7 +118,6 @@ func show_barrel_popup(barrel_index: int) -> void:
 		return
 	
 	var barrel_info = barrels_data[barrel_index]
-	print("Showing popup for: ", barrel_info["name"])
 	
 	if popup_image:
 		popup_image.texture = null
@@ -156,16 +126,13 @@ func show_barrel_popup(barrel_index: int) -> void:
 	
 	item_popup.visible = true
 	is_popup_active = true
-	print("Popup visible: ", item_popup.visible, " | is_popup_active: ", is_popup_active)
 
 func close_current_popup() -> void:
 	if not is_popup_active:
-		print("ERROR: Trying to close but is_popup_active is false!")
 		return
 	
 	item_popup.visible = false
 	is_popup_active = false
-	print("Popup closed")
 
 func update_ui() -> void:
 	if barrel_counter_label:
@@ -179,20 +146,14 @@ func update_ui() -> void:
 			instruction_label.text = "Collect all " + str(total_orbs) + " barrels! (" + str(remaining) + " remaining)"
 
 func complete_tutorial() -> void:
-	print("complete_tutorial() called")
-	
 	if collection_complete:
-		print("Already marked complete, returning")
 		return
 	
 	collection_complete = true
-	print("Setting collection_complete = true")
 	
 	if item_popup:
 		item_popup.visible = false
-		print("Popup hidden")
 	
-	# Try different possible paths
 	var paths = [
 		"res://Scenes/LoadingScreen.tscn",
 		"res://LoadingScreen.tscn",
@@ -201,34 +162,21 @@ func complete_tutorial() -> void:
 		"res://main.tscn"
 	]
 	
-	print("Checking for scene files...")
-	for path in paths:
-		var exists = ResourceLoader.exists(path)
-		print("  ", path, " - EXISTS: ", exists)
-		if exists:
-			print("Loading: ", path)
-			get_tree().change_scene_to_file(path)
-			return
-	
-	print("ERROR: No scene file found!")
-
-func skip_tutorial() -> void:
-	print("skip_tutorial() called - jumping to main level")
-	
-	# Try different possible paths
-	var paths = [
-		"res://Scenes/LoadingScreen.tscn",
-		"res://LoadingScreen.tscn",
-		"res://Scenes/Environment/environment.tscn",
-		"res://Scenes/Environment.tscn",
-		"res://main.tscn"
-	]
-	
-	print("Looking for main level scene...")
 	for path in paths:
 		if ResourceLoader.exists(path):
-			print("Found scene! Loading: ", path)
 			get_tree().change_scene_to_file(path)
 			return
+
+func skip_tutorial() -> void:
+	var paths = [
+		"res://Scenes/LoadingScreen.tscn",
+		"res://LoadingScreen.tscn",
+		"res://Scenes/Environment/environment.tscn",
+		"res://Scenes/Environment.tscn",
+		"res://main.tscn"
+	]
 	
-	print("ERROR: No main level scene found!")
+	for path in paths:
+		if ResourceLoader.exists(path):
+			get_tree().change_scene_to_file(path)
+			return

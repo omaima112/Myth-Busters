@@ -17,7 +17,6 @@ func _ready():
 	hide()
 	level2_button = get_node_or_null("Panel/Margins/VBoxContainer/Level2Button")
 
-	print("🎯 Win screen initialized")
 	if GameManager:
 		GameManager.game_won.connect(_on_game_won)
 
@@ -39,9 +38,7 @@ func _process(delta: float) -> void:
 
 func _on_game_won(stars: int):
 	stars_earned = stars
-	print("🏆 Game won! Stars: ", stars, " — waiting 4s...")
 	await get_tree().create_timer(4.0).timeout
-	print("✅ Showing win screen!")
 	show()
 	is_showing = true
 	display_stars(stars)
@@ -65,14 +62,12 @@ func display_stars(count: int):
 
 
 func _on_level_2_button_pressed():
-	print("🎮 Level 2 button pressed!")
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Scenes/LoadingScreen_Level2_Final.tscn")
 
 
 func _on_retry_button_pressed():
-	print("🔄 Retry button pressed!")
 	get_tree().paused = false
 	is_showing = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -83,7 +78,6 @@ func _on_retry_button_pressed():
 
 
 func _on_menu_button_pressed():
-	print("🏠 Menu button pressed!")
 	get_tree().paused = false
 	is_showing = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -95,7 +89,6 @@ func _input(event: InputEvent):
 		return
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_Q:
-			print("🎓 Q pressed — loading quiz...")
 			get_tree().paused = false
 			is_showing = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

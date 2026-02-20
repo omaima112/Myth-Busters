@@ -1,32 +1,35 @@
 extends Control
 
+# Add your level scene paths here
+var levels = [
+	"res://levels/level_1.tscn",
+	"res://levels/level_2.tscn",
+	"res://levels/level_3.tscn",
+]
+
+var level_names = [
+	"Level 1",
+	"Level 2",
+	"Level 3",
+]
+
+@onready var level_option: OptionButton = $MainContainer/LeftPanel/LevelOptionButton
+
 func _ready():
-	print("MENU LOADED - Script is working!")
-	# Manually connect buttons in case scene connections fail
-	var start_btn = get_node_or_null("MainContainer/LeftPanel/StartButton")
-	var quit_btn = get_node_or_null("MainContainer/LeftPanel/QuitButton")
+	_populate_level_options()
 
-	
-	if start_btn:
-		if not start_btn.pressed.is_connected(_on_start_button_pressed):
-			start_btn.pressed.connect(_on_start_button_pressed)
-
-	if quit_btn:
-		if not quit_btn.pressed.is_connected(_on_quit_button_pressed):
-			quit_btn.pressed.connect(_on_quit_button_pressed)
+func _populate_level_options():
+	level_option.clear()
+	for name in level_names:
+		level_option.add_item(name)
 
 func _on_start_button_pressed():
-	print("START GAME clicked")
-	get_tree().change_scene_to_file("res://scenes/LoadingScreen.tscn")
-
-	print("MULTIPLAYER clicked!")
-	var path = "res://scenes/multiplayer.tscn"
-	if ResourceLoader.exists(path):
-		print("Scene found, loading: " + path)
-		get_tree().change_scene_to_file(path)
+	var selected = level_option.selected
+	if selected >= 0 and selected < levels.size():
+		get_tree().change_scene_to_file(levels[selected])
 	else:
-		print("ERROR: Scene not found at: " + path)
+		# Default to first level if nothing selected
+		get_tree().change_scene_to_file(levels[0])
 
 func _on_quit_button_pressed():
-	print("QUIT clicked")
 	get_tree().quit()

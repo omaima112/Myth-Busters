@@ -129,7 +129,6 @@ func _clear_button_styles():
 #  READY
 # ─────────────────────────────────────────────
 func _ready():
-	print("🟢 quiz_2.gd _ready() called!")
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -139,7 +138,6 @@ func _ready():
 	next_button.pressed.connect(_on_next_pressed)
 	next_button.disabled = true
 
-	print("✅ Quiz initialized with ", questions.size(), " questions")
 	load_question()
 
 # ─────────────────────────────────────────────
@@ -163,12 +161,10 @@ func _process(delta: float):
 			var t = clamp((anim_time - delay) / 0.35, 0.0, 1.0)
 			var ease_t = 1.0 - pow(1.0 - t, 3.0)   # ease-out cubic
 			if i < earned_stars:
-				# earned star — gold, bouncy scale
 				var sc = lerp(0.0, 1.0, ease_t)
 				star_labels[i].scale = Vector2(sc, sc)
 				star_labels[i].modulate = Color(1.0, 0.85, 0.0, ease_t)
 			else:
-				# unearned star — dim grey
 				var sc = lerp(0.0, 0.85, ease_t)
 				star_labels[i].scale = Vector2(sc, sc)
 				star_labels[i].modulate = Color(0.35, 0.35, 0.35, ease_t * 0.7)
@@ -176,7 +172,6 @@ func _process(delta: float):
 	# Fade-in score bar label and animate bar fill after stars
 	if anim_time > 2.2:
 		var t = clamp((anim_time - 2.2) / 0.5, 0.0, 1.0)
-		# Animate bar fill width
 		if result_overlay != null and result_overlay.has_meta("bar_fill"):
 			var bar_fill = result_overlay.get_meta("bar_fill")
 			var bar_track = result_overlay.get_meta("bar_track")
@@ -219,10 +214,8 @@ func load_question():
 	selected_answer = -1
 	next_button.disabled = true
 	next_button.text = "Next >"
-	print("📝 Question ", current_question + 1, ": ", q["question"])
 
 func _on_option_pressed(index: int):
-	print("✅ Option ", index, " clicked!")
 	selected_answer = index
 
 	var correct_index = questions[current_question]["correct"]
@@ -251,10 +244,7 @@ func _on_next_pressed():
 
 	var correct_index = questions[current_question]["correct"]
 	if selected_answer == correct_index:
-		print("✅ Correct!")
 		score += 1
-	else:
-		print("❌ Wrong!")
 
 	current_question += 1
 	if current_question < questions.size():
@@ -267,7 +257,6 @@ func _on_next_pressed():
 # ─────────────────────────────────────────────
 func show_results():
 	var percentage = (score * 100) / questions.size()
-	print("🏆 Quiz finished! Score: ", score, " / ", questions.size(), " (", percentage, "%)")
 
 	# Calculate stars
 	if score > 8:
@@ -302,7 +291,7 @@ func show_results():
 	else:
 		note_text = "You are now well informed and free\nof misconceptions about Nuclear Power!"
 
-	# ── Hide all quiz UI ──
+	# Hide all quiz UI
 	for btn in option_buttons:
 		btn.visible = false
 	question_label.visible = false
@@ -311,7 +300,7 @@ func show_results():
 	stars_container.visible = false
 	note_label.visible = false
 
-	# ── Build result overlay ──
+	# Build result overlay
 	result_overlay = Panel.new()
 	result_overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	var overlay_style = StyleBoxFlat.new()
@@ -319,24 +308,6 @@ func show_results():
 	result_overlay.add_theme_stylebox_override("panel", overlay_style)
 	add_child(result_overlay)
 
-	# ── Card ──
-	# Layout (top to bottom inside card, total height 660):
-	#   32  top padding
-	#   50  QUIZ COMPLETE title
-	#   18  gap
-	#    3  divider
-	#   28  gap
-	#   40  bar
-	#   28  gap
-	#   44  grade badge
-	#   28  gap
-	#   70  stars row
-	#   28  gap
-	#   62  note text
-	#   (flexible gap fills remaining space)
-	#   54  back button
-	#   32  bottom padding
-	# Total = 32+50+18+3+28+40+28+44+28+70+28+62+~90+54+32 = ~609 => card ±330
 	var card = Panel.new()
 	card.set_anchors_preset(Control.PRESET_CENTER)
 	card.offset_left   = -280
@@ -359,7 +330,7 @@ func show_results():
 	card.add_theme_stylebox_override("panel", card_style)
 	result_overlay.add_child(card)
 
-	# ── TITLE  (top=32, h=50) ──
+	# TITLE
 	result_title = Label.new()
 	result_title.text = "QUIZ COMPLETE"
 	result_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -370,7 +341,7 @@ func show_results():
 	result_title.offset_bottom = 82
 	card.add_child(result_title)
 
-	# ── DIVIDER  (top=100, h=3) ──
+	# DIVIDER
 	var divider = Panel.new()
 	divider.set_anchors_preset(Control.PRESET_TOP_WIDE)
 	divider.offset_left   = 30
@@ -382,7 +353,7 @@ func show_results():
 	divider.add_theme_stylebox_override("panel", div_style)
 	card.add_child(divider)
 
-	# ── PROGRESS BAR  (top=131, h=40) ──
+	# PROGRESS BAR
 	var bar_track = Panel.new()
 	bar_track.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	bar_track.offset_left   = -230
@@ -431,7 +402,7 @@ func show_results():
 	score_ring_label.visible = false
 	card.add_child(score_ring_label)
 
-	# ── GRADE BADGE  (top=199, h=44) ──
+	# GRADE BADGE
 	grade_label = Label.new()
 	grade_label.text = grade_text
 	grade_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -445,7 +416,7 @@ func show_results():
 	grade_label.modulate.a = 0.0
 	card.add_child(grade_label)
 
-	# ── STARS ROW  (top=271, h=70) ──
+	# STARS ROW
 	var stars_row = HBoxContainer.new()
 	stars_row.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	stars_row.offset_left   = -150
@@ -468,7 +439,7 @@ func show_results():
 		stars_row.add_child(star)
 		star_labels.append(star)
 
-	# ── NOTE TEXT  (top=369, h=62) ──
+	# NOTE TEXT
 	result_note_label = Label.new()
 	result_note_label.text = note_text
 	result_note_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -483,7 +454,7 @@ func show_results():
 	result_note_label.modulate.a = 0.0
 	card.add_child(result_note_label)
 
-	# ── BACK BUTTON  anchored to BOTTOM with 32px padding ──
+	# BACK BUTTON
 	back_btn = Button.new()
 	back_btn.text = "☰ BACK TO MENU"
 	back_btn.add_theme_font_size_override("font_size", 24)
@@ -501,7 +472,7 @@ func show_results():
 	back_btn.pressed.connect(_go_back_to_level)
 	card.add_child(back_btn)
 
-		# ── Start animation ──
+	# Start animation
 	anim_time  = 0.0
 	pulse_time = 0.0
 	animating  = true
@@ -513,10 +484,8 @@ func display_stars(count: int):
 	star1.modulate = gold if count >= 1 else dim
 	star2.modulate = gold if count >= 2 else dim
 	star3.modulate = gold if count >= 3 else dim
-	print("⭐ Stars earned: ", count)
 
 func _go_back_to_level():
-	print("📍 Returning to menu...")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
