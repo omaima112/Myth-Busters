@@ -1,10 +1,11 @@
 extends CanvasLayer
 
 @export var next_scene: String = "res://Scenes/Levels/main_2.tscn"
-@export var min_display_time: float = 2.0
+@export var min_display_time: float = 4.0
 
 var start_time: float = 0.0
 var is_loading: bool = false
+var scene_ready: bool = false
 
 # Educational tips array - Level 2 focused (Hospital/Coal)
 var loading_tips = [
@@ -33,7 +34,7 @@ func _ready():
 	print("Loading screen initialized")
 	print("Target scene: ", next_scene)
 	
-	start_time = Time.get_ticks_msec() / 1000.0
+	start_time = float(Time.get_ticks_msec()) / 1000.0
 	is_loading = true
 	
 	# Create tip label if it doesn't exist
@@ -85,17 +86,21 @@ func _process(_delta):
 	var progress = []
 	var status = ResourceLoader.load_threaded_get_status(next_scene, progress)
 	
-	# Calculate elapsed time
-	var elapsed = (Time.get_ticks_msec() / 1000.0) - start_time
+	# Calculate elapsed time using float division
+	var elapsed = float(Time.get_ticks_msec()) / 1000.0 - start_time
 	
 	# Update loading text
 	update_loading_text(elapsed)
 	
-	# Update progress bar if it exists
-	update_progress_bar(progress)
+	# Update progress bar
+	update_progress_bar(progress, elapsed)
 	
-	# When loaded and minimum time passed, switch scene
-	if status == ResourceLoader.THREAD_LOAD_LOADED and elapsed >= min_display_time:
+	# Mark scene as ready when loaded
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		scene_ready = true
+	
+	# Only switch scene when BOTH: scene is loaded AND minimum display time has passed
+	if scene_ready and elapsed >= min_display_time:
 		print("Loading complete! Switching to: ", next_scene)
 		is_loading = false
 		var packed_scene = ResourceLoader.load_threaded_get(next_scene)
@@ -114,8 +119,11 @@ func update_loading_text(elapsed: float):
 			dots += "."
 		label.text = "LOADING" + dots
 
-func update_progress_bar(progress: Array):
-	"""Update the progress bar if it exists"""
+func update_progress_bar(progress: Array, elapsed: float):
+	"""Update the progress bar - blend real progress with time-based progress so it always animates"""
 	var progress_bar = get_node_or_null("ProgressBar")
-	if progress_bar and progress.size() > 0:
-		progress_bar.value = int(progress[0] * 200)
+	if progress_bar:
+		var real_progress = progress[0] if progress.size() > 0 else 0.0
+		var time_progress = clamp(elapsed / min_display_time, 0.0, 1.0)
+		var display_progress = max(real_progress, time_progress)
+		progress_bar.value = display_progress * 100.0

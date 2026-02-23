@@ -156,10 +156,8 @@ func complete_tutorial() -> void:
 	
 	var paths = [
 		"res://Scenes/LoadingScreen.tscn",
-		"res://LoadingScreen.tscn",
 		"res://Scenes/Environment/environment.tscn",
-		"res://Scenes/Environment.tscn",
-		"res://main.tscn"
+		"res://Scenes/main.tscn"
 	]
 	
 	for path in paths:
@@ -170,10 +168,8 @@ func complete_tutorial() -> void:
 func skip_tutorial() -> void:
 	var paths = [
 		"res://Scenes/LoadingScreen.tscn",
-		"res://LoadingScreen.tscn",
 		"res://Scenes/Environment/environment.tscn",
-		"res://Scenes/Environment.tscn",
-		"res://main.tscn"
+		"res://Scenes/main.tscn"
 	]
 	
 	for path in paths:

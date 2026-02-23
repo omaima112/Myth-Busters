@@ -29,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bq0ft4nj6v2ek" path="res://voices/1.mp3" id="24_8x6ym"]
 [ext_resource type="AudioStream" uid="uid://cdh78ecgb5qm0" path="res://voices/3.mp3" id="26_tnel6"]
 [ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="28_jsww7"]
-[ext_resource type="AudioStream" uid="uid://d0cnkkoerahs6" path="res://voices/15.mp3" id="29_mw2gn"]
+[ext_resource type="AudioStream" uid="uid://yoqer1s4yquj" path="res://voices/banana.mp3" id="29_8x6ym"]
 [ext_resource type="Texture2D" uid="uid://biamu4cb5or0p" path="res://Images/ChatGPT Image Feb 2, 2026, 11_17_33 PM.png" id="30_deloa"]
 [ext_resource type="Texture2D" uid="uid://ywbf1ytae61m" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.47 AM.jpeg" id="31_3flo4"]
 [ext_resource type="Texture2D" uid="uid://dqm6unjttqgvl" path="res://Buildings pack - Aug 2017/Textures/Hotel.png" id="32_86ndy"]
@@ -1632,7 +1632,7 @@ transform = Transform3D(1.053723, 0, 0, 0, 1.1218572, 0, 0, 0, 0.5621385, 44.298
 info_title = "Bonus Info"
 info_text = "Radiation from eating a banana (due to potassium-40) is comparable to the very low background radiation measured around nuclear power plants."
 info_image = ExtResource("28_jsww7")
-info_voice = ExtResource("29_mw2gn")
+info_voice = ExtResource("29_8x6ym")
 
 [node name="Orb29" parent="OrbsContainer" unique_id=1432592493 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.8916229, 0.027685435, 0.119341925, -0.01794376, 0.89677495, -0.073976845, -0.12118997, 0.070908874, 0.8889796, 53.34839, 0.75191784, -24.248127)
@@ -5930,7 +5930,7 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 [node name="Sketchfab_Scene94" parent="." unique_id=571232796 instance=ExtResource("86_i2u67")]
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -92.66821, 0.00399971, 51.66542)
 
-[node name="Sketchfab_Scene95" parent="." unique_id=1184160845 instance=ExtResource("92_8x6ym")]
+[node name="Sketchfab_Scene95" parent="." unique_id=388030592 instance=ExtResource("92_8x6ym")]
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, -50.319916, 4.1463156, 62.550236)
 
 [node name="Sketchfab_Scene66" parent="." unique_id=602044100 instance=ExtResource("90_deloa")]
