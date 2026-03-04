@@ -8,50 +8,50 @@
 [ext_resource type="Script" uid="uid://bieef0ues8b6e" path="res://Scenes/Environment/orbs_container.gd" id="5_6idwj"]
 [ext_resource type="PackedScene" uid="uid://d18vqvemgvqfv" path="res://Scenes/nuclear_powerplant.tscn" id="7_ae2a8"]
 [ext_resource type="Texture2D" uid="uid://cka35pla3i618" path="res://Images/doctor-pet-scan.webp" id="7_rs2mo"]
+[ext_resource type="AudioStream" uid="uid://ddwd7cev3qcir" path="res://voices/voiceslevel1/nuclearwaste.mp3" id="9_3flo4"]
 [ext_resource type="PackedScene" uid="uid://dc5vpf3gk08ql" path="res://Scenes/orbs/orb4.tscn" id="9_rsqt7"]
 [ext_resource type="PackedScene" uid="uid://cfu453p4eumht" path="res://Scenes/pole.tscn" id="11_0xcjn"]
 [ext_resource type="Texture2D" uid="uid://dvpyb4e205js2" path="res://Images/imagesfixed/chohta.png" id="11_deloa"]
-[ext_resource type="AudioStream" uid="uid://cpprgnachxkdy" path="res://voices/New voices/fact1.mp3" id="12_lxj0b"]
+[ext_resource type="AudioStream" uid="uid://clot1m3x4qq43" path="res://voices/voiceslevel1/medicaluses.mp3" id="12_rbqfw"]
 [ext_resource type="Texture2D" uid="uid://jffdmpkbtcni" path="res://Images/WhatsApp Image 2026-01-30 at 12.46.03 AM.jpeg" id="14_1kb8p"]
-[ext_resource type="AudioStream" uid="uid://btqgnm4qjsoxx" path="res://voices/New voices/fact9.mp3" id="15_lxj0b"]
+[ext_resource type="Texture2D" uid="uid://b71gy720hxsfx" path="res://Images/imagesfixed/polane.png" id="14_3flo4"]
+[ext_resource type="AudioStream" uid="uid://b2uuqn5cbw4v1" path="res://voices/voiceslevel1/flying.mp3" id="15_d0ug1"]
 [ext_resource type="Texture2D" uid="uid://djrrpa8r3aceq" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.51 AM.jpeg" id="16_3flo4"]
 [ext_resource type="Texture2D" uid="uid://dudy53xhpltib" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.51 AM (1).jpeg" id="16_jsww7"]
-[ext_resource type="AudioStream" uid="uid://dqep54stxqkfb" path="res://voices/New voices/fct4.mp3" id="17_deloa"]
-[ext_resource type="Texture2D" uid="uid://ch4gbcds3iucm" path="res://Images/imagesfixed/panchwan.png" id="17_uy52e"]
-[ext_resource type="AudioStream" uid="uid://ci87vynfimovl" path="res://voices/New voices/fact5.mp3" id="20_i2u67"]
-[ext_resource type="Texture2D" uid="uid://elijybbs4ko5" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.52 AM.jpeg" id="20_x3dms"]
-[ext_resource type="AudioStream" uid="uid://dbe0vyjlye27f" path="res://voices/New voices/fact8.mp3" id="22_8x6ym"]
+[ext_resource type="AudioStream" uid="uid://c2e6mlo5rqwsw" path="res://voices/voiceslevel1/footballfield.mp3" id="17_ww86s"]
+[ext_resource type="Texture2D" uid="uid://cbkpp4il5cwfd" path="res://Images/imagesfixed/sunn.png" id="19_3flo4"]
+[ext_resource type="AudioStream" uid="uid://bf5xovk5855c5" path="res://voices/voiceslevel1/cosmic.mp3" id="20_jr6re"]
+[ext_resource type="AudioStream" uid="uid://bunva5enffxna" path="res://voices/voiceslevel1/iaea.mp3" id="22_3flo4"]
 [ext_resource type="Texture2D" uid="uid://s32fg0d8wyhq" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.53 AM.jpeg" id="23_1kb8p"]
 [ext_resource type="Texture2D" uid="uid://b6mshhxemdgf1" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.53 AM (1).jpeg" id="23_cq1i7"]
-[ext_resource type="AudioStream" uid="uid://bmwvxpmifyu4w" path="res://voices/New voices/fact7.mp3" id="24_tnel6"]
-[ext_resource type="AudioStream" uid="uid://blg2b34dulfo2" path="res://voices/New voices/fact6.mp3" id="26_lxj0b"]
-[ext_resource type="Texture2D" uid="uid://cpjbu1hb7ww71" path="res://Images/imagesfixed/teesra.png" id="28_i2u67"]
+[ext_resource type="AudioStream" uid="uid://cof23h8d6yys1" path="res://voices/voiceslevel1/runsalltime.mp3" id="24_rbqfw"]
+[ext_resource type="Texture2D" uid="uid://dxykp1vuy6cui" path="res://Images/imagesfixed/mhm.png" id="25_3flo4"]
+[ext_resource type="AudioStream" uid="uid://dygc31tyxbxoe" path="res://voices/voiceslevel1/coolingtowers.mp3" id="26_d0ug1"]
 [ext_resource type="Texture2D" uid="uid://dljhr11x148tl" path="res://Images/WhatsApp Image 2026-01-30 at 1.51.55 AM.jpeg" id="28_jsww7"]
-[ext_resource type="AudioStream" uid="uid://yoqer1s4yquj" path="res://voices/banana.mp3" id="29_deloa"]
+[ext_resource type="AudioStream" uid="uid://crt48j4we7hpf" path="res://voices/voiceslevel1/banana.mp3" id="29_ww86s"]
 [ext_resource type="Texture2D" uid="uid://dqm6unjttqgvl" path="res://Buildings pack - Aug 2017/Textures/Hotel.png" id="32_86ndy"]
-[ext_resource type="AudioStream" uid="uid://eq3ahe6fivea" path="res://voices/New voices/myth6.mp3" id="32_lxj0b"]
+[ext_resource type="AudioStream" uid="uid://d21mpic7gd4ow" path="res://voices/voiceslevel1/causescancer.mp3" id="32_jr6re"]
+[ext_resource type="Texture2D" uid="uid://38amnva7ctyk" path="res://Images/imagesfixed/hssx.png" id="33_3flo4"]
+[ext_resource type="AudioStream" uid="uid://cgb5kkcrhoxqw" path="res://voices/voiceslevel1/automaticallyshut.mp3" id="34_5igun"]
 [ext_resource type="Texture2D" uid="uid://c8wqmalgiubln" path="res://Images/imagesfixed/pehla.png" id="34_8x6ym"]
 [ext_resource type="ArrayMesh" uid="uid://bdhqh7e3c7s4a" path="res://Buildings pack - Aug 2017/OBJ/Hospital.obj" id="34_huij4"]
-[ext_resource type="AudioStream" uid="uid://bsie8ysijfu77" path="res://voices/New voices/myth5.mp3" id="34_lxj0b"]
 [ext_resource type="ArrayMesh" uid="uid://be1f2a45nwlbs" path="res://Buildings pack - Aug 2017/OBJ/Shop.obj" id="36_d54yu"]
-[ext_resource type="Texture2D" uid="uid://b3nepg0oxncga" path="res://Images/imagesfixed/chahta.png" id="36_tnel6"]
+[ext_resource type="AudioStream" uid="uid://cdg8kdyg5m30q" path="res://voices/voiceslevel1/lessdeaths.mp3" id="36_dbj8p"]
 [ext_resource type="Texture2D" uid="uid://slbcmoqty1st" path="res://Buildings pack - Aug 2017/Textures/Shop.png" id="37_840wd"]
-[ext_resource type="AudioStream" uid="uid://catqu7n8y4auw" path="res://voices/New voices/myth1.mp3" id="37_mw2gn"]
 [ext_resource type="ArrayMesh" uid="uid://cjwlwit47fknn" path="res://Buildings pack - Aug 2017/OBJ/Flat.obj" id="37_xeifb"]
 [ext_resource type="PackedScene" uid="uid://csgo0urmcaob7" path="res://Scenes/orbs/orb2_red.tscn" id="38_c4k7n"]
+[ext_resource type="AudioStream" uid="uid://b3yb8n1mfkf6g" path="res://voices/voiceslevel1/coalplants.mp3" id="38_lxj0b"]
 [ext_resource type="ArrayMesh" uid="uid://dieb05sucghxo" path="res://Buildings pack - Aug 2017/OBJ/House2.obj" id="38_saevq"]
-[ext_resource type="AudioStream" uid="uid://djauxn8vueqa" path="res://voices/New voices/myth3.mp3" id="39_deloa"]
 [ext_resource type="Texture2D" uid="uid://cvbfux43c5rth" path="res://Buildings pack - Aug 2017/Textures/HouseTexture3.png" id="40_58yun"]
+[ext_resource type="AudioStream" uid="uid://brwa06uslt17" path="res://voices/voiceslevel1/atomicbombs.mp3" id="40_deloa"]
 [ext_resource type="PackedScene" uid="uid://c40cisiw1qoyl" path="res://Scenes/orbs/orb4_red.tscn" id="40_saevq"]
 [ext_resource type="PackedScene" uid="uid://dddpgpeo6egcf" path="res://Scenes/orbs/orb_red.tscn" id="41_86ndy"]
 [ext_resource type="Texture2D" uid="uid://1vb86wgefxtw" path="res://Buildings pack - Aug 2017/Textures/HouseTexture2.png" id="41_aopyj"]
-[ext_resource type="AudioStream" uid="uid://jnwnlmjqaj4" path="res://voices/New voices/myth4.mp3" id="41_uy52e"]
 [ext_resource type="Texture2D" uid="uid://yk7csbd6uepx" path="res://Images/imagesfixed/dosra.jpeg" id="42_mw2gn"]
 [ext_resource type="Texture2D" uid="uid://lgk6ebp8v7wp" path="res://Buildings pack - Aug 2017/Textures/HouseTexture1.png" id="42_taspi"]
-[ext_resource type="AudioStream" uid="uid://bueeajwpvvdbl" path="res://voices/New voices/fact2.mp3" id="43_257a7"]
+[ext_resource type="AudioStream" uid="uid://dkii0lfhx6ujw" path="res://voices/voiceslevel1/kerala.mp3" id="42_uy52e"]
 [ext_resource type="PackedScene" uid="uid://d4dip7uvmuwlo" path="res://Airport/airport.glb" id="44_0sdc0"]
 [ext_resource type="Texture2D" uid="uid://tmj2k6wu6obx" path="res://Images/imagesfixed/satwannn.png" id="44_257a7"]
-[ext_resource type="AudioStream" uid="uid://m2ft4ju2f83p" path="res://voices/New voices/myth2.mp3" id="44_i2u67"]
 [ext_resource type="ArrayMesh" uid="uid://csx23wk3xic07" path="res://steel fence/fance.obj" id="65_2qnay"]
 [ext_resource type="PackedScene" uid="uid://cv71q6rjfianx" path="res://Sign/stop sign/stopsign.fbx" id="65_gfpqj"]
 [ext_resource type="PackedScene" uid="uid://b4ra0fkf8h3qp" path="res://Sign/russian_radiation_sign-clear.glb" id="66_nij1o"]
@@ -1236,123 +1236,108 @@ script = ExtResource("5_6idwj")
 
 [node name="Orb61" parent="OrbsContainer" unique_id=1779244539 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 5.2368317, 1.5811819, -74.845215)
-info_title = "Waste Leakage Fear"
-info_text = "Myth: Nuclear waste leaks into the air or water
-
-Correction: Used nuclear fuel is solid and stored in secure, monitored facilities"
+info_title = "Myth: Nuclear waste leaks into the air or water"
+info_text = "Fact: Used nuclear fuel is solid and stored in secure, monitored facilities"
 info_image = ExtResource("11_deloa")
-info_voice = ExtResource("44_i2u67")
+info_voice = ExtResource("9_3flo4")
 
 [node name="Orb" parent="OrbsContainer" unique_id=953888495 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, 50.89052, 1.2665638, 91.642914)
-info_title = "Medical Nuclear Use"
-info_text = "Nuclear technology is widely used in medicine for diagnosis and cancer treatment"
+info_title = "Myth: Nuclear Technology Only Has Military Uses"
+info_text = "Fact: Nuclear technology saves millions of lives every year. PET scans, radiotherapy for cancer, sterilising medical equipment — all use nuclear science. Over 35 million nuclear medicine procedures performed worldwide every year."
 info_image = ExtResource("7_rs2mo")
-info_voice = ExtResource("12_lxj0b")
+info_voice = ExtResource("12_rbqfw")
 
 [node name="Orb10" parent="OrbsContainer" unique_id=1333296512 instance=ExtResource("4_owdl0")]
 transform = Transform3D(0.39379478, 0, 1.0804747, 0, 1.15, 0, -1.0804747, 0, 0.39379478, 2.219574, 0.67235494, 72.138016)
-info_title = "Energy Not Bombs"
-info_text = "Nuclear energy does not mean weapons! Reactors produce energy, not bombs"
-info_image = ExtResource("17_uy52e")
-info_voice = ExtResource("15_lxj0b")
+info_title = "Myth: Flying Is Safer Than Living Near Nuclear Plants"
+info_text = "Fact: A single 10-hour flight exposes you to more cosmic radiation from space than living near a nuclear plant for an entire month. Pilots receive more annual radiation than nuclear plant workers."
+info_image = ExtResource("14_3flo4")
+info_voice = ExtResource("15_d0ug1")
 
 [node name="Orb13" parent="OrbsContainer" unique_id=1924948781 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, 39.56314, 1.5700017, -57.791496)
-info_title = "Nuclear Waste Volume"
-info_text = "All nuclear waste produced in the United States could fit within a single football field"
+info_title = "Myth: Nuclear Waste Is Huge And Uncontrollable"
+info_text = "Fact: All nuclear waste produced in the United States since the 1950s could fit within a single football field at a depth of under 10 yards. Nuclear waste is solid, stable, and safely contained."
 info_image = ExtResource("14_1kb8p")
-info_voice = ExtResource("17_deloa")
+info_voice = ExtResource("17_ww86s")
 
 [node name="Orb18" parent="OrbsContainer" unique_id=1775727505 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 47.197464, 0.3369199, -84.883965)
-info_title = "Stable Waste Form"
-info_text = "Nuclear waste is solid, stable, and safely contained."
-info_image = ExtResource("20_x3dms")
-info_voice = ExtResource("20_i2u67")
+info_title = "Myth: Nuclear Plants Are the Biggest Radiation Source"
+info_text = "Fact: Cosmic radiation from outer space bombards every person on Earth every single day — contributing 0.33 mSv annually. Nuclear plants are the tiniest fraction of what you already receive naturally."
+info_image = ExtResource("19_3flo4")
+info_voice = ExtResource("20_jr6re")
 
 [node name="Orb19" parent="OrbsContainer" unique_id=1587275244 instance=ExtResource("1_jhh7m")]
 transform = Transform3D(0.4568674, 0, 1.055354, 0, 1.15, 0, -1.055354, 0, 0.4568674, -56.25592, 0.57675076, 5.4231567)
-info_title = "Peaceful Nuclear Oversight"
-info_text = "181+ IAEA member states collaborate peacefully. Treaties like NPT prevent 
-proliferation"
+info_title = "Myth: Countries With Nuclear Power Can Make Bombs"
+info_text = "Fact: 181+ IAEA member states collaborate peacefully. Treaties like the NPT prevent proliferation."
 info_image = ExtResource("16_jsww7")
-info_voice = ExtResource("22_8x6ym")
+info_voice = ExtResource("22_3flo4")
 
 [node name="Orb21" parent="OrbsContainer" unique_id=2054090183 instance=ExtResource("4_owdl0")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -38.03446, 2.3329723, -55.163506)
-info_title = "Always-On Power"
-info_text = "Nuclear power provides electricity continuously, day and night."
+info_title = "Myth: Nuclear Power Is Unreliable And Shuts Down Often"
+info_text = "Fact: Nuclear power provides electricity continuously, day and night, regardless of weather. US nuclear plants achieve over 90% capacity factors — the highest of any energy source on Earth."
 info_image = ExtResource("23_cq1i7")
-info_voice = ExtResource("24_tnel6")
+info_voice = ExtResource("24_rbqfw")
 
 [node name="Orb24" parent="OrbsContainer" unique_id=1034663269 instance=ExtResource("9_rsqt7")]
 transform = Transform3D(0.82028025, 0, -0.8060027, 0, 1.15, 0, 0.8060027, 0, 0.82028025, -104.185715, 0.4987967, -23.592003)
-info_title = "Automatic Safety Systems"
-info_text = "Modern reactors automatically shut down if abnormal conditions are detected."
-info_image = ExtResource("28_i2u67")
-info_voice = ExtResource("26_lxj0b")
+info_title = "Myth: Cooling Towers Release Radioactive Steam"
+info_text = "Fact: Cooling towers release only water vapor. No radioactive material, no toxic gases. The water in cooling towers never contacts the reactor fuel."
+info_image = ExtResource("25_3flo4")
+info_voice = ExtResource("26_d0ug1")
 
 [node name="Orb27" parent="OrbsContainer" unique_id=1670677355 instance=ExtResource("38_c4k7n")]
 transform = Transform3D(1.053723, 0, 0, 0, 1.1218572, 0, 0, 0, 0.5621385, 44.298306, 2.0700636, 7.9112225)
-info_title = "Banana Radiation Dose"
-info_text = "Radiation from eating a banana (due to potassium-40) is comparable to the very low background radiation measured around nuclear power plants."
+info_title = "Myth: Nuclear Radiation Is Unlike Any Natural Radiation"
+info_text = "Fact: Radiation from eating a banana (due to potassium-40) is comparable to the very low background radiation measured around nuclear power plants."
 info_image = ExtResource("28_jsww7")
-info_voice = ExtResource("29_deloa")
+info_voice = ExtResource("29_ww86s")
 
 [node name="Orb29" parent="OrbsContainer" unique_id=1432592493 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.99124175, 0.0016958888, 0.13204868, -0.004502287, 0.9997702, 0.020957086, -0.1319828, -0.02136806, 0.99102163, -24.640457, 0.6338835, 26.774115)
-info_title = "Cancer Near Plants"
-info_text = "Myth: Living near a nuclear plant causes cancer.
-
-Correction: Radiation exposure from properly operating nuclear plants is very low and remains within strict international safety limits"
+info_title = "Myth: Living Near A Nuclear Plant Causes Cancer"
+info_text = "Fact: Radiation exposure from properly operating nuclear plants is very low and remains within strict international safety limits. Studies have never demonstrated elevated cancer rates in nearby populations."
 info_image = ExtResource("34_8x6ym")
-info_voice = ExtResource("32_lxj0b")
+info_voice = ExtResource("32_jr6re")
 
 [node name="Orb31" parent="OrbsContainer" unique_id=508967575 instance=ExtResource("40_saevq")]
 transform = Transform3D(0.9000001, 0, 0, 0, 0.8999986, 0.0015707953, 0, -0.0015707954, 0.89999855, -104.5402, 0.54503876, 96.75742)
-info_title = "Weapons Connection Myth"
-info_text = "Myth: Nuclear energy leads directly to nuclear weapons.
-
-Correction: Civilian nuclear energy programs operate under international safeguards and inspections to prevent weapon use."
-info_image = ExtResource("36_tnel6")
-info_voice = ExtResource("34_lxj0b")
+info_title = "Myth: Reactor Meltdowns Destroy Everything Around Them"
+info_text = "Fact: Modern reactors automatically shut down if abnormal conditions are detected."
+info_image = ExtResource("33_3flo4")
+info_voice = ExtResource("34_5igun")
 
 [node name="Orb30" parent="OrbsContainer" unique_id=820223595 instance=ExtResource("41_86ndy")]
 transform = Transform3D(2.08, 0, 0, 0, 2.0800002, 0, 0, 0, 2.08, 94.156265, 1.2285268, -97.24862)
-info_title = "Low Nuclear Deaths"
-info_text = "Myth: Nuclear energy is the most dangerous form of electricity.
-
-Correction: Research shows nuclear energy has one of the lowest death rates per unit of electricity produced."
+info_title = "Myth: Nuclear Energy Is The Deadliest Power Source"
+info_text = "Fact: Nuclear energy causes only 0.07 deaths per TWh — lower than solar, wind, and 350x safer than coal. It has prevented an estimated 2 million deaths by replacing fossil fuels."
 info_image = ExtResource("23_1kb8p")
-info_voice = ExtResource("37_mw2gn")
+info_voice = ExtResource("36_dbj8p")
 
 [node name="Orb60" parent="OrbsContainer" unique_id=270483315 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -50.13419, 0.7920702, -97.87621)
-info_title = "Coal vs Nuclear Radiation"
-info_text = "Myth: Nuclear plants emit more radiation than coal plants.
-
-Correction: Studies show coal plants release more naturally occurring radiation into the environment than nuclear plants during normal operation."
+info_title = "Myth: Nuclear Plants Emit More Radiation Than Coal Plants"
+info_text = "Fact: Coal plants release more naturally occurring radiation than nuclear plants. Coal ash contains uranium and thorium released into the air when burned."
 info_image = ExtResource("16_3flo4")
-info_voice = ExtResource("39_deloa")
+info_voice = ExtResource("38_lxj0b")
 
 [node name="Orb64" parent="OrbsContainer" unique_id=488700511 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -84.960205, 0.7920702, -54.726223)
-info_title = "Reactor Explosion Fear"
-info_text = "Myth: Nuclear power plants can explode like atomic bombs.
-
-Correction: Nuclear power plants use low enriched fuel that cannot produce a nuclear weapon explosion."
+info_title = "Myth: Nuclear Plants Can Explode Like Atomic Bombs"
+info_text = "Fact: Power plants cannot explode like atomic bombs. Reactor fuel is enriched to only 3–5%. Bombs require over 90%."
 info_image = ExtResource("42_mw2gn")
-info_voice = ExtResource("41_uy52e")
+info_voice = ExtResource("40_deloa")
 
 [node name="Orb59" parent="OrbsContainer" unique_id=1248702059 instance=ExtResource("41_86ndy")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 93.481476, 1.5811895, 30.345362)
-info_title = "Kerala Radiation"
-info_text = "Myth: Radiation in Kerala is deadly, so people living there should suffer serious diseases
-
-Wrong! Kerala has naturally high radiation, yet people live normal, healthy lives with no unusual cancer rates.This shows that low-level natural radiation is not dangerous"
+info_title = "Myth: Radiation Is Always Dangerous"
+info_text = "Fact: Kerala has naturally high radiation, yet people live normal, healthy lives with no unusual cancer rates. This shows that low-level natural radiation is not dangerous"
 info_image = ExtResource("44_257a7")
-info_voice = ExtResource("43_257a7")
+info_voice = ExtResource("42_uy52e")
 
 [node name="Hospital" type="MeshInstance3D" parent="." unique_id=1193944215]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 64.10651, -0.02237463, 83.39027)

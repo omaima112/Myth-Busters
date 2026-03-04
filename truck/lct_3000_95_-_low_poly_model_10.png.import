@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpjbu1hb7ww71"
-path="res://.godot/imported/teesra.png-9d64cec5316bb9581ebe401f03a3967e.ctex"
+uid="uid://c7fj2n55cafvj"
+path="res://.godot/imported/lct_3000_95_-_low_poly_model_10.png-16faf224cfda81b9f7db8b823adea12f.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "dbbb9b9e51c814d1ae4eb84b39b74afd"
 }
 
 [deps]
 
-source_file="res://Images/imagesfixed/teesra.png"
-dest_files=["res://.godot/imported/teesra.png-9d64cec5316bb9581ebe401f03a3967e.ctex"]
+source_file="res://truck/lct_3000_95_-_low_poly_model_10.png"
+dest_files=["res://.godot/imported/lct_3000_95_-_low_poly_model_10.png-16faf224cfda81b9f7db8b823adea12f.ctex"]
 
 [params]
 
@@ -23,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

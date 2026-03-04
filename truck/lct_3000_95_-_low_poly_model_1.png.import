@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch4gbcds3iucm"
-path="res://.godot/imported/panchwan.png-915231531fa7b02dadc9bf97d44cc393.ctex"
+uid="uid://cwt4laof4whtl"
+path="res://.godot/imported/lct_3000_95_-_low_poly_model_1.png-40a32a52f1a5ed41f1648236239a7ec0.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "813bd4678788a473a08df86a8ec389c0"
 }
 
 [deps]
 
-source_file="res://Images/imagesfixed/panchwan.png"
-dest_files=["res://.godot/imported/panchwan.png-915231531fa7b02dadc9bf97d44cc393.ctex"]
+source_file="res://truck/lct_3000_95_-_low_poly_model_1.png"
+dest_files=["res://.godot/imported/lct_3000_95_-_low_poly_model_1.png-40a32a52f1a5ed41f1648236239a7ec0.ctex"]
 
 [params]
 
@@ -23,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
