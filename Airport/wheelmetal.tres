@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckj24t6xv0nym"]
+
+[resource]
+resource_name = "wheelmetal"
+cull_mode = 2
+albedo_color = Color(0.4066588, 0.4066588, 0.4066588, 1)
+metallic = 0.61658
+roughness = 0.235751

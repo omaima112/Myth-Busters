@@ -25,6 +25,9 @@ var total_orbs: int = 0
 var collected_orbs: int = 0
 var current_level: String = "Level 1"
 
+# Used to pass a target scene path to the LoadingScreen before transitioning
+var next_scene: String = ""
+
 # Timer variables
 var time_limit: int = 420      # 7 minutes in seconds
 var time_remaining_f: float = 420.0  # float for accurate delta subtraction

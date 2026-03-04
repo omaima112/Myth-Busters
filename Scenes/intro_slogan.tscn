@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bdssv4gl82rv6"]
+
+[ext_resource type="Script" uid="uid://7qfxwdjgvdvf" path="res://Scenes/intro_slogan.gd" id="1_script"]
+[ext_resource type="AudioStream" uid="uid://clfsfrsi68s40" path="res://Starting voice....mp3" id="2_ijvm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+bg_color = Color(0.04, 0.04, 0.06, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.85, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(1, 0.85, 0, 0.15)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.95, 0.2, 1)
+
+[node name="IntroSlogan" type="Control" unique_id=1645602492]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1642703152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.06, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=273990052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer" unique_id=2038935432]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="IconLabel" type="Label" parent="CenterContainer/VBox" unique_id=1647276272]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 72
+text = "☢"
+horizontal_alignment = 1
+
+[node name="Line1" type="Label" parent="CenterContainer/VBox" unique_id=597537629]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 30
+text = "\"Nuclear technology is often seen as deadly,"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Line2" type="Label" parent="CenterContainer/VBox" unique_id=1194081206]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 30
+text = "but this belief is a myth.\""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Divider" type="HSeparator" parent="CenterContainer/VBox" unique_id=1996683464]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SubLabel" type="RichTextLabel" parent="CenterContainer/VBox" unique_id=69400804]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center][color=#d4a843]Press Start to discover the facts
+and learn the truth.[/color][/center]"
+fit_content = true
+
+[node name="ContinueBtn" type="Button" parent="CenterContainer/VBox" unique_id=1556519456]
+visible = false
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.85, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+text = "START"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=830857102]
+stream = ExtResource("2_ijvm1")
+
+[connection signal="pressed" from="CenterContainer/VBox/ContinueBtn" to="." method="_on_continue_pressed"]

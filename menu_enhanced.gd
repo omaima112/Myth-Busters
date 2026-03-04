@@ -337,8 +337,12 @@ func _on_start_button_pressed():
 		GameManager.time_remaining_f = float(duration)
 		GameManager.time_remaining   = duration
 
-	# Load the tutorial directly
-	get_tree().change_scene_to_file("res://Scenes/Tutorial/tutorial.tscn")
+	# Tell LoadingScreen to load the tutorial next
+	if GameManager:
+		GameManager.next_scene = "res://Scenes/Tutorial/tutorial.tscn"
+
+	# Show the loading screen — it will then load the tutorial
+	get_tree().change_scene_to_file("res://Scenes/LoadingScreen.tscn")
 
 
 func _on_quit_button_pressed():

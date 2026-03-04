@@ -30,6 +30,7 @@ shadow_size = 6
 font = ExtResource("2_62nyy")
 font_size = 20
 font_color = Color(0, 1, 1, 1)
+shadow_size = 0
 shadow_color = Color(0, 1, 1, 0.5529412)
 shadow_offset = Vector2(0, 0)
 
@@ -66,7 +67,7 @@ shadow_offset = Vector2(0, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_info"]
 line_spacing = 5.0
 font = ExtResource("2_62nyy")
-font_size = 20
+font_size = 25
 font_color = Color(0.85, 0.97, 0.97, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_image_frame"]
@@ -93,6 +94,18 @@ size_flags_vertical = 3
 [node name="UI" type="CanvasLayer" parent="." unique_id=409621439]
 script = ExtResource("1_45svt")
 
+[node name="BackgroundShade" type="ColorRect" parent="UI" unique_id=1917082581]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8509804)
+
 [node name="ProgressBar" type="ProgressBar" parent="UI" unique_id=-984967295]
 visible = false
 offset_right = 1.0
@@ -103,10 +116,10 @@ max_value = 3.0
 show_percentage = false
 
 [node name="ContinueLabel" type="Label" parent="UI" unique_id=-984967294]
-offset_left = 515.0
-offset_top = 509.0
-offset_right = 708.0
-offset_bottom = 529.0
+offset_left = 492.0
+offset_top = 510.0
+offset_right = 685.0
+offset_bottom = 530.0
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Move Forward to Continue "
@@ -171,7 +184,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 17
-text = "Information asdasd asd as das dasd as dasd sa "
+text = "Information asdasd asd as das dasd as dasd sa Information asdasd asd as das dasd as dasd sa Information asdasd asd as das dasd as dasd sa Information asdasd asd as das dasd as dasd sa Information asdasd asd as das dasd as dasd sa Information asdasd asd as das dasd as dasd sa "
 label_settings = SubResource("LabelSettings_info")
 horizontal_alignment = 1
 vertical_alignment = 1

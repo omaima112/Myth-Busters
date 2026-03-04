@@ -13,7 +13,7 @@ func _ready():
 	
 	if radiation_bar:
 		radiation_bar.min_value = 0
-		radiation_bar.max_value = 30
+		radiation_bar.max_value = 1
 		radiation_bar.value = 0
 		radiation_bar.show_percentage = false
 	
@@ -31,7 +31,7 @@ func _process(_delta):
 	if radiation_label:
 		radiation_label.text = "☢ RADIATION LEVEL: %.1f μSv/h" % current_radiation
 		
-		if current_radiation < 1:
+		if current_radiation < 0.5:
 			radiation_label.modulate = Color(0.2, 1.0, 0.2)
 		elif current_radiation < 5:
 			radiation_label.modulate = Color(1.0, 1.0, 0.0)
@@ -43,7 +43,7 @@ func _process(_delta):
 	if radiation_bar:
 		radiation_bar.value = current_radiation
 		
-		if current_radiation < 1:
+		if current_radiation < 0.5:
 			radiation_bar.modulate = Color(0.2, 1.0, 0.2)
 		elif current_radiation < 5:
 			radiation_bar.modulate = Color(1.0, 1.0, 0.0)

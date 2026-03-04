@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://pjexj6o1silu"]
+
+[resource]
+resource_name = "silvermetal"
+cull_mode = 2
+albedo_color = Color(0.6666601, 0.6666601, 0.6666601, 1)
+metallic = 0.455959
+roughness = 0.323834

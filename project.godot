@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="myth-busters"
-run/main_scene="uid://br0fledc3bpng"
+run/main_scene="res://Scenes/intro_slogan.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/image="uid://bsg4pubo8x7c5"
 config/icon="res://icon.svg"
@@ -83,6 +83,7 @@ Horn={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 textures/webp_compression/compression_method=3

@@ -4,11 +4,9 @@
 [ext_resource type="Script" uid="uid://wdqe4plgbn8j" path="res://Scenes/Levels/main_2.gd" id="1_whrx3"]
 [ext_resource type="Script" uid="uid://b6ojk5javc8yb" path="res://Camera/camera_rig.gd" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bkql7a8enl67p" path="res://Scenes/popups.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://b7mnrpuva07ev" path="res://Scenes/touch_screen_controls.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cnv5v5bn0mw7d" path="res://Scenes/lose_screen.tscn" id="9_lose"]
 [ext_resource type="PackedScene" uid="uid://cm3wujgc2v1xn" path="res://Scenes/Levels/level_2.tscn" id="9_uao64"]
 [ext_resource type="PackedScene" uid="uid://djcrj5qtfce1x" path="res://Scenes/win_screen_2.tscn" id="10_kpxnr"]
-[ext_resource type="AudioStream" uid="uid://boo22e6mv71lv" path="res://gaming-game-minecraft-background-music-372242.mp3" id="11_v7hsc"]
 [ext_resource type="PackedScene" uid="uid://7dgeuby50k5m" path="res://Scenes/enemy.tscn" id="11_whrx3"]
 [ext_resource type="PackedScene" uid="uid://caq7hpx0d7sff" path="res://Scenes/timer_hud.tscn" id="12_vrv5v"]
 [ext_resource type="PackedScene" uid="uid://dk50kfrqx4gxs" path="res://Scenes/Levels/hud_2.tscn" id="12_whrx3"]
@@ -35,7 +33,7 @@ current = true
 fov = 83.416725
 
 [node name="Jeep" parent="." unique_id=2007525747 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(-0.0063525885, -0.07104613, 0.99745274, 0.02638465, 0.99711365, 0.07119009, -0.9996318, 0.02676969, -0.004459687, -0.54161584, 1.786706, 3.4084682)
+transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 0.9999998, 0, 1, 0, -4.3711385e-08, 113.22896, 3.578298, 45.708527)
 max_engine_force = 650.0
 max_steer_angle = 0.45
 steer_speed = 3.2
@@ -49,19 +47,11 @@ offset_right = 8.999999
 offset_bottom = 2.0
 scale = Vector2(2.1070201, 3.962356)
 
-[node name="TouchScreenControls" parent="." unique_id=701083740 instance=ExtResource("5_kry3j")]
-
 [node name="HUD" parent="." unique_id=139008116 instance=ExtResource("12_whrx3")]
 
 [node name="LoseScreen" parent="." unique_id=174884586 instance=ExtResource("9_lose")]
 
 [node name="WinScreen" parent="." unique_id=1747548582 instance=ExtResource("10_kpxnr")]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1158039612]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 54.90532, 0)
-stream = ExtResource("11_v7hsc")
-volume_db = 5.97
-autoplay = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=744865548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6105213, 0.37798405, 1.059185)

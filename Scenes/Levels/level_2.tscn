@@ -4306,7 +4306,7 @@ shape = SubResource("BoxShape3D_rmhrp")
 
 [node name="Orb69" parent="orbs" unique_id=1175831541 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 30.075966, 1.5797989, 0.9417151)
-info_title = "Myth"
+info_title = "Reactor Radiation"
 info_text = "Nuclear reactors give more radiation than a normal city
 
 Wrong! Radiation from a reactor is very tiny (less than 1%) of natural background radiation in a city"
@@ -4315,16 +4315,17 @@ info_voice = ExtResource("59_i3efm")
 
 [node name="Orb55" parent="orbs" unique_id=820223595 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 25.825037, 1.5797989, -73.45653)
-info_title = "Myth"
+info_title = "Hospitals vs Reactors"
 info_text = "Hospitals are completely safe than Reactors
 
-False! Hospitals have daily risks, while nuclear reactors use stronger layered safety systems"
+False! Hospitals have daily risks, while nuclear reactors use stronger layered safety systems
+"
 info_image = ExtResource("57_1axn8")
 info_voice = ExtResource("61_7kirv")
 
 [node name="Orb56" parent="orbs" unique_id=786260794 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -41.20928, 1.5797989, 43.94311)
-info_title = "Myth"
+info_title = "Reactors Safety Measures"
 info_text = "Nuclear reactors are extremely dangerous
 
 Reactors are heavily protected and monitored, often safer than many everyday facilities"
@@ -4333,7 +4334,7 @@ info_voice = ExtResource("63_ciw3c")
 
 [node name="Orb57" parent="orbs" unique_id=1267451624 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 95.44515, 1.8650293, -49.303215)
-info_title = "Myth"
+info_title = "Radiation Use"
 info_text = "Only nuclear facilities use dangerous radiation
 
 Hospitals use radiation openly; reactors keep radiation sealed inside thick containment."
@@ -4342,7 +4343,7 @@ info_voice = ExtResource("65_jni7c")
 
 [node name="Orb59" parent="orbs" unique_id=1682457365 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -62.061657, 1.5798008, 67.78913)
-info_title = "Myth"
+info_title = "Rare Reactor Accidents"
 info_text = "A nuclear accident can happen easily
 
 False! Reactor accidents are rare due to backups; hospital risks occur daily"
@@ -4351,7 +4352,7 @@ info_voice = ExtResource("86_g7o7e")
 
 [node name="Orb58" parent="orbs" unique_id=842147315 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 63.69876, 1.579797, -54.45957)
-info_title = "Myth"
+info_title = "CT Scan Myth"
 info_text = "CT scans are completely safe and expose no radiation
 
 False! A single CT scan can expose about 7 mSv of radiation which is 700x higher than Reactor"
@@ -4360,7 +4361,7 @@ info_voice = ExtResource("69_rmhrp")
 
 [node name="Orb60" parent="orbs" unique_id=830168783 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -67.28606, 1.5797989, -65.3251)
-info_title = "Myth"
+info_title = "Coal Plants & Reactors"
 info_text = "Coal plants are safer than nuclear plants
 
 False! Coal plants emit radiation about 0.6uSv/hr which is more than six times"
@@ -4369,7 +4370,7 @@ info_voice = ExtResource("71_dbqre")
 
 [node name="Orb61" parent="orbs" unique_id=1172849561 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -78.769264, 1.5797989, 1.8050213)
-info_title = "Myth"
+info_title = "Cleaner Coal"
 info_text = "Coal is better for the environment than nuclear energy
 
 No! Coal enerygy emits pollution which causes alot of death per year"
@@ -4378,7 +4379,7 @@ info_voice = ExtResource("73_x7035")
 
 [node name="Orb62" parent="orbs" unique_id=4979127 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -39.453156, 1.5797989, -79.81031)
-info_title = "Myth"
+info_title = "Coal Waste"
 info_text = "Coal waste is less harmful than nuclear waste
 
 False! Coal waste spreads into soil and water, while nuclear waste is sealed, tracked, and isolated"
@@ -4387,7 +4388,7 @@ info_voice = ExtResource("75_ksshh")
 
 [node name="Orb63" parent="orbs" unique_id=1254928215 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -104.30171, 1.5798008, -32.66798)
-info_title = "Myth"
+info_title = "Endless Coal"
 info_text = "Coal will never run out
 
 Totally False! Coal is limited source of Energy while nuclear fuel yields massive energy from small amounts"
@@ -4396,7 +4397,7 @@ info_voice = ExtResource("77_yckq3")
 
 [node name="Orb64" parent="orbs" unique_id=1526477971 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -26.81269, 1.5797989, -36.918938)
-info_title = "Myth"
+info_title = "Cause Of Air Pollution"
 info_text = "Coal Plant is safer than Reactor
 
 False! Coal plants cause air pollution that leads to respiratory and heart diseases. Nuclear plants have strict safety systems"
@@ -4405,7 +4406,7 @@ info_voice = ExtResource("79_pp6jf")
 
 [node name="Orb65" parent="orbs" unique_id=1098573998 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 69.86073, 1.5797989, 78.59723)
-info_title = "Myth"
+info_title = "ALARA"
 info_text = "Radiation exposure in nuclear reactors is uncontrolled and unavoidable
 
 Nuclear reactors follow ALARA, keeping radiation As Low As Reasonably Achievable through strict controls"
@@ -4414,7 +4415,7 @@ info_voice = ExtResource("81_w7612")
 
 [node name="Orb66" parent="orbs" unique_id=742053161 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, 103.93149, 1.5797989, -72.53064)
-info_title = "Myth"
+info_title = "Hospital Waste Impact"
 info_text = "Hospitals do not harm the environment in the long term
 
 Not so true! Hospital waste is constant; nuclear waste is smaller and strictly controlled"
@@ -4423,7 +4424,7 @@ info_voice = ExtResource("83_nhcdk")
 
 [node name="Orb67" parent="orbs" unique_id=2106378870 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -79.40091, 1.5797951, -79.23822)
-info_title = "Myth"
+info_title = "Chernobyl Deaths"
 info_text = "Chernobyl caused more deaths than coal pollution
 
 False! Air pollution from coal kills far more people in a single year than Chernobyl did in total"
@@ -4432,7 +4433,7 @@ info_voice = ExtResource("84_caci1")
 
 [node name="Orb68" parent="orbs" unique_id=1092090774 instance=ExtResource("56_4m2nc")]
 transform = Transform3D(1.765, 0, 0, 0, 1.7649994, 0, 0, 0, 1.7649999, -0.85713625, 1.5797989, 64.55777)
-info_title = "Myth"
+info_title = "Frequent Nuclear Accidents"
 info_text = "Nuclear accidents happen frequently
 
 Coal causes continuous health damage every day, while nuclear accidents are extremely rare worldwide"
@@ -4443,6 +4444,7 @@ info_voice = ExtResource("67_mxgr0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.191345, 0, 33.8089)
 script = ExtResource("73_mxgr0")
 max_radiation = 0.3
+radiation_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city" unique_id=413400380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.484512, 1.3065186, -30.018074)
@@ -4463,6 +4465,7 @@ debug_color = Color(18.892157, 0, 15.3002825, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.041214, 0, -18.49123)
 script = ExtResource("73_mxgr0")
 max_radiation = 1.0
+radiation_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="coal" unique_id=502923937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.14241, 1.4859009, -53.450512)
@@ -4473,6 +4476,7 @@ debug_color = Color(0.75188565, 0.4533617, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.95298, 0, -18.49123)
 script = ExtResource("73_mxgr0")
 max_radiation = 2.5
+radiation_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="xray" unique_id=1985291121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.316124, 1.4775553, -35.41062)
@@ -4488,6 +4492,7 @@ debug_color = Color(0.77, 0.55401504, 0.0076999925, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.735596, 0, -18.49123)
 script = ExtResource("73_mxgr0")
 max_radiation = 25.0
+radiation_speed = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ctscan" unique_id=1431085636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.316124, 1.4775553, -35.41062)
@@ -4503,6 +4508,7 @@ debug_color = Color(0.77, 0.55401504, 0.0076999925, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.90473, 0, -18.49123)
 script = ExtResource("73_mxgr0")
 max_radiation = 0.12
+radiation_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ICU" unique_id=1613896912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.316124, 1.4775553, -35.41062)
@@ -4518,6 +4524,7 @@ debug_color = Color(0.77, 0.55401504, 0.0076999925, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.191345, 0, 95.27673)
 script = ExtResource("73_mxgr0")
 max_radiation = 0.1
+radiation_speed = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor" unique_id=2024170081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.344284, 2.2445068, -19.149727)

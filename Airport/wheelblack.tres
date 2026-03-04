@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://mlvknv66gdup"]
+
+[resource]
+resource_name = "wheelblack"
+cull_mode = 2
+albedo_color = Color(0.06665933, 0.06468226, 0.063821234, 1)
+roughness = 0.5
