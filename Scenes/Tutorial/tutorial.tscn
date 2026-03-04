@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://br4icnwqqn8dp" path="res://Scenes/Tutorial/path/low_poly_industrial_ceiling_lamp.glb" id="6_37jl6"]
 [ext_resource type="Script" uid="uid://b8qbo0lnjojy7" path="res://Scenes/Tutorial/item_popup_manager.gd" id="6_n7yiw"]
 [ext_resource type="PackedScene" uid="uid://bqxe6a8vwtjej" path="res://Scenes/Jeep/Jeep.tscn" id="6_nrevq"]
-[ext_resource type="Texture2D" uid="uid://bemv657xg8n3x" path="res://Images/level1_new.png" id="7_1n4ff"]
+[ext_resource type="Texture2D" uid="uid://b5urlhme3n6n5" path="res://Images/level1_airport.png" id="7_1n4ff"]
 [ext_resource type="Script" uid="uid://n32smt6e1ae1" path="res://Scenes/Tutorial/camera_rig_tutorial.gd" id="7_xpl50"]
 [ext_resource type="Texture2D" uid="uid://cs45ip471rvxy" path="res://Images/level2_new.png" id="8_37jl6"]
 [ext_resource type="Texture2D" uid="uid://5x5yn5q8g7yo" path="res://Images/quiz_new.png" id="9_rp3sh"]
